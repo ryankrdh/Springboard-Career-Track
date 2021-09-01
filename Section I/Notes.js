@@ -101,6 +101,8 @@ LEXICAL SCOPE: Lexical Scope
 Another point to mention is the lexical scope. Lexical scope means the children scope have the access to the variables defined in the parent scope. The children functions are lexically bound to the execution context of their parents.
 
 
+BOOLEANS: 
+
 The following values are always falsy:
 
 false
@@ -108,7 +110,7 @@ false
 -0 (minus zero)
 0n (BigInt zero)
 '', "", `` (empty string)
-null: s an assignment value. It can be assigned to a variable as a representation of no value
+null: is an assignment value. It can be assigned to a variable as a representation of no value
 undefined: means a variable has been declared but has not yet been assigned a value
 NaN
 
@@ -121,11 +123,92 @@ Everything else is truthy. That includes:
 {} (an empty object)
 function(){} (an “empty” function)
 
+converting truthy to falsy and falsy to truthy with NOT! operator.
+
+
+Know basic STRING METHODS:
+
+array.prototype.slice(i, j): slices from i to j and outputs. If no j, from i to end.
+
+array.prototype.includes(i): checks to see if i exists in the array/sentence. returns boolean.
+
+array.prototype.indexof(i): method returns the index within the calling String object of the first occurrence of the specified value, starting the search at fromIndex. Returns -1 if the value is not found.
+
+array.prototype.concat(i): method concatenates the string arguments to the calling string and returns a new string.
 
 
 
+NUMBERS:
+
+You should be comfortable converting a number to a string.
+
+Generating a random number
+
+Round a number with each of the fllowing.
+    Math.ceil(): function always rounds a number up to the next largest integer.
+ 
+    Math.floor(): function returns the largest integer less than or equal to a given number.
+
+    Math.round(): function returns the value of a number rounded to the nearest integer.
 
 
+STRINGS:
 
+you should be comfortable creating a string
+
+converting a string to a number:
+    parseInt(): method converts a string into an integer (a whole number).
+
+    parseFloat(): method converts a string into a point number (a number with decimal points). You can even pass in strings with random text in them.
+
+    Number():  method converts a string to a number.
+    Sometimes it’s an integer. Other times it’s a point number. And if you pass in a string with random text in it, you’ll get NaN, an acronym for “Not a Number.”
+
+
+Iterating through each element in a string:
+
+first method is charAt() is a classic approach. ('banana'.charAt(2))
+Bracket notation is newer ('banana'[2])
+
+Other popular ways to iterate through a string is:
+
+for loop: The classic approach — a simple for loop
+for(let i = 0; i < 10; i++) {
+
+}
+
+for ...of: This statement was introduced with ECMAScript 2015 and can be used with iterable objects. It’s more convenient to write than a classic for loop if you don’t care about the current index in the loop body.
+
+
+forEach(): This is the functional version of a for loop. Many people prefer it over for…of and for loops because it’s a higher-order function, and it helps to stick to a programming style that leverages immutability (see the Airbnb style guide in the references).
+One downside is you need to convert the string into an array before iterating. If performance really matters in your use case (and it usually doesn’t), it might not be your first choice.
+[....str].forEach(process)
+
+copying a string: str.slice()
+or assign it to an old variable.
+
+
+understand iteration:
+while loops:
+while (i < array.length) {
+    console.log(array[i]);
+    i++;
+}
+Know how to avoide infinite loop.
+
+
+Nested loops:
 
 */
+let matrix = [
+  ['a', 'b', 'c'],
+  ['d', 'e', 'f'],
+  ['g', 'h', 'i'],
+];
+for (let i = 0; i < matrix.length; i++) {
+  let subArr = matrix[i];
+
+  for (let j = 0; j < subArr.length; j++) {
+    console.log(subArr[j]);
+  }
+}
