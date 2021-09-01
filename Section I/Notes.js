@@ -108,8 +108,8 @@ false
 -0 (minus zero)
 0n (BigInt zero)
 '', "", `` (empty string)
-null
-undefined
+null: s an assignment value. It can be assigned to a variable as a representation of no value
+undefined: means a variable has been declared but has not yet been assigned a value
 NaN
 
 
