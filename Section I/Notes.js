@@ -217,12 +217,70 @@ Arrays:
 You should be comfortable creating an array.
 
 getting and setting elements in an array. 
+
 Looping over an array:
 fruits.forEach(function(item, index, array) {
   console.log(item, index)
 })
 
-Other methods: push, pop, shift, unshift, 
+Remove an item by index position
+let pos = fruits.indexOf('banana')
+let removedItem = fruits.splice(pos, 1)
 
+Remove an item from an index position.
+let vegetables = ['Cabbage', 'Turnip', 'Radish', 'Carrot']
+console.log(vegetables)
+// ["Cabbage", "Turnip", "Radish", "Carrot"]
+
+let pos = 1
+let n = 2
+
+let removedItems = vegetables.splice(pos, n)
+// this is how to remove items, n defines the number of items to be removed,
+// starting at the index position specified by pos and progressing toward the end of array.
+
+console.log(vegetables)
+// ["Cabbage", "Carrot"] (the original array is changed)
+
+console.log(removedItems)
+// ["Turnip", "Radish"]
+
+
+Other methods: push, pop, shift, unshift, indexOf
+
+copy an array:
+let shallowCopy = fruits.slice() // this is how to make a copy
+// ["Strawberry", "Mango"]
+
+
+OBJECTS
+You should be comfortable creating objects
+Getting and setting key value pairs in an array
+iterating through objects
+making copies of objects
+
+
+Know the difference between dot and bracket notation.
+
+When working with dot notation, property identifies can only be alphanumeric. Properties can't start with a number. 
+
+When working with bracket notation, property identifiers only have to be a String. They can include any characters, including spaces. Variables may also be used as long as the variable resolves to a String.
+
+bracket notation allows you to pass arguments dynamically.
+
+
+[] === [] will return false since the reference types are different.
+
+
+placing functions on objects (methods)
+
+function greet() {
+    let msg = 'hiii';
+    console.log(msg)
+}
+
+const person = {name: 'timothy', talk: greet}
+
+person.talk()
 
 */
