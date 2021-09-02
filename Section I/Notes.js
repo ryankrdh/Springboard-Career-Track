@@ -177,7 +177,28 @@ for(let i = 0; i < 10; i++) {
 
 }
 
-for ...of: This statement was introduced with ECMAScript 2015 and can be used with iterable objects. It’s more convenient to write than a classic for loop if you don’t care about the current index in the loop body.
+for ...of: This statement was introduced with ECMAScript 2015 and can be used with iterable objects. It’s more convenient to write than a classic for loop if you don’t care about the current index in the loop body. *ITERATES OVER ITERABLES (arrays, strings) You cannot use this with objects.
+
+for (let x of arr) {
+    console.log(x)
+}
+
+for (let char of "PURPLE RAIN!") {
+    console.log(char)
+}
+
+
+for ...in: Iterates over an object. Objects are not iterables. for ...in using on array or string will output index. *ITERATES OVER OBJECTS.
+const chicken = {
+    name: "lady gray",
+    age: 4,
+    color: "black"
+}
+
+for (let prop in chicken) {
+    console.log(`${prop} ->${chicken[prop}]}`) 
+}
+
 
 
 forEach(): This is the functional version of a for loop. Many people prefer it over for…of and for loops because it’s a higher-order function, and it helps to stick to a programming style that leverages immutability (see the Airbnb style guide in the references).
