@@ -283,4 +283,10 @@ const person = {name: 'timothy', talk: greet}
 
 person.talk()
 
+
+
+string template literals:
+`hi i am a ${1+2}rd number`
+
+
 */
