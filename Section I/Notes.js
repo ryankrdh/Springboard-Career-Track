@@ -199,16 +199,30 @@ Know how to avoide infinite loop.
 
 Nested loops:
 
-*/
 let matrix = [
-  ['a', 'b', 'c'],
-  ['d', 'e', 'f'],
-  ['g', 'h', 'i'],
+    ['a', 'b', 'c'],
+    ['d', 'e', 'f'],
+    ['g', 'h', 'i'],
 ];
 for (let i = 0; i < matrix.length; i++) {
-  let subArr = matrix[i];
-
-  for (let j = 0; j < subArr.length; j++) {
-    console.log(subArr[j]);
-  }
+    let subArr = matrix[i];
+    
+    for (let j = 0; j < subArr.length; j++) {
+        console.log(subArr[j]);
+    }
 }
+
+
+Arrays:
+You should be comfortable creating an array.
+
+getting and setting elements in an array. 
+Looping over an array:
+fruits.forEach(function(item, index, array) {
+  console.log(item, index)
+})
+
+Other methods: push, pop, shift, unshift, 
+
+
+*/
