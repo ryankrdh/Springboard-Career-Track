@@ -136,7 +136,7 @@ array.prototype.indexof(i): method returns the index within the calling String o
 
 array.prototype.concat(i): method concatenates the string arguments to the calling string and returns a new string.
 
-
+** SPLICE only works with arrays. method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. To access part of an array without modifying it, see slice().
 
 NUMBERS:
 
