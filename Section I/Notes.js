@@ -311,6 +311,10 @@ string template literals:
 
 
 Debugging:
+Make assumptions
+Test assumptions
+prove assumptions 
+repeat
 
 
 */
