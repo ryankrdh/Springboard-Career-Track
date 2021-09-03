@@ -318,4 +318,30 @@ repeat
 
 
 use chrome extension debugger or console.log (simple things only)
+
+common javascript bugs:
+== is very loose about comparisons. only use ===
+objects & arrays are not equal to similar objects & arrays
+    [1, 2, 3] !== [1, 2, 3] arrays are reference. You cant compare them.
+calling functionwith missing arguments make those arguments undefined.
+calling function with extra arguments is ignored (extra arguments are ignored)
+getting a missing property from object/index from array is undefined (no error is thrown)
+
+
+
+TRY/CATCH
+
+try {
+    functionThatDoesNotExist();
+} catch(e) {
+    console.log("something went wrong!")
+    console.log(e);
+}
+console.log("did we make it?")
+
+(e) holds the value of the error caught.
+
+
+
+
 */
