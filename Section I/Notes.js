@@ -317,4 +317,5 @@ prove assumptions
 repeat
 
 
+use chrome extension debugger or console.log (simple things only)
 */
