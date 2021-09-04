@@ -370,4 +370,12 @@ When should you use this?
 *use it for portions of your code where you suspect errors will occur that are beyond your control
 
 
+RECAP: 
+
+* A SyntaxError happen when JavaScript is unable to parse certain syntax
+* A ReferenceError occurs when JavaScript tries to access a variable that is not aware of - remember your scopes!
+* A TypeError occurs when JavaScript runs an invlaid expression on the wrong type.
+* You can throw your own errors using the throw keyword
+
+
 */
