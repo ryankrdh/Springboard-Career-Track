@@ -342,7 +342,7 @@ console.log("did we make it?")
 (e) holds the value of the error caught.
 
 
-finally: try/catch blocks come with another optional keyword finally which will execute code regardless if an error is throw or not.
+FINALLY: try/catch blocks come with another optional keyword finally which will execute code regardless if an error is throw or not.
 example without catch:
 
 try {
@@ -350,4 +350,24 @@ try {
 } finally {
     console.log("finally")
 }
+
+THROW: throws a custom error.
+
+try {
+    throw new Error("I am the error")
+} catch (err) {
+    console.log("what king of error?", err.name);
+    console.log("what is the message", err.message);
+    console.log("where did it happen?", err.stack);
+}
+
+When should you use this?
+
+* any time you want to hide errors from a user.
+* any time you want to produce custom errors for your users' benefit
+* it works as a nice fallback in areas of your code that could fail under unusual circumstances that were not foreseen during development.
+* it can hide overly technical error messages from users who wouldn't understand them anyhow
+*use it for portions of your code where you suspect errors will occur that are beyond your control
+
+
 */
