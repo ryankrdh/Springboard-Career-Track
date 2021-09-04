@@ -342,5 +342,12 @@ console.log("did we make it?")
 (e) holds the value of the error caught.
 
 
-finally: try/catch blocks come with another optional keyword finally which will execute code regardless if an error is throw or not
+finally: try/catch blocks come with another optional keyword finally which will execute code regardless if an error is throw or not.
+example without catch:
+
+try {
+    console.log("try")
+} finally {
+    console.log("finally")
+}
 */
