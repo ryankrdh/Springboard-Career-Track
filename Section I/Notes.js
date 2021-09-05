@@ -399,10 +399,43 @@ name(fn);
 
 
 putting functions in arrays:
-
 let funcs = [greet, diss]
-
 funcs[0]()
 
 
+storing functions in a variable:
+const myFunc = function add(x,y) {
+    return x + y;
+}
+myFunc(3,4)
+
+
+Returning a function as a value:
+function giveBirth() {
+    console.log("giving birth!!")
+    return function cry() {
+        return "waahhhh"
+    }
+}
+
+
+Another example:
+function makeMultiplyFunc(num) {
+    return function mult(x) {
+        return num * x;
+    }
+}
+
+const double = makeMultiplyFunc(2)
+double(9)
+18
+
+
+THREADING IN JAVASCRIPT:
+JS is single threaded. some other languages are multi threaded.
+
+
+setTimeout:  It sets a timer (a countdown set in milliseconds) for an execution of a callback function, calling the function upon completion of the timer.
+setTimeout(func, delay) 
+3000 ms is 3 seconds.
 */
