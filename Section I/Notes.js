@@ -446,7 +446,8 @@ clearInterval(id)
 
 Annonymous Functions:
 setTimeout(function() {
-
+    diss();
+    diss();
 }, 1000);
 greet();
 
