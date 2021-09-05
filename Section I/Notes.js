@@ -438,4 +438,18 @@ JS is single threaded. some other languages are multi threaded.
 setTimeout:  It sets a timer (a countdown set in milliseconds) for an execution of a callback function, calling the function upon completion of the timer.
 setTimeout(func, delay) 
 3000 ms is 3 seconds.
+
+setInterval: The setInterval() method will continue calling the function until clearInterval() is called, or the window is closed.
+const id = setInterval(func, 2000)
+clearInterval(id)
+
+
+Annonymous Functions:
+setTimeout(function() {
+
+}, 1000);
+greet();
+
+
+
 */
