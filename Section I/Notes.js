@@ -367,7 +367,7 @@ When should you use this?
 * any time you want to produce custom errors for your users' benefit
 * it works as a nice fallback in areas of your code that could fail under unusual circumstances that were not foreseen during development.
 * it can hide overly technical error messages from users who wouldn't understand them anyhow
-*use it for portions of your code where you suspect errors will occur that are beyond your control
+* use it for portions of your code where you suspect errors will occur that are beyond your control
 
 
 RECAP: 
@@ -375,7 +375,34 @@ RECAP:
 * A SyntaxError happen when JavaScript is unable to parse certain syntax
 * A ReferenceError occurs when JavaScript tries to access a variable that is not aware of - remember your scopes!
 * A TypeError occurs when JavaScript runs an invlaid expression on the wrong type.
-* You can throw your own errors using the throw keyword
+* You can throw your own errors using the throw keyword.
+* Using try/catch/finally blocks are an excellent way to handle errors when they may be unpredictable.
+
+
+Javascript treats functions are considered first-class data types since they are treated like any other data types.
+functions are objects in javascript.
+
+First Class Functions
+1. functions can be passed as arguments to other functions. 
+2. the return values of a function can be another function.
+3. a function can be assigned to a variable.
+
+function name (arg) {
+    arg();
+}
+
+function fn() {
+    console.log('This is function 2');
+}
+
+name(fn);
+
+
+putting functions in arrays:
+
+let funcs = [greet, diss]
+
+funcs[0]()
 
 
 */
