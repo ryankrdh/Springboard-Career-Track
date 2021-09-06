@@ -283,6 +283,8 @@ Getting and setting key value pairs in an array
 iterating through objects
 making copies of objects
 
+Object members can be:
+properties, methods.
 
 Know the difference between dot and bracket notation.
 
@@ -507,6 +509,114 @@ const printOne = function () {
 vs.
 
 function printOne() {
-
+    
 }
+
+
+
+Selecting Elements in the DOM
+The DOM allows us to use javascript to manipulate HTML.
+We can use methods like querySelector to access elements on the page. 
+Using the DOM we can modify elements and attributes.
+
+DIFFERENCE BETWEEN getElementById VS. querySelector
+
+In query selector, you can use any valid CSS selector to select elements. With element by ID, you can only select element with ID name and it will be looking only for elements with particular ID, this method is quite fast.
+
+
+
+getElementById:
+document.getElementById("main");
+Finds the FIRST matching id.
+
+getElementsByTagName:
+document.getElementsByTagName("li");
+It returns a list of all of the elements that match the string passed to the function.
+It looks like an array but you cannot use common methods like push, pop, indexOf or includes.
+
+getElementsByClassName:
+document.getElementsByClassName("heading");
+accepts a string which is the name of an element in the DOM.
+It returns a list of all the elements that have a class attribute, which matches the string passed to the function
+
+querySelector:
+document.querySelector("#main");
+accepts a string which is a valid CSS selector.
+It returns the first element that matches the CSS selector passed to the function.
+
+querySelectorAll:
+document.querySelectorAll("li");
+accepts a string which is a valid CSS selector.
+It returns all the elements that matches the CSS selector passed to the function.
+*/
+
+/// zoom lesson on OOP
+/*
+constructor function:
+function Person(name) {
+  this.name = name;
+  this.greeting = function () {
+    "Hi! I'm " + this.name + '.';
+  };
+}
+
+let person1 = new Person('Bob');
+let person2 = new Person('Sarah');
+
+console.log(person1.greeting);
+console.log(person2);
+
+
+
+Other ways to create object instances:
+
+The Object() constructor
+let person1 = new Object();
+
+Using the create() method
+let person2 = Object.create(person1)
+
+
+Javascript is often described as prototype-based language.
+
+
+** prototype inheritance 
+** constructor
+** extends
+call ataches this into function and exectues the function immediately
+bind attaches this into function and it needs to be invoked separately
+
+
+class Teacher extends Person {
+    constructor(first, last, age, gender, interests, subject, grade) {
+        super(first, last, age, gender, interests); // 'this' is initialized by calling the parent constructor
+
+        this.subject = subject;
+        this.grade = grade;
+    }
+}
+
+You can reuse the person object in another object using inheritance:
+
+function Teacher(first, last, age, gender, interests, subject) {
+    Person.call(this, first, last, age, gender, interests);
+    this.subject = subject;
+}
+
+
+
+
+
+
+
+
+const person = {
+  name: 'Bob',
+  greeting: function () {
+    // console.log(`hi this is ${this.name}`);
+    'hi ' + this.name + '!';
+  },
+};
+
+// console.log(person);
 */
