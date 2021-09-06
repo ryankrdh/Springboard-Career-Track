@@ -451,6 +451,28 @@ setTimeout(function() {
 }, 1000);
 greet();
 
+const printOne = function () {
+    console.log(1)
+}
 
+vs.
+
+function printOne() {
+
+}
+*/
+
+/*
+twitter 
+facebook
+twitch
+slalom
+new relic.  ignite
+microsoft: i will bring diversity into the field
+amazon: apprenti
+
+diversity of race, background, 
+
+associate, apprenticeship, junior, early career
 
 */
