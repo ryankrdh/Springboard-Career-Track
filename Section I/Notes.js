@@ -177,7 +177,7 @@ for(let i = 0; i < 10; i++) {
 
 }
 
-for ...of: This statement was introduced with ECMAScript 2015 and can be used with iterable objects. It’s more convenient to write than a classic for loop if you don’t care about the current index in the loop body. *ITERATES OVER ITERABLES (arrays, strings) You cannot use this with objects.
+for ...of: This statement was introduced with ECMAScript 2015 and can be used with iterable objects. It’s more convenient to write than a classic for loop if you don’t care about the current index in the loop body. *ITERATES OVER ITERABLES (arrays, strings) You cannot use this with objects. You CAN use break, continue, and return.
 
 for (let x of arr) {
     console.log(x)
@@ -202,7 +202,8 @@ for (let prop in chicken) {
 
 
 forEach(): This is the functional version of a for loop. Many people prefer it over for…of and for loops because it’s a higher-order function, and it helps to stick to a programming style that leverages immutability (see the Airbnb style guide in the references).
-One downside is you need to convert the string into an array before iterating. If performance really matters in your use case (and it usually doesn’t), it might not be your first choice.
+One downside is you need to convert the string into an array before iterating. If performance really matters in your use case (and it usually doesn’t), it might not be your first choice. 
+You can't break, continue, and return.
 [....str].forEach(process)
 
 copying a string: str.slice()
@@ -460,19 +461,4 @@ vs.
 function printOne() {
 
 }
-*/
-
-/*
-twitter 
-facebook
-twitch
-slalom
-new relic.  ignite
-microsoft: i will bring diversity into the field
-amazon: apprenti
-
-diversity of race, background, 
-
-associate, apprenticeship, junior, early career
-
 */
