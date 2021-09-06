@@ -144,6 +144,8 @@ You should be comfortable converting a number to a string.
 
 Generating a random number
 
+Math.
+
 Round a number with each of the fllowing.
     Math.ceil(): function always rounds a number up to the next largest integer.
  
@@ -443,6 +445,52 @@ setTimeout(func, delay)
 setInterval: The setInterval() method will continue calling the function until clearInterval() is called, or the window is closed.
 const id = setInterval(func, 2000)
 clearInterval(id)
+
+
+*** ASSIGNMENT EXAMPLES ***
+
+EXAMPLE 1
+
+function randomGame() {
+  let counter = 0;
+  let randomNumber = 0;
+  // randomize number 0 and 1 every 1000 milliseconds.
+  // let randomNumber = Math.random();
+  let gameGenerator = setInterval(function () {
+    randomNumber = Math.random();
+    // TESTER
+    console.log(randomNumber);
+    counter++;
+    // If the picked number is greater than .75, stop the timer.
+    if (randomNumber > 0.75) {
+      // stop the timer, console.log the number of tries.
+      console.log(counter);
+      clearInterval(gameGenerator);
+    }
+  }, 1000);
+}
+
+// Calling the function
+randomGame();
+
+
+EXAMPLE 2 
+
+function countDown(num) {
+  let timerID = setInterval(function () {
+    num--;
+    // in order for the countdown to wait to show DONE as part of the countdown, console.log needs to be after the if statement.
+    if (num == 0) {
+      clearInterval(timerID);
+      console.log('DONE!');
+    } else {
+      console.log(num);
+    }
+  }, 1000);
+}
+
+countDown(4);
+
 
 
 Annonymous Functions:
