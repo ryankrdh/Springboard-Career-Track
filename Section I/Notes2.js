@@ -26,6 +26,8 @@ document.getElementsByClassName("heading");
 accepts a string which is the name of an element in the DOM.
 It returns a list of all the elements that have a class attribute, which matches the string passed to the function
 
+
+QUERY SELECTOR can replace getElement methods most of the time
 querySelector:
 document.querySelector("#main");
 accepts a string which is a valid CSS selector.
@@ -36,4 +38,12 @@ document.querySelectorAll("li");
 accepts a string which is a valid CSS selector.
 It returns all the elements that matches the CSS selector passed to the function.
 
+
+
+.innerText vs .textContent 
+innerText is aware of the rendered appearance of text, while textContent is not.
+textContent will give ALL the text including <script> and <script>. 
+it even shows: style ="ignores display:none;""
+
+innerText is usually the one you want.
 */
