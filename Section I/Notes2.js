@@ -46,4 +46,25 @@ textContent will give ALL the text including <script> and <script>.
 it even shows: style ="ignores display:none;""
 
 innerText is usually the one you want.
+
+innerHTML is like textContent for a specific tag 
+document.querySelector('p').innerHTML
+
+To prevent cross site scripting attack: 
+if you were using innerHTML, other users could run code or insert scripts into our website
+
+
+
+
+
+THA cleaning service.
+deep cleaning. $50 per hour. two people. 3 hrs
+$300
+
+$ 170 per visit
+
+Molly Maid of Northwest Seattle
+free in home estimate. 
+
+sept 27th 11am.
 */
