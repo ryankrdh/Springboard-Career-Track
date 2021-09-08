@@ -54,17 +54,31 @@ To prevent cross site scripting attack:
 if you were using innerHTML, other users could run code or insert scripts into our website
 
 
+In javascript, css properties are camel cased.
+
+const allH3s = document.querySelectorAll('h3');
+for (let h3 of allH3s) {
+    h3.style.color = 'purple'
+}
 
 
 
-THA cleaning service.
-deep cleaning. $50 per hour. two people. 3 hrs
-$300
 
-$ 170 per visit
 
-Molly Maid of Northwest Seattle
-free in home estimate. 
-
-sept 27th 11am.
 */
+
+// picking a random color.
+
+function randomRGB() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(%{r},${g},${b})`;
+}
+
+// const h1 = document.querySelector('h1');
+// h1.style.color = randomRGB();
+
+setInterval(function () {
+  h1.style.color = randomRGB();
+}, 500);
