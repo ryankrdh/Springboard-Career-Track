@@ -62,23 +62,68 @@ for (let h3 of allH3s) {
 }
 
 
-
-
-
-*/
-
 // picking a random color.
 
 function randomRGB() {
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);
   const b = Math.floor(Math.random() * 256);
-  return `rgb(%{r},${g},${b})`;
+  return `rgb(${r},${g},${b})`;
 }
 
 // const h1 = document.querySelector('h1');
 // h1.style.color = randomRGB();
 
-setInterval(function () {
-  h1.style.color = randomRGB();
-}, 500);
+// setInterval(function () {
+//   h1.style.color = randomRGB();
+// }, 500);
+
+const letters = document.querySelectorAll('.letter');
+
+const intervalID = setInterval(function () {
+  for (let letter of letters) {
+    letter.style.color = randomRGB();
+  }
+}, 1000);
+
+// clearInterval(intervalID)
+
+
+getAttribute 
+
+const imgs = document.querySelectorAll('img');
+
+for(let img of imgs) {
+    console.log(img.getAttribute('src'))
+} 
+
+// This sets all images to the first img.
+const src = imgs[0].getAttribute('src');
+for (let img of imgs) {
+    img.setAttribute('src', src);
+}
+getAttribute takes in two elements, att. you want to change. and second is the value you want to give it.
+
+const firstInput = document.querySelector("input")
+firstInput.setAttribute("type", "email")
+
+direct attribute access:
+const input = document.querySelector('form input')
+
+//saving the input data into a variable and clearing it.
+const userInput = input.value;
+input.value = '';
+
+const range = document.querySelector('input[type="range"]') //selecting by attribute
+
+// manipulating the value.
+range.value = 5
+
+Manipulating classes:
+* setAttribute('class') - this will override the class
+* className - This will give you a string representation of the class.
+* classList - This will give you an array-like object to add, remove, or toggle classes.
+
+classList methods: add, remove, toggle, contains
+
+*/
