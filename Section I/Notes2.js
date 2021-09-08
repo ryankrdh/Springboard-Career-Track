@@ -147,4 +147,13 @@ setInterval(function () {
     h1.classList.toggle('big');
     h1.classList.toggle('small');
 }, 1000)
+
+
+const newTodo = document.createElement('li');
+const boldText = document.createElement('b');
+const ul = document.querySelector('ul');
+boldText.textContent = "DON'T FORGET TO LOCK THE COOP!"
+newTodo.append(boldText);
+ul.append(newTodo);
+
 */
