@@ -153,7 +153,17 @@ const newTodo = document.createElement('li');
 const boldText = document.createElement('b');
 const ul = document.querySelector('ul');
 boldText.textContent = "DON'T FORGET TO LOCK THE COOP!"
+newTodo.classList = 'Todo'
 newTodo.append(boldText);
 ul.append(newTodo);
 
+const secondTodo = document.createElement('li');
+secondTodo.textContent = "Order more la croix";
+
+ul.append(newTodo, secondTodo) 
+
+
+appendChild will add one at a time to the end.
+append will add multiple at the end.
+prepend will add multiple at the beginning.
 */
