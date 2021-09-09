@@ -186,4 +186,12 @@ with some of these finder methods, you will see that you don't always get back o
 Everything in the DOM is a node, some nodes are not actually HTML elements, but text or even comments!
 
 Every element is a node. but not all nodes are elements.
+
+enters are considered text node. 
+
+The DOM allows us to use JS to find and modify elements and their attributes.
+We can modify text, styles, and much more using the DOM
+To easily modify multiple elements, we can iterate over a list of elements and change each one.
+
+
 */
