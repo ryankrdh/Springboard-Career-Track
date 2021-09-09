@@ -166,4 +166,24 @@ ul.append(newTodo, secondTodo)
 appendChild will add one at a time to the end.
 append will add multiple at the end.
 prepend will add multiple at the beginning.
+
+removeChild vs remove is the same.
+
+const ul = document.querySelector('ul');
+ul.remove();
+
+parentElement:
+const div = document.querySelector('div');
+const section = div.parentElement
+
+children, firstElementChild, lastElementChild
+const ul = document.querySelector('ul');
+const li = ul.children
+
+
+Nodes vs. Elements.
+with some of these finder methods, you will see that you don't always get back on html element, you sometimes get back what is called a text node.
+Everything in the DOM is a node, some nodes are not actually HTML elements, but text or even comments!
+
+Every element is a node. but not all nodes are elements.
 */
