@@ -199,7 +199,7 @@ To easily modify multiple elements, we can iterate over a list of elements and c
 
 /*
 
-//adding onclick and ondblclick
+// adding onclick and ondblclick
 function makeBody(color) {
   document.body.style.backgroundColor = color;
 }
@@ -210,5 +210,24 @@ btn.onclick = function () {
 };
 
 
+// add EventListener is different since we can decide what type of event to play.
+// also beneficial if you want to add two events or delete the event.
+const h1 = document.querySelector('h1');
+
+h1.addEventListener('dblclick', function() {
+    console.log('You just clicked the h1 element!');
+    makeBody('violet');
+})
+
+// adding multiple listeners
+const violetBtn = document.querySelector('#violet');
+
+violetBtn.addEventListener('click', function () {
+    makeBody('violet');
+});
+
+violetBtn.addEventListener('click', function() {
+    h1.style.color = 'cyan';
+});
 
 */
