@@ -587,3 +587,6 @@ const person = {
 
 // console.log(person);
 */
+
+// **** REVIEW ****
+// forEach, for...of, for...in, for loop

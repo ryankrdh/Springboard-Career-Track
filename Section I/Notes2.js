@@ -193,5 +193,22 @@ The DOM allows us to use JS to find and modify elements and their attributes.
 We can modify text, styles, and much more using the DOM
 To easily modify multiple elements, we can iterate over a list of elements and change each one.
 
+*/
+
+// ***** JAVACRIPT EVENTS *****
+
+/*
+
+//adding onclick and ondblclick
+function makeBody(color) {
+  document.body.style.backgroundColor = color;
+}
+
+const btn = document.querySelector('#bg');
+btn.onclick = function () {
+  makeBody('red');
+};
+
+
 
 */
