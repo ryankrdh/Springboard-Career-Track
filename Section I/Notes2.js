@@ -252,20 +252,54 @@ pageX/pageY - Where on the page did this event occur?
 key - what key was pressed that triggered this event?
 preventDefault() - a function used to prevent the default behavior of the event.
 
-*/
 
 // MouseMap Demo
 document.addEventListener('mousemove', function (e) {
-  //   console.log(e.pageX, e.pageY);
-  const r = Math.round((e.pageX / window.innerWidth) * 255);
-  console.log(r);
-  const b = Math.round((e.pageY / window.innerHeight) * 255);
-  console.log(b);
-  const color = `rgb(${r}, 0, ${b})`;
-  document.body.style.backgroundColor = color;
+    //   console.log(e.pageX, e.pageY);
+    const r = Math.round((e.pageX / window.innerWidth) * 255);
+    console.log(r);
+    const b = Math.round((e.pageY / window.innerHeight) * 255);
+    console.log(b);
+    const color = `rgb(${r}, 0, ${b})`;
+    document.body.style.backgroundColor = color;
 });
 
-document.body.style.backgroundColor;
 
-(100 * 255) / 400;
-63.75(100 / 400) * 255;
+// User Submission
+
+<form action="">
+    Name: <input id="firstName" type="text">
+    <button>Add your name!</button>
+</form>
+
+const formElement = document.querySelector("form");
+
+formElement.addEventListener("submit", function(event) {
+    console.log("you just submitted the form!")
+})
+
+
+// You will need event.preventDfault() to prevent the form action from sending a new request.
+
+const form = document.querySelector('#monkeyform');
+form.addEventListener('submit', function(evt) {
+    evt.preventDefault(); // You need this in order to prevent an action
+    aler    t('You submitted the form!!');  
+})
+
+// preventing other types of default behaviors. 
+document.querySelector('a').addEventListener('click', function(e) {
+    e.preventDefault();
+    console.log('No google for you!');
+});
+
+
+// LOGO maker demo
+
+
+your brand name 
+
+your brand color
+
+logo font size
+*/
