@@ -230,4 +230,14 @@ violetBtn.addEventListener('click', function() {
     h1.style.color = 'cyan';
 });
 
+
+// Two ways to load DOM. Have the script tag at the end OR use:
+document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.querySelector('button');
+
+    btn.addEventListener('click', function () {
+        console.log('clicked');
+    }); 
+});
+
 */
