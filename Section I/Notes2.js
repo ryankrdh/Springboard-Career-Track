@@ -239,5 +239,33 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('clicked');
     }); 
 });
+ 
+
+// Inside of the callback to addEventListener, we get access to a special object as a parameter - the event object.
+const h1 = document.querySelector('h1');
+h1.addEventListener('click', function(event) {
+    console.log(event.type)
+});
+
+* target - what element is the target of the event.
+pageX/pageY - Where on the page did this event occur?
+key - what key was pressed that triggered this event?
+preventDefault() - a function used to prevent the default behavior of the event.
 
 */
+
+// MouseMap Demo
+document.addEventListener('mousemove', function (e) {
+  //   console.log(e.pageX, e.pageY);
+  const r = Math.round((e.pageX / window.innerWidth) * 255);
+  console.log(r);
+  const b = Math.round((e.pageY / window.innerHeight) * 255);
+  console.log(b);
+  const color = `rgb(${r}, 0, ${b})`;
+  document.body.style.backgroundColor = color;
+});
+
+document.body.style.backgroundColor;
+
+(100 * 255) / 400;
+63.75(100 / 400) * 255;
