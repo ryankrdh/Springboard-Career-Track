@@ -303,26 +303,48 @@ const fontSizeInput = document.querySelector('input[name="fontsize"]');
 const results = document.querySelector('#results');
 
 form.addEventListener('submit', function (e) {
-  e.preventDefault();
-  //   console.log('submit!');
-  const newLogo = makeLogo(
-    brandInput.value,
-    colorInput.value,
-    fontSizeInput.value
-  );
-  results.appendChild(newLogo);
-  //   brandInput.value = ''; // to reset text bar
+    e.preventDefault();
+    //   console.log('submit!');
+    const newLogo = makeLogo(
+        brandInput.value,
+        colorInput.value,
+        fontSizeInput.value
+        );
+        results.appendChild(newLogo);
+        //   brandInput.value = ''; // to reset text bar
+    });
+    
+    function makeLogo(text, color, size) {
+        const logo = document.createElement('h2');
+        logo.innerText = text;
+        logo.style.color = color;
+        logo.style.fontSize = size + 'px';
+        return logo;
+    }
+    
+    
+// key events
+
+document.addEventListener('keypress', function (e) {
+    console.log(e.key);
 });
 
-function makeLogo(text, color, size) {
-  const logo = document.createElement('h2');
-  logo.innerText = text;
-  logo.style.color = color;
-  logo.style.fontSize = size + 'px';
-  return logo;
-}
+// this will fire any keys pressed. including shift
+document.addEventListener('keydown', function (e) {
+    console.log(e.key);
+});
+
+document.addEventListener('keyup', function (e) {
+    console.log(e.key);
+});
+
 
 
 
 
 */
+
+const playerKey = document.querySelector('input');
+playerKey.addEventListener('keypress', function (e) {
+  console.log('KEY PRESS: ', e.key);
+});
