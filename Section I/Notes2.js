@@ -295,11 +295,34 @@ document.querySelector('a').addEventListener('click', function(e) {
 
 
 // LOGO maker demo
+// using name attribute instead of id
+const form = document.querySelector('#logoform');
+const brandInput = document.querySelector('input[name="brandname"]');
+const colorInput = document.querySelector('input[name="color"]');
+const fontSizeInput = document.querySelector('input[name="fontsize"]');
+const results = document.querySelector('#results');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  //   console.log('submit!');
+  const newLogo = makeLogo(
+    brandInput.value,
+    colorInput.value,
+    fontSizeInput.value
+  );
+  results.appendChild(newLogo);
+  //   brandInput.value = ''; // to reset text bar
+});
+
+function makeLogo(text, color, size) {
+  const logo = document.createElement('h2');
+  logo.innerText = text;
+  logo.style.color = color;
+  logo.style.fontSize = size + 'px';
+  return logo;
+}
 
 
-your brand name 
 
-your brand color
 
-logo font size
 */
