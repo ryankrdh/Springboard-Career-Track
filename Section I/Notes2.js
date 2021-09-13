@@ -346,5 +346,14 @@ playerKey.addEventListener('keypress', function (e) {
 
 // multiple events
 
+const removeButtons = document.querySelectorAll('li button');
 
+// you need a for loop since the querySelector at top chooses one only
+for (let btn of removeButtons) {
+    btn.addEventListener('click', function(e) {
+        e.target.parentElement.remove();
+    });
+}
 */
+
+const form = document.querySelector('#add');
