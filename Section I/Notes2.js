@@ -344,16 +344,54 @@ playerKey.addEventListener('keypress', function (e) {
 });
 
 
-// multiple events
+// multiple events + event delegation
 
+
+
+*/
+
+const form = document.querySelector('#add-friend');
 const removeButtons = document.querySelectorAll('li button');
+const input = document.querySelector('#first-name');
+const friendList = document.querySelector('#friend-list');
 
 // you need a for loop since the querySelector at top chooses one only
 for (let btn of removeButtons) {
-    btn.addEventListener('click', function(e) {
-        e.target.parentElement.remove();
-    });
+  btn.addEventListener('click', function (e) {
+    e.target.parentElement.remove();
+  });
 }
-*/
 
-const form = document.querySelector('#add');
+// the new buttons won't work so there are two options: 1. Adding the event listener when we create elements. 2. event delegation.
+
+// Event delegation.
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  //   console.log(input.value);
+  const newFriend = document.createElement('li');
+  const removeBtn = document.createElement('button');
+  removeBtn.innerText = 'UnFriend';
+  removeBtn.addEventListener('click', function (e) {
+    e.target.parentElement.remove();
+  });
+  newFriend.innerText = input.value;
+  newFriend.appendChild(removeBtn);
+  friendList.appendChild(newFriend);
+  input.value = '';
+});
+
+// Inefficient method. adding the event listeners.
+// form.addEventListener('submit', function (e) {
+//   e.preventDefault();
+//   //   console.log(input.value);
+//   const newFriend = document.createElement('li');
+//   const removeBtn = document.createElement('button');
+//   removeBtn.innerText = 'UnFriend';
+//   removeBtn.addEventListener('click', function (e) {
+//     e.target.parentElement.remove();
+//   });
+//   newFriend.innerText = input.value;
+//   newFriend.appendChild(removeBtn);
+//   friendList.appendChild(newFriend);
+//   input.value = '';
+// });
