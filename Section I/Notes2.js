@@ -329,7 +329,7 @@ document.addEventListener('keypress', function (e) {
     console.log(e.key);
 });
 
-// this will fire any keys pressed. including shift
+// this will fire any keys pressed. including shift, arrow keys
 document.addEventListener('keydown', function (e) {
     console.log(e.key);
 });
@@ -338,13 +338,13 @@ document.addEventListener('keyup', function (e) {
     console.log(e.key);
 });
 
+const playerKey = document.querySelector('input');
+playerKey.addEventListener('keypress', function (e) {
+  console.log(`KEY PRESS: `, e.key);
+});
 
 
+// multiple events
 
 
 */
-
-const playerKey = document.querySelector('input');
-playerKey.addEventListener('keypress', function (e) {
-  console.log('KEY PRESS: ', e.key);
-});
