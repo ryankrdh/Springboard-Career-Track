@@ -378,7 +378,6 @@ playerKey.addEventListener('keypress', function (e) {
 //   input.value = '';
 // });
 
-*/
 
 // // **** USING DELEGATIONS TO CREATE REMOVE BUTTON ****
 const form = document.querySelector('#add-friend');
@@ -389,8 +388,11 @@ friendList.addEventListener('click', function (e) {
   //   console.log(e.target.tagName);
   if (e.target.tagName === 'BUTTON') {
     e.target.parentElement.remove();
-  } else if (e.target.tagName === 'LI') {
-    e.target.style.color = 'red';
+  } else if (e.target.tagName === 'LI' || e.target.tagName === 'SPAN') {
+    e.target.classList.add('best-friend');
+    const heart = document.createElement('span');
+    heart.innerHTML = '&hearts;';
+    e.target.prepend(heart);
   }
 });
 // the new buttons won't work so there are two options: 1. Adding the event listener when we create elements. 2. event delegation.
@@ -406,3 +408,5 @@ form.addEventListener('submit', function (e) {
   friendList.appendChild(newFriend);
   input.value = '';
 });
+
+*/
