@@ -427,4 +427,9 @@ const colorsSection = document.querySelector('#colors');
 colorsSection.addEventListener('click', function (e) {
   document.body.style.backgroundColor = e.target.dataset.hex;
 });
-*/
+
+
+// Local Storage
+
+Local storage: Persists in the browser as long as you want it to. I can quit the browser, restart the computer and it will still be in the local storage.
+Session storage: Only lasts for the duration of your session.
