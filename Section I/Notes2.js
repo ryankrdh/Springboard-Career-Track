@@ -437,4 +437,41 @@ Session storage: Only lasts for the duration of your session.
 modifying localStorage: The most important thing to remember is that all your keys in localStorage or sessionStorage must be strings. It's a good habit to set all your keys as strings to avoid confusion.
 
 setItem: will update or add to the storage. 
-localStorage.setItem('catName', 'Blue')
+localStorage.setItem('catName', 'Blue');
+localStorage.setItem('catCount', 68);
+
+let newCount = count + 8;
+localStorage.setItem('catCount', newCount)
+
+getItem: retrieving an item in localStorage.
+localStorage.getItem("firstName");
+
+access items on the localStorage object:
+localStorage.firstName
+
+localStorage.removeItem('CARBON_PRESETS')
+
+sessionStorage.setItem('msg', 'help plz')
+
+localStorage.clear()
+
+
+// Adding objects to local storage.
+
+const preferences = {
+  fontSize: '18px',
+  favColor: 'purple',
+};
+
+localStorage.setItem('preference', preference)
+
+In order to get back our original data type, we need to convert this array to a special string format called JSON.
+
+JSON (Javascript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate.
+
+JSON.stringify: is used to convert JavaScript to JSON (or stringify)
+JSON.parse Parses a string as JSON
+
+localStorage.setItem('preferenceKey', JSON.stringify(preferences));
+
+*/
