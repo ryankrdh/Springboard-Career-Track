@@ -458,20 +458,30 @@ localStorage.clear()
 
 // Adding objects to local storage.
 
+
+
 const preferences = {
   fontSize: '18px',
   favColor: 'purple',
 };
 
+
 localStorage.setItem('preference', preference)
 
-In order to get back our original data type, we need to convert this array to a special string format called JSON.
+// In order to get back our original data type, we need to convert this array to a special string format called JSON.
 
-JSON (Javascript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate.
+// JSON (Javascript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate.
 
-JSON.stringify: is used to convert JavaScript to JSON (or stringify)
-JSON.parse Parses a string as JSON
+// JSON.stringify: is used to convert JavaScript to JSON (or stringify)
+// JSON.parse Parses a string as JSON
 
+// To store in local storage
 localStorage.setItem('preferenceKey', JSON.stringify(preferences));
+
+// To retrieve a value from local storage
+JSON.parse(localStorage.getItem('preferenceKey'));
+
+const { favColor } = JSON.parse(localStorage.preferenceKey);
+document.body.style.backgroundColor = favColor;
 
 */
