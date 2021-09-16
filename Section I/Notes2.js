@@ -433,3 +433,8 @@ colorsSection.addEventListener('click', function (e) {
 
 Local storage: Persists in the browser as long as you want it to. I can quit the browser, restart the computer and it will still be in the local storage.
 Session storage: Only lasts for the duration of your session.
+
+modifying localStorage: The most important thing to remember is that all your keys in localStorage or sessionStorage must be strings. It's a good habit to set all your keys as strings to avoid confusion.
+
+setItem: will update or add to the storage. 
+localStorage.setItem('catName', 'Blue')
