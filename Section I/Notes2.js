@@ -485,7 +485,14 @@ const { favColor } = JSON.parse(localStorage.preferenceKey);
 document.body.style.backgroundColor = favColor;
  
 // Local Storage Demo
+
 const toggleSwitch = document.querySelector('input[type="checkbox"]');
+
+if (localStorage.getItem('darkModeEnabled')) {
+    document.body.className = 'dark';
+    toggleSwitch.checked = true;
+}
+
 toggleSwitch.addEventListener('click', function (e) {
   const { checked } = toggleSwitch;
   if (checked) {
@@ -496,6 +503,30 @@ toggleSwitch.addEventListener('click', function (e) {
   document.body.className = checked ? 'dark' : '';
 });
 
+
+
+
+
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+
 // // QUESTION:
-// In the following code, why do we put squigly bracket around const variable:
-// const { checked } = toggleSwitch;
+// const toggleSwitch = document.querySelector('input[type="checkbox"]');
+// toggleSwitch.addEventListener('click', function (e) {
+//   const { checked } = toggleSwitch;
+//   if (checked) {
+//     localStorage.setItem('darkModeEnabled', true);
+//   } else {
+//     localStorage.removeItem('darkModeEnabled');
+//   }
+//   document.body.className = checked ? 'dark' : '';
+// });
