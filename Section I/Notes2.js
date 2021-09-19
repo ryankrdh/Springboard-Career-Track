@@ -519,17 +519,20 @@ toggleSwitch.addEventListener('click', function (e) {
 
 
 
-// // QUESTION:
-// const toggleSwitch = document.querySelector('input[type="checkbox"]');
-// toggleSwitch.addEventListener('click', function (e) {
-//   const { checked } = toggleSwitch;
-//   if (checked) {
-//     localStorage.setItem('darkModeEnabled', true);
-//   } else {
-//     localStorage.removeItem('darkModeEnabled');
-//   }
-//   document.body.className = checked ? 'dark' : '';
-// });
+// QUESTION:
 
+
+const toggleSwitch = document.querySelector('input[type="checkbox"]');
+toggleSwitch.addEventListener('click', function (e) {
+  const { checked } = toggleSwitch;
+  if (checked) {
+    localStorage.setItem('darkModeEnabled', true);
+  } else {
+    localStorage.removeItem('darkModeEnabled');
+  }
+  document.body.className = checked ? 'dark' : '';
+});
+
+// this is because of object destructuring(ES6). 
 
 */
