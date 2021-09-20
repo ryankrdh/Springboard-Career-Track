@@ -26,12 +26,38 @@ Create files and folders in Terminal using mkdir and touch.
 Move files and folders in Terminal using mv.
 Copy files and folders in Terminal using cp.
 Remove files and folders in Terminal using rm and rmdir.
+    rm -rf: force deletes without prompt.  
 cat app.js: prints out the contents
+
 echo "word": it will repeat the words back. 
 echo ".env" > .gitignore: replaces all the content in there. 
 
-less, open
+open index.html: it will open a file or folder using a default program
 
+less:
+
+.: Dot is a reference to a current directory.
+    example: open . will open the current directory.
+
+mv test.txt ../: moves files from and to. 
+mv test.txt newfile.txt: renames files and folders.
+mv test.txt ../hello.txt: renames AND moves.
+
+cp [org. file] [path to copied file]
+cp dogs.txt dogs_copy.txt: makes full copy of the file.
+cp dogs.txt ../DOGS.txt: this will copy and move it to the file.
+
+cp -r DUMB super_dumb: copy of the whole FOLDER use -r.
+cp -r DUMB ../super_cumb: moving and copying the folder.
+
+
+
+USEFUL KEYBOARD TERMINAL SHORTCUTS:
+control + a: Takes you to the beginning.
+control + e: Takes you to the end.
+control + w: Delete the word up to where your cursor is.
+control + u: Delete the entire line.
+option + arrowkeys: jumps cursor by word
 
 
 */
