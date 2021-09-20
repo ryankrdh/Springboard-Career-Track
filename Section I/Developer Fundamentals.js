@@ -26,14 +26,14 @@ Create files and folders in Terminal using mkdir and touch.
 Move files and folders in Terminal using mv.
 Copy files and folders in Terminal using cp.
 Remove files and folders in Terminal using rm and rmdir.
-    rm -rf: force deletes without prompt.  
+    rm -rf [foldername]: force deletes without prompt.  
 cat app.js: prints out the contents
 
 echo "word": it will repeat the words back. 
 echo ".env" > .gitignore: replaces all the content in there. 
 
 open index.html: it will open a file or folder using a default program
-
+s
 less:
 
 .: Dot is a reference to a current directory.
@@ -58,6 +58,21 @@ control + e: Takes you to the end.
 control + w: Delete the word up to where your cursor is.
 control + u: Delete the entire line.
 option + arrowkeys: jumps cursor by word
+
+*/
+
+/*
+
+GIT SHORTCUTS:
+
+ git status: checking up on current repository.
+git init: initializes a new repository
+rm -rf .git: deletes the git folder.
+
+
+
+
+
 
 
 */
