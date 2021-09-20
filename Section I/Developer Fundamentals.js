@@ -68,7 +68,15 @@ GIT SHORTCUTS:
  git status: checking up on current repository.
 git init: initializes a new repository
 rm -rf .git: deletes the git folder.
+git log: view previous commits
 
+
+git add .
+git commit -m ""
+git push
+
+
+git diff: it will view what is modified.
 
 
 
