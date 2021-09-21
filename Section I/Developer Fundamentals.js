@@ -81,11 +81,15 @@ git diff: it will view what is modified.
 
 //-------------------------------------------------------------
 
+git status: checks to see if working line is clean.
 git branch add-css: adding branch called add-css.
 git checkout add-css: switches to the branch "add-css" 
 git checkout -b [name]: creates and moves to the new branch.
 git branch -d [name]: deletes a branch.
 
 git branch -D [name]: if there are commits that haven't been merged yet. it will force delete. 
+
+git merge [name]: stay on the branch you are merging to and write the branch name you are merging from. 
+
 
 */
