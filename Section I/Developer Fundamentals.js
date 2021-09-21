@@ -69,6 +69,7 @@ GIT SHORTCUTS:
 git init: initializes a new repository
 rm -rf .git: deletes the git folder.
 git log: view previous commits
+    git log --oneline: displayed as one commit per line.
 
 
 git add .
@@ -78,9 +79,13 @@ git push
 
 git diff: it will view what is modified.
 
+//-------------------------------------------------------------
 
+git branch add-css: adding branch called add-css.
+git checkout add-css: switches to the branch "add-css" 
+git checkout -b [name]: creates and moves to the new branch.
+git branch -d [name]: deletes a branch.
 
-
-
+git branch -D [name]: if there are commits that haven't been merged yet. it will force delete. 
 
 */
