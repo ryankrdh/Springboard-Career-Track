@@ -93,3 +93,19 @@ git merge [name]: stay on the branch you are merging to and write the branch nam
 
 
 */
+
+/*
+
+git remote add origin https://github.com/aninmatedtext.git
+    this will add the name origin to the github url so you can remotely access it without typing the full url
+
+git remote -v: view list of remotes
+
+git push origin master: origin is the nickname for the url
+git push -u origin master: using this first time when you push, the -u will make it default to just type git push instead of git push origin master.
+
+git clone [copied github url]: getting a clone of someone's repository.
+
+git pull origin master: getting the latest updated code from git hub.
+ 
+*/
