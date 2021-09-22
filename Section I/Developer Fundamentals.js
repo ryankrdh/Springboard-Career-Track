@@ -107,5 +107,21 @@ git push -u origin master: using this first time when you push, the -u will make
 git clone [copied github url]: getting a clone of someone's repository.
 
 git pull origin master: getting the latest updated code from git hub.
- 
+
 */
+
+/*
+
+UNIT TESTING
+
+*/
+
+function calculateTaxes(income) {
+  if (income > 30000) {
+    return income * 0.25;
+  } else {
+    return income * 0.15;
+  }
+}
+
+console.log(calculateTaxes(500));
