@@ -114,17 +114,22 @@ git pull origin master: getting the latest updated code from git hub.
 
 UNIT TESTING
 
-*/
 
 function calculateTaxes(income) {
-  if (!Number.isFinite(income)) {
-    throw new Error('Invalid income!');
-  }
-  if (income > 30000) {
-    return income * 0.25;
-  } else {
-    return income * 0.15;
-  }
+    if (!Number.isFinite(income)) {
+        throw new Error('Invalid income!');
+    }
+    if (income > 30000) {
+        return income * 0.25;
+    } else {
+        return income * 0.15;
+    }
 }
 
 console.log(calculateTaxes(500));
+
+
+* need to clean up after testing. 
+
+
+*/
