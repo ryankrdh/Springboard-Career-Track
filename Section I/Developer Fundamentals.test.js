@@ -18,3 +18,15 @@ describe('calculateTaxes tests', function () {
     expect(() => calculateTaxes(true)).toThrowError();
   });
 });
+
+// This "hook" will run after every IT. Used for cleaner code.
+afterEach(function () {
+  console.log('After Each');
+  input.value = '';
+  username = [];
+});
+
+// This "hook" will run before every IT.
+beforeEach(() => {
+  console.log('before!');
+});

@@ -133,3 +133,9 @@ console.log(calculateTaxes(500));
 
 
 */
+
+/* 
+Review: 
+1. Arrow function
+2. Object destructuring
+*/
