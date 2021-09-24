@@ -130,6 +130,18 @@ console.log(calculateTaxes(500));
 
 
 * need to clean up after testing. 
+Unit Tests: simple and cheap, work well with pure functions that do not have side effects.
+Integration Tests: More complex and costly to maintain. Used to test impure functions
+
+// this function will update an array outside of the function so there is a side effect hence not pure.
+function append (arr, val) {
+    arr.push(val);
+}
+
+// this function is a pure function.
+function appendPure (arr, val) {
+    return [...arr, val]
+}
 
 
 */
