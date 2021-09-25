@@ -144,6 +144,7 @@ function appendPure (arr, val) {
 }
 
 
+modular codes are easy to test. 
 */
 
 /* 
