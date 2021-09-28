@@ -19,9 +19,9 @@ forEach:
 * Runs a callback function for each value in the array and then returns undefined.
 * forEach will always return undefined - no matter what.
 
-
-
 */
+
+/*
 
 const colors = ['teal', 'cyan', 'peach', 'purple'];
 
@@ -53,3 +53,19 @@ console.log(total);
 // DIFFERENCE BETWEEN FOR OF, FOR LOOP, FOR EACH:
 // for of is a newer concept and for each has been around for a long time.
 // Did not have for of back then. forEach came before for of
+
+*/
+
+const colors = ['teal', 'cyan', 'peach', 'purple'];
+
+// creating your own forEach function
+function forEach(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    callback(arr[i], i);
+  }
+}
+
+// testing the forEach function
+forEach(colors, function (color, i) {
+  console.log(color.toUpperCase(), `index of ${i}`);
+});
