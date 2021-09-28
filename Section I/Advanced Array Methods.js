@@ -54,7 +54,6 @@ console.log(total);
 // for of is a newer concept and for each has been around for a long time.
 // Did not have for of back then. forEach came before for of
 
-*/
 
 const colors = ['teal', 'cyan', 'peach', 'purple'];
 
@@ -69,3 +68,11 @@ function forEach(arr, callback) {
 forEach(colors, function (color, i) {
   console.log(color.toUpperCase(), `index of ${i}`);
 });
+
+// regular forEach function
+colors.forEach(function (color, i) {
+  console.log(color.toUpperCase(), `index of ${i}`);
+});
+
+
+*/
