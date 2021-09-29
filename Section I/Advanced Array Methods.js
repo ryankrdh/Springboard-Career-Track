@@ -92,4 +92,62 @@ JS ARRAY METHODS - MAP
 // returns the new array.
 // map always returns a enw array of the same length.
  
+let numbers = [1, 2, 3];
+
+numbers.map(function(value, index, array) {
+    return value * 10;
+});
+
+
+const numbers = [21, 37, 64, 99, 142];
+
+const negatives = numbers.map(function (num) {
+  return num * -1;
+});
+
+// ** Use forEach if you just wanted to console.log the results. map will return an aray of undefined.
+const doubles = numbers.map(function (num) {
+  console.log(num * 2);
+});
+
+
+
+const todos = [
+  {
+    id: 1,
+    text: 'walk the dog',
+    priority: 'high',
+  },
+  {
+    id: 2,
+    text: 'walk the chickens',
+    priority: 'medium',
+  },
+  {
+    id: 3,
+    text: 'feed the cats',
+    priority: 'low',
+  },
+  {
+    id: 4,
+    text: 'Put out the fire in my garage ',
+    priority: 'very high',
+  },
+];
+
+// isolating the texts from todos.
+const todoText = todos.map(function (todo) {
+  return todo.text;
+});
+
+// links is currently a nodeList not an array. But we can make it into an array.
+// const links = document.querySelectorAll('a');
+// Array.from(links);
+
+const links = Array.from(document.querySelectorAll('a'));
+const urls = links.map(function (a) {
+  return a.href;
+});
+
+
 */
