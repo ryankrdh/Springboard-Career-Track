@@ -53,6 +53,7 @@ console.log(total);
 // DIFFERENCE BETWEEN FOR OF, FOR LOOP, FOR EACH:
 // for of is a newer concept and for each has been around for a long time.
 // Did not have for of back then. forEach came before for of
+// forEach is mildly useful at best.
 
 
 const colors = ['teal', 'cyan', 'peach', 'purple'];
@@ -75,4 +76,20 @@ colors.forEach(function (color, i) {
 });
 
 
+*/
+
+/*
+JS ARRAY METHODS - MAP
+
+// Map is very useful.
+// pass in a callback and it calls that function once in the array. ForEach calls the function and doesn't do much with it. 
+
+// When map calls the function: 
+// creates a new array
+// iterates through an array
+// runs a callback function for each value in the array. 
+// adds the result of that callback function to the new array
+// returns the new array.
+// map always returns a enw array of the same length.
+ 
 */
