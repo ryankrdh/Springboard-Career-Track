@@ -149,5 +149,46 @@ const urls = links.map(function (a) {
   return a.href;
 });
 
+// ---------------------------------------------------
+
+// creating my own Map
+const todos = [
+  {
+    id: 1,
+    text: 'walk the dog',
+    priority: 'high',
+  },
+  {
+    id: 2,
+    text: 'walk the chickens',
+    priority: 'medium',
+  },
+  {
+    id: 3,
+    text: 'feed the cats',
+    priority: 'low',
+  },
+  {
+    id: 4,
+    text: 'Put out the fire in my garage ',
+    priority: 'very high',
+  },
+];
+
+// myMap([1, 2, 3], function (val) {
+//   return val * 3;
+// });
+
+function myMap(arr, callback) {
+  const mappedArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    mappedArray.push(callback(arr[i]));
+  }
+  return mappedArray;
+}
+
+const priorityMap = myMap(todos, function (todo) {
+  return todo.priority;
+});
 
 */
