@@ -204,29 +204,60 @@ const priorityMap = myMap(todos, function (todo) {
  });
 
 
- const words = [
-	'immunoelectrophoretically',
-	'rotavator',
-	'tsktsk',
-	'psychophysicotherapeutics',
-	'squirrelled',
-	'crypt',
-	'uncopyrightable',
-	'cysts',
-	'pseudopseudohypoparathyroidism',
-	'unimaginatively'
+
+const words = [
+  'immunoelectrophoretically',
+  'rotavator',
+  'tsktsk',
+  'psychophysicotherapeutics',
+  'squirrelled',
+  'crypt',
+  'uncopyrightable',
+  'cysts',
+  'pseudopseudohypoparathyroidism',
+  'unimaginatively',
 ];
 
-const longWords = words.filter(function(word) {
-    return word.length >= 20;
+const longWords = words.filter(function (word) {
+  return word.length >= 20;
 });
 
-const cOrUWords = words.filter(function(w) {
-    return w[0] === 'u' || w[0] === 'c';
+const cOrUWords = words.filter(function (w) {
+  return w[0] === 'u' || w[0] === 'c';
 });
+
+// -------------------------------
+
+const containsVowel = function (word) {
+  for (let char of word) {
+    if (isVowel(char)) return true;
+  }
+  return false;
+};
 
 // if it doesn't exist, it would output -1.
-const isVowel = function(char) {
-    return 'aeiou'.indexOf(char) !== -1;
+const isVowel = function (char) {
+  return 'aeiou'.indexOf(char) !== -1;
 };
+
+const containVowels = words.filter(containsVowel);
+const containNoVowels = words.filter(function (word) {
+  return !containsVowel(word);
+});
+
+
+// -----------------------------------------------
+
+// map and filter example:
+
+// creates an array of all the inputs
+const allCheckboxes = document.querySelectorAll('input[type="checkbox"]')
+
+// creats a filter to find .checked method.
+// Array.from converts the array.
+const checked = Array.from(allCheckboxes).filter(function(box) {
+    return box.checked;
+});
+
+
 */
