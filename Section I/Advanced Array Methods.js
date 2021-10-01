@@ -253,11 +253,47 @@ const containNoVowels = words.filter(function (word) {
 // creates an array of all the inputs
 const allCheckboxes = document.querySelectorAll('input[type="checkbox"]')
 
-// creats a filter to find .checked method.
+// creates a filter to find .checked method.
 // Array.from converts the array.
-const checked = Array.from(allCheckboxes).filter(function(box) {
+const checked = Array.from(allCheckboxes).filter(function (box) {
     return box.checked;
 });
 
+// instead of outputing 'inputs', get the inner text.
+const completedItems = checked.map(function (checkbox) {
+    return checkbox.parentElement.innerText;
+});
 
+// chaining the two functions above.
+function extractCompletedTodos() {
+    const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    return Array.from(allCheckboxes)
+    .filter(function (box) {
+        return box.checked;
+    })
+    .map(function (checkbox) {
+        return checkbox.parentElement.innerText;
+    });
+};
+
+// --------------------------------------------------
+// writing your own filter.
+
+function myFilter(arr, callback) {
+    const filteredArray = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(callback(arr[i], i, arr)) {
+            filteredArray.push(arr[i])
+        }
+    }
+    return filteredArray;
+ }
+
+const shorties = myFilter(words, function(word) {
+    return word.length<= 10; 
+ });
+
+const everyOtherWord = myFilter(word, function(word, i) {
+    return i % 2 === 0 
+ })
 */
