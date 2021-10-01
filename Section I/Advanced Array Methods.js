@@ -225,6 +225,7 @@ const cOrUWords = words.filter(function(w) {
     return w[0] === 'u' || w[0] === 'c';
 });
 
+// if it doesn't exist, it would output -1.
 const isVowel = function(char) {
     return 'aeiou'.indexOf(char) !== -1;
 };
