@@ -182,7 +182,8 @@ const todos = [
 function myMap(arr, callback) {
   const mappedArray = [];
   for (let i = 0; i < arr.length; i++) {
-    mappedArray.push(callback(arr[i]));
+    const val = callback(arr[i], i, arr);
+    mappedArray.push(val);
   }
   return mappedArray;
 }
@@ -191,4 +192,40 @@ const priorityMap = myMap(todos, function (todo) {
   return todo.priority;
 });
 
+*/
+
+/*
+// JS ARRAY METHODS - FILTER
+
+ let letters = ['a', 'b', 'c', 'b', 'c'];
+
+ const filteredLetters = letters.filter(function(value, index, array) {
+     return value === 'b';
+ });
+
+
+ const words = [
+	'immunoelectrophoretically',
+	'rotavator',
+	'tsktsk',
+	'psychophysicotherapeutics',
+	'squirrelled',
+	'crypt',
+	'uncopyrightable',
+	'cysts',
+	'pseudopseudohypoparathyroidism',
+	'unimaginatively'
+];
+
+const longWords = words.filter(function(word) {
+    return word.length >= 20;
+});
+
+const cOrUWords = words.filter(function(w) {
+    return w[0] === 'u' || w[0] === 'c';
+});
+
+const isVowel = function(char) {
+    return 'aeiou'.indexOf(char) !== -1;
+};
 */
