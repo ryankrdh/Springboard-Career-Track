@@ -297,7 +297,13 @@ const everyOtherWord = myFilter(word, function(word, i) {
     return i % 2 === 0 
  })
 
+*/
+
+/*
+// ------------------------------------------------------
+// JS Array Methods - SOME and EVERY
 
 
- 
+
+
 */
