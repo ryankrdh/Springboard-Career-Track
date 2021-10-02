@@ -296,4 +296,8 @@ const shorties = myFilter(words, function(word) {
 const everyOtherWord = myFilter(word, function(word, i) {
     return i % 2 === 0 
  })
+
+
+
+ 
 */
