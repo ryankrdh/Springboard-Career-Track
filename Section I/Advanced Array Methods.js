@@ -378,5 +378,19 @@ myEvery([4, 5, 6], function (n) {
 });
 
 */
+/*
+// FIND
+
+// Iterates through an array
+// Runs a callback on each value in the array
+// if the callback returns true at any point, return the value int he array that we're iterating over. It only returns the first matched
+
+*/
+
+const scores = [0, 0, 0, 0, 55, 59, 69, 73, 73, 75, 79, 83, 88, 91, 93];
+
+scores.find(function (score) {
+  return score > 75;
+});
 
 // Do I need to keep writing my own methods?? (some, every, forEach, map, filter)
