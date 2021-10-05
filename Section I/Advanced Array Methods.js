@@ -303,7 +303,78 @@ const everyOtherWord = myFilter(word, function(word, i) {
 // ------------------------------------------------------
 // JS Array Methods - SOME and EVERY
 
+// Unline map and filter, it does not return an array. just returns a boolean value. 
+// If one element returns true, the eniter method returns true. also called 'any'
+
+let numbers = [1, 2, 3];
+
+// This will return true.
+numbers.some(function(value, index, array) {
+    return value < 3;
+})
+
+// This will return false.
+numbers.some(function(value, index, array) {
+    return value > 10;
+})
 
 
+words.some(function(word) {
+    return word.length > 25;
+})
+
+words.some(function(word) {
+    return word.indexOf('thyroid')  !== -1
+})
+
+words.every(function(w) {
+    return w.length > 5;
+})
+
+function allStrings(arr) {
+    return arr.every(function(el) {
+        return typeof el === 'string'
+    }); 
+} 
+
+
+const btn = document.querySelector('button');
+btn.addEventListener('click', function(e) {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    // Using array.from since checkboxes is a node list
+    const allChecked = Array.from(checkboxes).every(function(checkbox){
+        return checkbox.checked
+    });
+    console.log(allChecked);
+*/
+
+/*
+// Implementing some and every on your own
 
 */
+
+function mySome(arr, callback) {
+  for (let i = 0; i <= arr.length; i++) {
+    if (callback(arr[i], i, arr)) return true;
+  }
+  return false;
+}
+
+// array and callback function
+mySome([4, 5, 6], function (n) {
+  return n > 5;
+});
+
+// ---------------------------------------------
+
+function myEvery(arr, callback) {
+  for (let i = 0; i <= arr.length; i++) {
+    if (!callback(arr[i], i, arr)) return false;
+  }
+  return true;
+}
+
+myEvery([4, 5, 6], function (n) {
+  return n > 5;
+});
+// Do I need to keep writing my own methods?? (some, every, forEach, map, filter)
