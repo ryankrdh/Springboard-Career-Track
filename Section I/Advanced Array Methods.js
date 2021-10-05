@@ -444,7 +444,75 @@ function myFindIndex(arr, callback) {
   }
 }
 
-
 */
 
+/*
+// REDUCE
+// The first parameter to the callback is either the first value in the array or the optional second parameter.
+// The first parameter to the callback is often called "accumulator"
+// The returned value from the callback becomes the new value of accumulator. 
+
+let evens = [2, 4, 6, 8, 10];
+
+evens.reduce(function(accumulator, nextValue) {
+    return accumulator + nextValue;
+});
+
+// result: 2, 6, 12, 20, 30 Reduce will return 30.
+
+const words = [ 'hello', 'I', 'love', 'you' ];
+const result = words.reduce(function(accum, nextWord) {
+    console.log(accum, nextWord);
+    return accum + nextword;
+});
+
+
+// FINDING MIN using REDUCE
+const midtermScores = [70, 88, 93, 94, 64, 62, 56];
+const minScore = midtermScores.reduce(function(min, nextScore){
+    // if (nextScore < min) {
+    //     return nextScore;
+    // }
+    // return min; 
+    return nextScore < min ? nextScore : min;
+})
+
+// ADDING A SECOND PARAMETER
+evens.reduce(function(accumulator, nextValue) {
+    return accumulator + nextValue;
+}, 10);
+// the 10 will be the starting base for the accumulator instead of the first value.
+
+// ------------------------------ 
+// without reduce
+
+const nums = [20, 30, 50, 12, -2, 45, 99, 19, 22, 85];
+
+// FINDING SUM without reduce.
+let total = 0;
+for(let num of nums) {
+    total += num;
+}
+
+// FINDING MIN without reduce.
+let min = nums[0];
+for (let i = 1; i < nums.length; i++) {
+    if(nums[i] < min) min = nums[i] 
+}
+
+// CREATING OBJECT FOR EACH CHAR WITH COUNTER without reduce.
+const str = 'lollapalooza';
+const charFreq = {};
+for (let char of str) {
+  if (charFreq[char]) {
+    charFreq[char] += 1;
+  } else {
+    charFreq[char] = 1;
+  }
+}
+
+// 
+
+
+*/
 // Do I need to keep writing my own methods?? (some, every, forEach, map, filter)
