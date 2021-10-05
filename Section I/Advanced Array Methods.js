@@ -385,7 +385,7 @@ myEvery([4, 5, 6], function (n) {
 // Runs a callback on each value in the array
 // if the callback returns true at any point, return the value int he array that we're iterating over. It only returns the first matched
 
-*/
+
 
 const scores = [0, 0, 0, 0, 55, 59, 69, 73, 73, 75, 79, 83, 88, 91, 93];
 
@@ -393,4 +393,41 @@ scores.find(function (score) {
   return score > 75;
 });
 
+// use .findIndex instead of index of for more complicated cases.
+
+// finds the first even number
+scores.find(function(score) {
+    return score !== 0 && score % 2 === 0;
+})
+
+// finds all the even numbers
+const evenScores = scores.filter(function(score) {
+    return score % 2 === 0; 
+})
+
+// finds the index of the first even.
+const firstEven = scores.findIndex(function(score) {
+    return score !== 0 && score% 2 === 0;
+});
+
+// dividing an array into two arrays.
+function partition(arr, pivot) {
+    const pivotIdx = arr.findIndex(function(el) {
+        return el > pivot;
+    });
+    const left = arr.slice (0, pivotIdx);
+    const right = arr.slice(pivotIdx);
+    return [left, right]
+}
+
+*/
+
+/*
+// writing my own find / findIndex methods
+
+*/
 // Do I need to keep writing my own methods?? (some, every, forEach, map, filter)
+
+function myFind(arr, )
+
+
