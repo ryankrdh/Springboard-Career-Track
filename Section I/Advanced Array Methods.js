@@ -351,7 +351,6 @@ btn.addEventListener('click', function(e) {
 /*
 // Implementing some and every on your own
 
-*/
 
 function mySome(arr, callback) {
   for (let i = 0; i <= arr.length; i++) {
@@ -377,4 +376,7 @@ function myEvery(arr, callback) {
 myEvery([4, 5, 6], function (n) {
   return n > 5;
 });
+
+*/
+
 // Do I need to keep writing my own methods?? (some, every, forEach, map, filter)
