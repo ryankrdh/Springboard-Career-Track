@@ -428,6 +428,18 @@ function partition(arr, pivot) {
 */
 // Do I need to keep writing my own methods?? (some, every, forEach, map, filter)
 
-function myFind(arr, )
+function myFind(arr, callback) {
+  for (let i = 0; i <= arr.length; i++) {
+    if (arr === callback) {
+      return arr;
+    }
+  }
+}
 
-
+function myFindIndex(arr, callback) {
+  for (let i = 0; i <= arr.length; i++) {
+    if (arr === callback) {
+      return i;
+    }
+  }
+}
