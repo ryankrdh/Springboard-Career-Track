@@ -410,6 +410,11 @@ const firstEven = scores.findIndex(function(score) {
     return score !== 0 && score% 2 === 0;
 });
 
+// When the function doesn't find the index. This will result in -1
+scores.findIndex(function(score) {
+    return score > 100;
+}) 
+
 // dividing an array into two arrays.
 function partition(arr, pivot) {
     const pivotIdx = arr.findIndex(function(el) {
@@ -425,21 +430,21 @@ function partition(arr, pivot) {
 /*
 // writing my own find / findIndex methods
 
-*/
-// Do I need to keep writing my own methods?? (some, every, forEach, map, filter)
-
 function myFind(arr, callback) {
-  for (let i = 0; i <= arr.length; i++) {
-    if (arr === callback) {
-      return arr;
-    }
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i], i, arr)) return arr[i];
   }
 }
 
 function myFindIndex(arr, callback) {
-  for (let i = 0; i <= arr.length; i++) {
-    if (arr === callback) {
-      return i;
-    }
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i], i, arr)) return i;
+  } else {
+      return -1;
   }
 }
+
+
+*/
+
+// Do I need to keep writing my own methods?? (some, every, forEach, map, filter)
