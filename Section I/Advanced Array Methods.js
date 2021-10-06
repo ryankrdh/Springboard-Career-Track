@@ -469,6 +469,8 @@ const result = words.reduce(function(accum, nextWord) {
 
 // FINDING MIN using REDUCE
 const midtermScores = [70, 88, 93, 94, 64, 62, 56];
+const finalsScores = [92, 93, 76, 77, 78, 59, 61];
+
 const minScore = midtermScores.reduce(function(min, nextScore){
     // if (nextScore < min) {
     //     return nextScore;
@@ -477,11 +479,20 @@ const minScore = midtermScores.reduce(function(min, nextScore){
     return nextScore < min ? nextScore : min;
 })
 
+// using the second parameter to find lowest score between midterm and final.
+const minMidtermScore = midtermScores.reduce(function(min, nextScore) {
+    return nextScore < min ? nextScore : min;
+});
+const minOverallScore = finalsScores.reduce(function(min, nextScore) {
+    return nextScore < min ? nextScore : min;
+}, minMidtermScore);
+
+
 // ADDING A SECOND PARAMETER
 evens.reduce(function(accumulator, nextValue) {
     return accumulator + nextValue;
 }, 10);
-// the 10 will be the starting base for the accumulator instead of the first value.
+// the 10 will be the starting base for the accumulator instead of the first value. 
 
 // ------------------------------ 
 // without reduce
@@ -510,8 +521,6 @@ for (let char of str) {
     charFreq[char] = 1;
   }
 }
-
-// 
 
 
 */
