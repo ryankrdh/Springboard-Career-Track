@@ -14,6 +14,6 @@
 
 // 7. practice, practice, practice (then solicit feedback)
 
-// 8. prepare a few variations.
+// 8. prepare a few variations. Don't make it the same as everyone else.
 
 // 9. nail it with confidence.
