@@ -17,3 +17,13 @@
 // 8. prepare a few variations. Don't make it the same as everyone else.
 
 // 9. nail it with confidence.
+
+// sound ambitious. sound like you want a challenge and a stretch. sound like a performer
+
+/*
+// ELEVATOR PITCH
+
+Hi my name is Ryan and I'll be graduating from Springboard in June of 2022.
+
+I am looking for a software engineer position in Seattle. 
+*/
