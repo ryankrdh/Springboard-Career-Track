@@ -1,5 +1,15 @@
 'use strict';
 
 /*
+// ECMA: Standards organization for information and communication systems.
+
+Let can be reassigned but not redeclared (unlike var)
+The let keyword creates a block-scoped variable: a variable that only exists inside a code block.
+
+let and const are scoped to the code block, not just the function like var.
+
+The const keyword prevents a variable from ever being reassigned or redeclared.
+
+with const you can mutate the content as long as you don't reassign the variable. Objects and arrays can be mutated.
 
 */
