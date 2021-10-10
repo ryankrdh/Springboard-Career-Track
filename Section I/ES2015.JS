@@ -13,3 +13,19 @@ The const keyword prevents a variable from ever being reassigned or redeclared.
 with const you can mutate the content as long as you don't reassign the variable. Objects and arrays can be mutated.
 
 */
+
+/*
+// HOISTING
+
+var gets hoisted. let/const does not get hoisted to the top. 
+
+Unlike let, you need to assign a variable to const when declaring a variable.
+
+Try and use const and if it doesn't work use let.
+
+*/
+
+/*
+//ARROW FUNCTION
+
+*/
