@@ -33,5 +33,11 @@ Arrow Functions do not have their own this context. If your function uses the ke
 You should not be using arrow functions:
 
 In an object method
-When you need your own keyword this
+When you need your own keyword this.
+
+Arrow Functions Summary
+Can only be used as shorthand for anonymous function expressions
+Must put parentheses around parameters if there are 0 or 2+ parameters
+Return statement is implied if you leave out curly braces
+They do not make their own this
 */
