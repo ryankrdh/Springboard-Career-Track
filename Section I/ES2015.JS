@@ -40,4 +40,35 @@ Can only be used as shorthand for anonymous function expressions
 Must put parentheses around parameters if there are 0 or 2+ parameters
 Return statement is implied if you leave out curly braces
 They do not make their own this
-*/
+
+
+// arrow function won't replace function declarations.
+
+array.map(function(x) {
+    return x * 2
+})
+
+ // function declaration 
+ function greet () {
+
+ }
+
+ // function expression
+ const add = function (x, y) {
+    return x + y;
+ };
+
+// ARROW FUNCTION
+const add = (x,y) => {
+    return x + y;
+};
+
+//SHORTENING CALLBACKS
+[1, 2, 3].forEach(function (n, idx) {
+    console.log(n, idx);
+});
+
+[1, 2, 3].forEach((n, idx) => {
+    console.log(n, idx);
+});
+ */
