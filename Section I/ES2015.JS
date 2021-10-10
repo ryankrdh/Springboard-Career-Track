@@ -28,4 +28,10 @@ Try and use const and if it doesn't work use let.
 /*
 //ARROW FUNCTION
 
+Arrow Functions do not have their own this context. If your function uses the keyword this, be wary!
+
+You should not be using arrow functions:
+
+In an object method
+When you need your own keyword this
 */
