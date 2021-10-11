@@ -71,4 +71,41 @@ const add = (x,y) => {
 [1, 2, 3].forEach((n, idx) => {
     console.log(n, idx);
 });
- */
+
+//SHORTENING EXERCISE 1
+const x = [2, 3, 6, 78, 99, 104, 23].reduce(function (max, currNum) {
+  return Math.max(max, currNum);
+});
+
+const y = [2, 3, 6, 78, 99, 104, 23].reduce((max, currNum) => {
+  return Math.max(max, currNum);
+});
+
+// Simple version if there is only one parameter
+const double = (n) => n*2;
+
+[1, 5, 7, 9, 10, 12, 13, 15 ].map((n) => (n % 2 === 0 ? 'even' : 'odd'));
+
+//SHORTENING EXERCISE 2
+
+const dailyRainTotals = [
+    [ 1.2, 0.35, 2.2 ],
+    [1.7, 0.6, 0.1],
+    [2.5, 0.9, 1.5]
+];
+
+
+// WITH RETURNS
+dailyRainTotals.map((hourlyRainTotals) => {
+  return hourlyRainTotals.reduce((sum, inchesOfRain) => {
+    return sum + inchesOfRain;
+  });
+});
+
+// WITH IMPLICIT RETURNS
+dailyRainTotals.map((hourlyRainTotals) =>
+  hourlyRainTotals.reduce((sum, inchesOfRain) => sum + inchesOfRain)
+);
+
+
+*/
