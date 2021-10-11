@@ -112,4 +112,13 @@ dailyRainTotals.map((hourlyRainTotals) =>
 /*
 // REST AND SPREAD OPERATOR
 
+// ...something: rest
+function sum(...nums) {
+    return nums.reduce((sum, n) => sum + n);
+}
+// AS ARROW FUNCTION
+const sumAll = (...values) => {
+    if (!values.length) return undefined;
+    return values.reduce((sum, n) => sum + n);
+}
 */
