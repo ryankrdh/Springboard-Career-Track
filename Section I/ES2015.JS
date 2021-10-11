@@ -107,5 +107,9 @@ dailyRainTotals.map((hourlyRainTotals) =>
   hourlyRainTotals.reduce((sum, inchesOfRain) => sum + inchesOfRain)
 );
 
+*/
+
+/*
+// REST AND SPREAD OPERATOR
 
 */
