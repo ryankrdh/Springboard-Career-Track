@@ -112,7 +112,7 @@ dailyRainTotals.map((hourlyRainTotals) =>
 /*
 // REST AND SPREAD OPERATOR
 
-// ...something: rest
+// ...something: rest when defining a function
 function sum(...nums) {
     return nums.reduce((sum, n) => sum + n);
 }
@@ -130,8 +130,36 @@ function makeFamily(parent1, parent2, ...kids) {
     };
 }
 
+// type example: boolean, number, string.
 const filterByType = (type, ...vals) => {
     return vals.filter((v) => typeof v === type);
 };
 
+*/
+
+/*
+// SPREAD OPERATOR
+max(...something) 
+[...something]
+{...asd}
+
+// ways to make a copy of an array using spread
+const palette = ['lavender berry', 'sunflower yellow', 'orchid orange'];
+const paletteCopy = ['sky blue', ...palette, 'grass green']
+
+// wasy to make a copy using concat
+palette.concat('deep purple')
+
+// OBJECTS ARE NOT ITERABLE IN JAVASCRIPT
+
+const tea = {
+  type: 'oolong',
+  name: 'winter sprout',
+  origin: 'taiwan',
+};
+
+const teaTin = { ...tea, price: 22.99 };
+
+// change the value of name
+const newTea = { ...tea, name: 'golden frost' };
 */
