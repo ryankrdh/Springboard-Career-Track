@@ -162,4 +162,18 @@ const teaTin = { ...tea, price: 22.99 };
 
 // change the value of name
 const newTea = { ...tea, name: 'golden frost' };
+
+// when you use spread, it wont perform deep clone. It keeps the original references for any nested objects or arrays.
+*/
+
+/*
+//OBJECT ENHANCEMENTS
+Current usage
+These new shorthand methods are everywhere!
+Object shorthand and methods allow for writing less code
+Computed property names are everywhere in modern web frameworks.
+
+Computed property names in the wild
+This appears when you work with multiple inputs or DOM elements and you want to change the value in an object based on a specific interaction,
+It’s impossible to know upfront what key you are changing in the object without hardcoding the key, so instead we can use the event object for a browser interaction.
 */
