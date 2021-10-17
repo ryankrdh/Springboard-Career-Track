@@ -166,6 +166,80 @@ const newTea = { ...tea, name: 'golden frost' };
 // when you use spread, it wont perform deep clone. It keeps the original references for any nested objects or arrays.
 */
 
+// OBJECT ESTRUCTURING
+
+// JavaScript programmers take things out of objects all the time.
+
+// Here’s how you used to have to extract values into variables.
+
+let userData = {
+  username: 'smith',
+  id: 12345,
+  password: 'fiddlesticks',
+  firstName: 'Angela',
+  lastName: 'Smith',
+  age: 'guess',
+  isLegit: undefined,
+};
+
+let username = userData.username;
+let firstName = userData.firstName;
+let lastName = userData.lastName;
+let id = userData.id;
+
+// That’s A Lot of Typing
+// So they came up with some syntactic sugar.
+
+let userData = {
+  username: 'smith',
+  id: 12345,
+  password: 'fiddlesticks',
+  firstName: 'Angela',
+  lastName: 'Smith',
+  age: 'guess',
+  isLegit: undefined,
+};
+
+/*
+  declare variables: username, firstName, lastName, id
+   values taken from the keys of the same name in userData
+ */
+
+let { username, firstName, lastName, id } = userData;
+
+console.log(username); // smith
+console.log(id); // 12345
+
+// --------------------------------
+
+Destructuring + Spread;
+const userData = {
+  username: 'smith',
+  id: 12345,
+  password: 'fiddlesticks',
+  firstName: 'Angela',
+  lastName: 'Smith',
+  age: 'guess',
+  isLegit: undefined,
+};
+
+// extract the password key; collect the rest in 'user'
+const { password, ...user } = userData;
+
+console.log(user);
+/*
+{
+  username: 'smith',
+  id: 12345,
+  firstName: 'Angela',
+  lastName: 'Smith',
+  age: 'guess',
+  isLegit: undefined
+}
+*/
+
+// -----------------------------------
+
 /*
 //OBJECT ENHANCEMENTS
 Current usage
@@ -183,5 +257,15 @@ function changeValueInObj(obj, event){
     [event.target.name]: [event.target.value]
   }
 }
+*/
+
+// QUESTIONS:
+/*
+Section 10.4 REST/SPREAD: 
+Return a new object with all the keys and values
+from obj and a new key/value pair  
+VS.
+Return a new object with a modified key and value. 
+
 
 */
