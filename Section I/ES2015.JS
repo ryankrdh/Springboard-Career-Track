@@ -242,21 +242,27 @@ console.log(user);
 
 // Renaming with destructuring
 const instructorData = {
-  name: "Colt",
-  job: "Instructor"
-}
+  name: 'Colt',
+  job: 'Instructor',
+};
 
 const { name: instructorName, job: occupation } = instructorData;
 
-instructorName // "Colt"
-occupation // "Instructor"
-Defaults with destructuring
+instructorName; // "Colt"
+occupation; // "Instructor"
+
+// -----------------------------------
+
+// Defaults with destructuring
 const options = {
-  refreshTime: 200
-}
+  refreshTime: 200,
+};
 const { refreshTime = 750, waitTime = 1000 } = options;
 console.log(refreshTime); // 200 - initialized in options
 console.log(waitTime); // 1000 - fallback to default
+
+// ** RENAME AND DEFAULT
+const { refreshTime: timePassed = 750, waitTime: pauseTime = 1000 } = options;
 
 // -----------------------------------
 
@@ -269,9 +275,11 @@ const instructor = {
   funFacts: {
     favoriteFood: 'Burrito',
     favoriteDrink: 'Old Fashioned',
-  }
+  },
 };
-const {funFacts: {favoriteFood, favoriteDrink}} = instructor;
+const {
+  funFacts: { favoriteFood, favoriteDrink },
+} = instructor;
 console.log(favoriteFood); // 'Burrito'
 
 // ----------------------------------
@@ -285,7 +293,7 @@ function makeInstructor(settings) {
 }
 // We’re going to assume the function is passed an object with a key of name and age
 
-function myFunc({name, age}) {
+function myFunc({ name, age }) {
   let name = name;
   let age = age;
 }
@@ -293,7 +301,7 @@ function myFunc({name, age}) {
 
 // We can use default parameters!
 
-function myFunc({name = "Xie", age=38}) {
+function myFunc({ name = 'Xie', age = 38 }) {
   let name = name;
   let age = age;
 }
@@ -305,9 +313,9 @@ const myFavoriteThings = ['teaching', 'music', 'hiking', 'dank memes'];
 
 const [first, second, ...others] = myFavoriteThings;
 
-console.log(first);   // 'teaching'
-console.log(second);  // 'music'
-console.log(others);  // ['hiking', 'dank memes']
+console.log(first); // 'teaching'
+console.log(second); // 'music'
+console.log(others); // ['hiking', 'dank memes']
 
 // -----------------------------------------------------------------
 
@@ -320,7 +328,6 @@ let b = 3;
 console.log(a); // 3
 console.log(b); // 1
 
-
 // -----------------------------------------------------------------
 
 // -----------------------------------------------------------------
@@ -328,7 +335,6 @@ console.log(b); // 1
 // -----------------------------------------------------------------
 
 // -----------------------------------------------------------------
-
 
 /*
 //OBJECT ENHANCEMENTS
