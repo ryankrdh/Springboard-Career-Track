@@ -309,9 +309,15 @@ function myFunc({ name = 'Xie', age = 38 }) {
 // -----------------------------------------------------------------
 
 // You Can Apply The Same Concept To Arrays!
-const myFavoriteThings = ['teaching', 'music', 'hiking', 'dank memes'];
+const myFavoriteThings = [
+  'teaching',
+  'music',
+  'hiking',
+  'riding',
+  'dank memes',
+];
 
-const [first, second, ...others] = myFavoriteThings;
+const [first, second, , ...others] = myFavoriteThings; // empty comma will skip an element
 
 console.log(first); // 'teaching'
 console.log(second); // 'music'
