@@ -336,6 +336,19 @@ console.log(b); // 1
 
 // -----------------------------------------------------------------
 
+// More examples:
+const longJumpResults = ['Tammy', 'Jessica', 'Violet'];
+
+function awardMedals([gold, silver, bronze]) {
+  return {
+    gold,
+    silver,
+    bronze,
+  };
+}
+
+console.log(awardMedals(longJumpResults)); // gold: "Tammy" silver: "Jessica" bronze: "Violet"
+
 // -----------------------------------------------------------------
 
 // -----------------------------------------------------------------
