@@ -283,6 +283,16 @@ const {
 console.log(favoriteFood); // 'Burrito'
 
 // ----------------------------------
+// More examples of destructuring nested objects
+
+const {
+  Rated: { rating, advisory: note },
+} = movie;
+const {
+  Ratings: [{ Value: imdbRating }, { Value: rtRating }, { Value: metaRating }],
+} = movie;
+
+// ----------------------------------
 
 // Destructuring functions
 // We can use destructuring to extract key/value pairs from an object into variables.
