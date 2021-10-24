@@ -398,9 +398,10 @@ function makePerson(first, last, age) {
     };
 }
 
+// ES6
 function makePerson(first, last, age) {
     return {
-        first, last, age, isAlive : true
+        first, last, age, isAlive: true 
     }
 }
 
@@ -421,6 +422,28 @@ let instructor = {
   sayHello() {
     return 'Hello!';
   },
+};
+
+// another example(old school)
+const mathStuff = {
+    x: 200,
+    add: function(a,b) {
+        return a + b;
+    },
+    square: function(a) {
+        return a * a;
+    }
+}
+
+// ES2015
+const mathStuff = {
+    x: 200, 
+    add(a,b) {
+        return a + b;
+    },
+    square(a) {
+        return a* a;
+    }
 };
 
 // -----------------------------------------------------------------
@@ -444,6 +467,22 @@ let instructor {
 }
 
 instructor.Mary; // "That's me!"
+
+// another example(old school)
+function makeColor(name, hex) {
+    const color = {};
+    color[name] = hex;
+    color[hex] = name;
+    return color;
+}
+
+// ES2015 
+function makeColor(name, hex) {
+    return  {
+        name : hex, 
+        hex : name
+    }
+}
 
 // -----------------------------------------------------------------
 
