@@ -386,6 +386,24 @@ let instructor = {
   lastName,
 };
 
+// Another Example
+
+//ES5 (oldschool)
+function makePerson(first, last, age) {
+    return {
+        first : first,
+        last : last,
+        age : age,
+        isAplive : true
+    };
+}
+
+function makePerson(first, last, age) {
+    return {
+        first, last, age, isAlive : true
+    }
+}
+
 // -----------------------------------------------------------------
 
 // Object Methods
@@ -444,7 +462,7 @@ function changeValueInObj(obj, event){
       [event.target.name]: [event.target.value]
     }
   }
-  
+
 // -----------------------------------------------------------------
 
 // -----------------------------------------------------------------
@@ -494,3 +512,5 @@ Return a new object with a modified key and value.
 
 
 */
+
+
