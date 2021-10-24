@@ -365,32 +365,60 @@ console.log(awardMedals(longJumpResults)); // gold: "Tammy" silver: "Jessica" br
 
 // -----------------------------------------------------------------
 
-/*
 //OBJECT ENHANCEMENTS
-Current usage
-These new shorthand methods are everywhere!
-Object shorthand and methods allow for writing less code
-Computed property names are everywhere in modern web frameworks.
+// Current usage
+// These new shorthand methods are everywhere!
+// Object shorthand and methods allow for writing less code
+// Computed property names are everywhere in modern web frameworks.
 
-Computed property names in the wild
-This appears when you work with multiple inputs or DOM elements and you want to change the value in an object based on a specific interaction,
-It’s impossible to know upfront what key you are changing in the object without hardcoding the key, so instead we can use the event object for a browser interaction.
+// Computed property names in the wild
+// This appears when you work with multiple inputs or DOM elements and you want to change the value in an object based on a specific interaction,
+// It’s impossible to know upfront what key you are changing in the object without hardcoding the key, so instead we can use the event object for a browser interaction.
 
-function changeValueInObj(obj, event){
+function changeValueInObj(obj, event) {
   return {
     ...obj,
-    [event.target.name]: [event.target.value]
-  }
+    [event.target.name]: [event.target.value],
+  };
 }
-*/
 
-/*
-Maps
-Also called “hash maps” in other languages
-Until ES2015 - objects were replacements for maps
-Similar to objects, except the keys can be ANY data type!
-Created using the new keyword
-*/
+// Object Shorthand
+// ES2015 provides quite a few enhancements for JS objects!
+
+// When the keys are the same name as the variable values, (this happens a lot), you don’t have to repeat yourself.
+
+let firstName = 'Mary';
+let lastName = 'Malarky';
+
+// ES5 (Oldschool)
+let instructor = {
+  firstName: firstName,
+  lastName: lastName,
+};
+
+let firstName = 'Mary';
+let lastName = 'Malarky';
+
+// ES6
+let instructor = {
+  firstName,
+  lastName,
+};
+
+// Maps
+// Also called “hash maps” in other languages
+// Until ES2015 - objects were replacements for maps
+// Similar to objects, except the keys can be ANY data type!
+// Created using the new keyword
+
+// What it looks like
+let firstMap = new Map();
+
+firstMap.set(1, 'Ash');
+firstMap.set(false, 'a boolean');
+firstMap.set('nice', 'a string');
+firstMap.delete('nice'); // true
+firstMap.size; // 2
 
 // QUESTIONS:
 /*
