@@ -648,7 +648,8 @@ annoyingHashTags.add('#noFilter');
 for(let val of annoyingHashTags) {
     console.log("Please don't use", val);
 }
-
+// -----------------------------------------------------------------
+// Map objects are collections of key/value pairs where both the keys and values may be arbitrary ECMAScript language values. A distinct key value may only occur in one key/value pair within the Map’s collection. Distinct key values as discriminated using the a comparision algorithm that is selected when the Map is created.
 // -----------------------------------------------------------------
 // When would you use sets?
 // Removing duplicate values
