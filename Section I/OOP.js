@@ -20,3 +20,12 @@ o1.sayHi = function () {
 };
 
 o1.sayHi(); // Hi!
+
+// Can get arrays of keys, values, or [key, val] arrays:
+
+Object.keys(o1); // ["name", "sayHi"]
+
+Object.values(o1); // ["Whiskey", function () {...} ]
+
+Object.entries(o1); // [["name", "Whiskey"],
+//  ["sayHi", function () { ... } ]
