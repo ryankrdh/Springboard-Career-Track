@@ -29,3 +29,15 @@ Object.values(o1); // ["Whiskey", function () {...} ]
 
 Object.entries(o1); // [["name", "Whiskey"],
 //  ["sayHi", function () { ... } ]
+
+// -------------------------------------------------
+// Details You Should Know
+// Properties that do not exist in the object register as undefined.
+
+o1.elie; // undefined
+// (This causes issues when you attempt to invoke () or . access them)
+
+// All keys get “stringified”:
+
+o1[1] = 'hello';
+o1['1'] = 'goodbye';
