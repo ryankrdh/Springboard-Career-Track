@@ -46,3 +46,22 @@ o1['1'] = 'goodbye';
 
 o1[1]; // "goodbye"
 // (This gets even more confusing when using things like nested arrays as keys)
+//-------------------------------------------------------
+// Mixing Data And Functionality
+// Functions and Data
+// Imagine some useful functions:
+
+// demo/triangles.js
+/* area of right triangle */
+
+function getTriangleArea(a, b) {
+  return (a * b) / 2;
+}
+
+/* hypotenuse of right triangle */
+
+function getTriangleHypotenuse(a, b) {
+  return Math.sqrt(a * a + b * b);
+}
+getTriangleArea(3, 4); // 6
+getTriangleHypotenuse(3, 4); // 5
