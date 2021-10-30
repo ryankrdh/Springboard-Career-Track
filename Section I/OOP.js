@@ -41,3 +41,8 @@ o1.elie; // undefined
 
 o1[1] = 'hello';
 o1['1'] = 'goodbye';
+
+// What is o1[1]?
+
+o1[1]; // "goodbye"
+// (This gets even more confusing when using things like nested arrays as keys)
