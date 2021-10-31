@@ -510,6 +510,7 @@ function changeValueInObj(obj, event){
 // Until ES2015 - objects were replacements for maps
 // Similar to objects, except the keys can be ANY data type!
 // Created using the new keyword
+// You can use any data types as a key for maps
 
 // What it looks like
 let firstMap = new Map();
