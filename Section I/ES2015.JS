@@ -586,6 +586,11 @@ const bandMap = new Map(bandData);
 // Turning the map back into an array.
 [...bandMap]
 
+// Chaining set calls together
+bandMap.set(182, 'Blink-182').set('twenty', 'Matchbox Twenty')
+
+// Spreading keys into iterable arrays.
+[...bandMap.keys()]
 
 // -----------------------------------------------------------------
 // Why use maps?
