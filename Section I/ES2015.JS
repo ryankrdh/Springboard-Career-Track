@@ -579,6 +579,14 @@ for(let [key, value] of m.entries()){
   // 2 "Shani"
   // 3 "Michelle"
 
+// Another example. Turning an array into a map
+const bandData = [[3, '3 Doors Down'], ['three', 'Three Dog Night'], ['nine', 'Nine Inch Nails']];
+const bandMap = new Map(bandData);
+
+// Turning the map back into an array.
+[...bandMap]
+
+
 // -----------------------------------------------------------------
 // Why use maps?
 // Finding the size is easy - no more loops or Object.keys()
