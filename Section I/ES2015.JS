@@ -599,7 +599,7 @@ bandMap.forEach((val, key) => {
 });
 
 for (let [key, value] of bandMap) {
-  console.log(x);
+  console.log(key, '=', value);
 }
 
 // Unless you already have a function to pass in to forEach, use for of. 
@@ -631,8 +631,7 @@ const hashTags = new Set(["#selfie", "#nofilter"])
 // There is only a single method to add items to a set: add()
 
 const annoyingHashTags = new Set();
-annoyingHashTags.add("#YOLO");
-annoyingHashTags.add("#Blessed");
+annoyingHashTags.add("#YOLO").add("#Blessed");
 annoyingHashTags.add("#YOLO"); // will not be added!
 
 // -----------------------------------------------------------------
@@ -685,6 +684,19 @@ annoyingHashTags.add('#noFilter');
 for(let val of annoyingHashTags) {
     console.log("Please don't use", val);
 }
+// -----------------------------------------------------------------
+function filterHashTags(tags) {
+  const bannedHashTags = new Set(['nofilter', 'justsaying', 'winning', 'yolo']);
+  return tags.filter((tag) => !bannedHashTags.has(tag));
+}
+
+const susansTags = [ 'happymonday', 'yolo', 'winning', 'sunset'];
+
+filterHashTags(susansTags) // returns ["happymonday", "sunset"]
+// -----------------------------------------------------------------
+// remove repeats with set and turn it back to array
+const ages = [45, 32, 21, 23, 24, 98, 98, 2, 4, 4, 3, 4, 12, 14, 45];
+[...new Set(ages)]
 // -----------------------------------------------------------------
 // Map objects are collections of key/value pairs where both the keys and values may be arbitrary ECMAScript language values. A distinct key value may only occur in one key/value pair within the Map’s collection. Distinct key values as discriminated using the a comparision algorithm that is selected when the Map is created.
 // -----------------------------------------------------------------
