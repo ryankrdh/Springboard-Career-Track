@@ -543,6 +543,18 @@ firstMap.forEach(v => console.log(v));
 // [1,2,3,4,5]
 // {a:1}
 
+// maps can also have functions as keys
+
+const add = (x, y) => x + y;
+const mult = (x, y) => x * y;
+
+const funcCalls = new Map();
+funcCalls.set(add, 0);
+funcCalls.set(mult, 0);
+
+funcCalls.set(add, 1);
+funcCalls.set(mult, 9);
+
 // Maps also provide:
 
 // .keys() to iterate over all the keys
