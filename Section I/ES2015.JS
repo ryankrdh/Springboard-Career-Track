@@ -593,6 +593,17 @@ bandMap.set(182, 'Blink-182').set('twenty', 'Matchbox Twenty')
 [...bandMap.keys()]
 
 // -----------------------------------------------------------------
+// Iterating over maps.
+bandMap.forEach((val, key) => {
+  console.log(key + '=>' + val);
+});
+
+for (let [key, value] of bandMap) {
+  console.log(x);
+}
+
+// Unless you already have a function to pass in to forEach, use for of. 
+// -----------------------------------------------------------------
 // Why use maps?
 // Finding the size is easy - no more loops or Object.keys()
 // The keys can be any data type!
