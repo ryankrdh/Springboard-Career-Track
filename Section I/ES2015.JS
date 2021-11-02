@@ -718,12 +718,6 @@ const ages = [45, 32, 21, 23, 24, 98, 98, 2, 4, 4, 3, 4, 12, 14, 45];
 // QUESTIONS:
 /*
 
-Section 10.4 REST/SPREAD: 
-Return a new object with all the keys and values
-from obj and a new key/value pair  
-VS.
-Return a new object with a modified key and value. 
-
 // -------------------------------------------------------------------
 
 */
