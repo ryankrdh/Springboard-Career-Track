@@ -69,3 +69,36 @@ function getTriangleHypotenuse(a, b) {
 }
 getTriangleArea(3, 4); // 6
 getTriangleHypotenuse(3, 4); // 5
+
+// -------------------------------------------------------
+
+// Using a POJO
+let triangle = {
+  a: 3,
+  b: 4,
+  getArea: function () {
+    return (this.a * this.b) / 2;
+  },
+  getHypotenuse: function () {
+    return Math.sqrt(this.a ** 2 + this.b ** 2);
+  },
+};
+
+triangle.getArea(); // 6
+triangle.getHypotenuse(); // 5
+
+// For now:
+
+let triangle = {
+  a: 3,
+  b: 4,
+  getArea: function () {
+    return (this.a + this.b) / 2;
+  },
+};
+// this references to “this object”
+
+// So, we can helpfully mix data & functionality!
+
+// This is tidy: related functionality lives together
+// Annoying when we want more than one triangle
