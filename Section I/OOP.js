@@ -11,7 +11,7 @@ let o2 = new Object(); // same thing
 
 o1.name = 'Whiskey';
 
-o1['name'] = 'Whiskey'; // same thing
+o1['name'] = 'Whiskey'; // same thing. but gets evaluated
 
 // Can add functions as keys:
 
@@ -30,6 +30,10 @@ Object.values(o1); // ["Whiskey", function () {...} ]
 Object.entries(o1); // [["name", "Whiskey"],
 //  ["sayHi", function () { ... } ]
 
+//iterates through key/value as individual arrays.
+for (let [key, value] of Object.entries(obj)) {
+  console.log(key, value);
+}
 // -------------------------------------------------
 // Details You Should Know
 // Properties that do not exist in the object register as undefined.
