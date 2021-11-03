@@ -71,7 +71,6 @@ getTriangleArea(3, 4); // 6
 getTriangleHypotenuse(3, 4); // 5
 
 // -------------------------------------------------------
-
 // Using a POJO
 let triangle = {
   a: 3,
