@@ -101,3 +101,30 @@ let triangle = {
 
 // This is tidy: related functionality lives together
 // Annoying when we want more than one triangle
+
+// -----------------------------------------------
+// Constructors
+// Consider how we made an instance of our Triangle class:
+
+let myTri = new Triangle(); // "instantiation" of triangle
+myTri.a = 3;
+myTri.b = 4;
+demo / triangle - constructor.js;
+class Triangle {
+  constructor(a, b) {
+    this.a = a;
+    this.b = b;
+  }
+
+  getArea() {
+    return (this.a * this.b) / 2;
+  }
+
+  getHypotenuse() {
+    return Math.sqrt(this.a ** 2 + this.b ** 2);
+  }
+}
+// The method with the special name constructor is called when you make a new instance.
+
+let myTri2 = new Triangle(3, 4);
+myTri2.getArea(); // 6
