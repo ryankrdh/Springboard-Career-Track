@@ -128,3 +128,22 @@ class Triangle {
 
 let myTri2 = new Triangle(3, 4);
 myTri2.getArea(); // 6
+
+// --------------------------------------------
+// What Can You Do in the Constructor?
+// Whatever you want!
+// Common things:
+// Validate data
+// Assign properties
+ 
+constructor(a, b) {
+  if (!Number.isFinite(a) || a <= 0)
+    throw new Error("Invalid a: " + a);
+
+  if (!Number.isFinite(b) || b <= 0)
+    throw new Error("Invalid b: " + b);
+
+  this.a = a;
+  this.b = b;
+}
+// (Note you don’t return anything from constructor function).
