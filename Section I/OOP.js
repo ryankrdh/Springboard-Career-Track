@@ -149,6 +149,27 @@ constructor(a, b) {
 // (Note you don’t return anything from constructor function).
 
 // Methods
+ 
+const add = (x, y) => x + y;
+const mult = (x, y) => x * y;
+const square = (x) => x * x;
+const power = (x, y) => x ** y;
+
+const myMath = { add, mult, square, power };
+
+// Other ways to add functions as properties:
+
+const myMath = {
+    add(x,y) {
+        return x + y;
+    },
+    square(x) {
+        return x * x;
+    }
+};
+
+// -------------------------------------------------------------
+
 getArea() {
   return (this.a * this.b) / 2;
 }
