@@ -147,3 +147,147 @@ constructor(a, b) {
   this.b = b;
 }
 // (Note you don’t return anything from constructor function).
+
+// Methods
+getArea() {
+  return (this.a * this.b) / 2;
+}
+// Functions placed in a class are “methods” (formally: “instance methods”).
+
+// They have access to properties of object with this.
+
+// They can take arguments/return data like any other function.
+
+// A method can call another method:
+
+class Triangle {
+   getArea() {
+     return (this.a * this.b) / 2;
+   }
+
+   /* Is this a big triangle? */
+
+   isBig() {
+     return this.getArea() > 50;
+   }
+ }
+// Note: to call a method, you need to call it on this
+
+// Without this, calling getArea throws a ReferenceError - it is not in scope!
+
+// Inheritance & Super
+
+class Triangle {
+    constructor(a, b) {
+      this.a = a;
+      this.b = b;
+    }
+  
+    getArea() {
+      return (this.a * this.b) / 2;
+    }
+  
+    getHypotenuse() {
+      return Math.sqrt(
+          this.a ** 2 + this.b ** 2);
+    }
+  
+    describe() {
+      return `Area is ${this.getArea()}.`;
+    }
+  }
+
+  class Triangle {
+    constructor(a, b) {
+      this.a = a;
+      this.b = b;
+    }
+  
+    getArea() {
+      return (this.a * this.b) / 2;
+    }
+  
+    getHypotenuse() {
+      return Math.sqrt(
+          this.a ** 2 + this.b ** 2);
+    }
+  
+    describe() {
+      return `Area is ${this.getArea()}.`;
+    }
+  }
+
+  // -----------------------------------------------------
+
+  class ColorTriangle {
+    constructor(a, b, color) {
+      this.a = a;
+      this.b = a;
+      this.color = color;
+    }
+  
+    getArea() {
+      return (this.a * this.b) / 2;
+    }
+  
+    getHypotenuse() {
+      return Math.sqrt(
+          this.a ** 2 + this.b ** 2);
+    }
+  
+    describe() {
+      return `Area is ${this.getArea()}.` +
+          ` Color is ${this.color}!`;
+    }
+  }
+
+  class ColorTriangle extends Triangle {
+    constructor(a, b, color) {
+      // call parent constructor with (a, b)
+      super(a, b);
+      this.color = color;
+    }
+  
+    // will "inherit" getArea, getHypotenuse
+  
+    // "override" describe() w/new version  
+  
+    describe() {
+      return super.describe() +
+          ` Color is ${this.color}!`;
+    }
+  }
+
+  // ----------------------------------------------------
+
+//   Multi-Level Inheritance
+class ColorTriangle extends Triangle {
+  constructor(a, b, color) {
+    // call parent constructor with (a, b)
+    super(a, b);
+    this.color = color;
+  }
+
+  // will "inherit" getArea, getHypotenuse
+
+  // "override" describe() w/new version  
+
+  describe() {
+    return super.describe() +
+        ` Color is ${this.color}!`;
+  }
+}
+ 
+
+class InvisTriangle extends ColorTriangle {
+  constructor(a, b) {
+    // call parent constructor  
+    super(a, b, "invisible");
+  }
+
+  // still inherit getArea, getHypotenuse
+
+  describe() {
+    return "You can't see me!";
+  }
+}
