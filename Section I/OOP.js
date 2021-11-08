@@ -91,7 +91,11 @@ triangle.getHypotenuse(); // 5
 let triangle = {
   a: 3,
   b: 4,
+  printThis : function() { // **** You can write this without function but 'this' will react differently.
+      console.log(this);
+  },
   getArea: function () {
+      this.printThis();
     return (this.a + this.b) / 2;
   },
 };
@@ -104,12 +108,14 @@ let triangle = {
 
 // -----------------------------------------------
 // Constructors
+// first letter is uppercased for constructor functions.
 // Consider how we made an instance of our Triangle class:
+// The new keyword creates a new blank, plain js object.
 
 let myTri = new Triangle(); // "instantiation" of triangle
 myTri.a = 3;
 myTri.b = 4;
-demo / triangle - constructor.js;
+
 class Triangle {
   constructor(a, b) {
     this.a = a;
@@ -189,7 +195,7 @@ class Triangle {
    /* Is this a big triangle? */
 
    isBig() {
-     return this.getArea() > 50;
+     return this.getArea() > 50; 
    }
  }
 // Note: to call a method, you need to call it on this
