@@ -706,6 +706,8 @@ const ages = [45, 32, 21, 23, 24, 98, 98, 2, 4, 4, 3, 4, 12, 14, 45];
 // Efficiently checking if an item is in a collection (much better than arrays)
 // includes or indexOf in an array, it is looping over every array to check. Set will take the same amount of time no matter how big.
 
+// for constructor functions, do not use bla
+
 // -----------------------------------------------------------------
 // -----------------------------------------------------------------
 // -----------------------------------------------------------------
