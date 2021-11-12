@@ -320,4 +320,23 @@ class InvisTriangle extends ColorTriangle {
 }
 
 //--------------------------------------------------- 
-// PROTOYPES
+// PROTOYPES are the mechanism by shich javascript objects inherit features from one another.
+
+
+
+// ----------------------------------------------------
+
+// THIS
+
+// JavaScript “Functions”
+// In a sense, JavaScript doesn’t have functions.
+
+// Everything is called on something, like a method.
+
+function whatIsThis() {
+  console.log("this =", this);
+}
+let o = { myFunc: whatIsThis };
+
+o.myFunc();    // get "this = o"
+whatIsThis();      // wtf?!
