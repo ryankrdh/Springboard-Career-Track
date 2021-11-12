@@ -340,3 +340,21 @@ let o = { myFunc: whatIsThis };
 
 o.myFunc();    // get "this = o"
 whatIsThis();      // wtf?!
+
+// -----------------------------------------------------
+
+// Global Object
+// When you call a function on nothing …
+
+// … you call it on the “global object”
+
+// In browser JS, that’s window (the browser window)
+// in NodeJS, that’s global (where some Node utilities are)
+// You’ve relied on that, even if you didn’t realize it!
+
+alert("Hi!");
+
+window.alert("Hi!");   // -- same thing!
+Therefore, a “function” called at the top level is same as:
+
+window.whatIsThis()
