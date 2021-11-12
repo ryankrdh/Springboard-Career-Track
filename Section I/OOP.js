@@ -318,3 +318,6 @@ class InvisTriangle extends ColorTriangle {
     return "You can't see me!";
   }
 }
+
+//--------------------------------------------------- 
+// PROTOYPES
