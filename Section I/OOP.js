@@ -342,9 +342,6 @@ class InvisTriangle extends ColorTriangle {
 }
 
 //--------------------------------------------------- 
-// PROTOYPES are the mechanism by shich javascript objects inherit features from one another.
-
-
 
 // ----------------------------------------------------
 
