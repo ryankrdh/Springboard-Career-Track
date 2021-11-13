@@ -244,6 +244,27 @@ class Triangle {
     }
   }
 
+// -----------------------------------------------------
+
+// PROTOTYPES
+
+function Triangle(a,b) {
+  this.a = a
+  this.b = b;
+}
+Triangle.prototype.getArea = function() {
+  return this.a * this.b / 2;
+};
+Triangle.prototype.getHypotenuse = function() {
+  return Math.sqrt(this.a ** 2 + this.b ** 2);
+};
+
+const tri1 = new Triangle(3, 4);
+tri1.getHypotenuse(); // 5
+const tri2 = new Triangle(9, 12);
+tri2.getHypotenuse(); // 15
+
+
   // -----------------------------------------------------
 
   class ColorTriangle {
