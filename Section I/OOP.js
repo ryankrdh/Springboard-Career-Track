@@ -264,49 +264,50 @@ tri1.getHypotenuse(); // 5
 const tri2 = new Triangle(9, 12);
 tri2.getHypotenuse(); // 15
 
+// classes allow us to have the same functionality without talking about the prototypes. Without prototypes/class, it would just create a  new function every time it is called.
 
-  // -----------------------------------------------------
+// -----------------------------------------------------
 
-  class ColorTriangle {
-    constructor(a, b, color) {
-      this.a = a;
-      this.b = a;
-      this.color = color;
-    }
-  
-    getArea() {
-      return (this.a * this.b) / 2;
-    }
-  
-    getHypotenuse() {
-      return Math.sqrt(
-          this.a ** 2 + this.b ** 2);
-    }
-  
-    describe() {
-      return `Area is ${this.getArea()}.` +
-          ` Color is ${this.color}!`;
-    }
+class ColorTriangle {
+  constructor(a, b, color) {
+    this.a = a;
+    this.b = a;
+    this.color = color;
   }
 
-  class ColorTriangle extends Triangle {
-    constructor(a, b, color) {
-      // call parent constructor with (a, b)
-      super(a, b);
-      this.color = color;
-    }
-  
-    // will "inherit" getArea, getHypotenuse
-  
-    // "override" describe() w/new version  
-  
-    describe() {
-      return super.describe() +
-          ` Color is ${this.color}!`;
-    }
+  getArea() {
+    return (this.a * this.b) / 2;
   }
 
-  // ----------------------------------------------------
+  getHypotenuse() {
+    return Math.sqrt(
+        this.a ** 2 + this.b ** 2);
+  }
+
+  describe() {
+    return `Area is ${this.getArea()}.` +
+        ` Color is ${this.color}!`;
+  }
+}
+
+class ColorTriangle extends Triangle {
+  constructor(a, b, color) {
+    // call parent constructor with (a, b)
+    super(a, b);
+    this.color = color;
+  }
+
+  // will "inherit" getArea, getHypotenuse
+
+  // "override" describe() w/new version  
+
+  describe() {
+    return super.describe() +
+        ` Color is ${this.color}!`;
+  }
+}
+
+// ----------------------------------------------------
 
 //   Multi-Level Inheritance
 class ColorTriangle extends Triangle {
