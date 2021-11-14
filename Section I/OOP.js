@@ -266,6 +266,15 @@ tri2.getHypotenuse(); // 15
 
 // classes allow us to have the same functionality without talking about the prototypes. Without prototypes/class, it would just create a  new function every time it is called.
 
+class Triangle{
+  greet() {
+    console.log('Hello from triangle!!');
+  }
+  display() {
+    console.log(`Triangle with sides of ${this.a} and ${this.b}`);
+  }
+}
+
 // -----------------------------------------------------
 
 class ColorTriangle {
