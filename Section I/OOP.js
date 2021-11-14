@@ -154,6 +154,19 @@ constructor(a, b) {
 }
 // (Note you don’t return anything from constructor function).
 
+// refactor:
+
+constructor(a, b, c) {
+  for (let side of [ a, b, c ] ) {
+    if (!Number.isFinite(side) || side <= 0) {
+      throw new Error('Sides must be positive numbers!');
+    }
+  }
+  this.a = a;
+  this.b = b;
+  this.c = c;
+}
+ 
 // Methods
  
 const add = (x, y) => x + y;
@@ -173,6 +186,8 @@ const myMath = {
         return x * x;
     }
 };
+
+
 
 // -------------------------------------------------------------
 
@@ -289,7 +304,7 @@ secondTri.b = 12;
 
 constructor(a,b) {
   if (!Number.isFinite(a) || a <= 0)
-    throw new Error("Invalid a: " + a);
+    throw new Error("Invalid a: " + a); 
 
   if (!Number.isFinite(b) || b <= 0)
     throw new Error("Invalid b: " + b);
@@ -299,6 +314,8 @@ constructor(a,b) {
 }
 
 // ------------------------------------------------------
+
+// You don't want to return with constructor. Instead throw new Error for validations.
 class ColorTriangle {
   constructor(a, b, color) {
     this.a = a;
@@ -373,6 +390,38 @@ class InvisTriangle extends ColorTriangle {
 }
 
 //--------------------------------------------------- 
+// PRACTICE
+
+class Triangle {
+  constructor(a, b, c) {
+    for (let side of [ a, b, c]) {
+      if (!Number.isFinite(side) || side <= m0) {
+        throw new Error('Sides must be positive numbers!');
+      }
+    }
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  }
+  greet() {
+    console.log('Hello from a triangle!!');
+  }
+  display() {
+    console.log(`Triangle with sides of ${this.a}, ${this.b}, and ${this.c}`
+    );
+  }
+  getArea() {
+    const { a, b, c } = this;
+    const s = (a + b + c) / 2;
+    return Math.sqrt(s * [s - a] * [s - b] * [s - c]);
+  }
+  isBig() {
+    return this.getArea() > 50;
+  }
+}
+
+const t1 = new Triangle(3, 4, 5);
+const t2 = new Triangle(5, 6, 10);
 
 // ----------------------------------------------------
 
@@ -408,3 +457,15 @@ window.alert("Hi!");   // -- same thing!
 Therefore, a “function” called at the top level is same as:
 
 window.whatIsThis()
+
+
+
+
+
+
+
+
+
+// QUESTIONS --------------------------------------------------
+
+// prototypes, classes, constructors.
