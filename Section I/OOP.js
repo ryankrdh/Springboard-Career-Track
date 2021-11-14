@@ -265,7 +265,7 @@ const tri2 = new Triangle(9, 12);
 tri2.getHypotenuse(); // 15
 
 // classes allow us to have the same functionality without talking about the prototypes. Without prototypes/class, it would just create a  new function every time it is called.
-
+ 
 class Triangle{
   greet() {
     console.log('Hello from triangle!!');
@@ -284,6 +284,21 @@ secondTri.b = 12;
 
 // -----------------------------------------------------
 
+// What can you do in the constructor?
+// common things: validate data, assign properties
+
+constructor(a,b) {
+  if (!Number.isFinite(a) || a <= 0)
+    throw new Error("Invalid a: " + a);
+
+  if (!Number.isFinite(b) || b <= 0)
+    throw new Error("Invalid b: " + b);
+
+  this.a = a;
+  this.b = b;
+}
+
+// ------------------------------------------------------
 class ColorTriangle {
   constructor(a, b, color) {
     this.a = a;
