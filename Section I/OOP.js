@@ -275,6 +275,13 @@ class Triangle{
   }
 }
 
+const firstTri = new Triangle();
+firstTri.a = 3;
+firstTri.b = 4;
+const secondTri = new Triangle();
+secondTri.a = 9;
+secondTri.b = 12;
+
 // -----------------------------------------------------
 
 class ColorTriangle {
