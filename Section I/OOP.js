@@ -464,8 +464,6 @@ window.whatIsThis()
 
 
 
-
-
 // QUESTIONS --------------------------------------------------
 
-// prototypes, classes, constructors.
+// prototypes, classes, constructors. class methods
