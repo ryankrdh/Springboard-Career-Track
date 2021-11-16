@@ -458,7 +458,36 @@ Therefore, a “function” called at the top level is same as:
 
 window.whatIsThis()
 
+// ---------------------------------------------------------
+// Undefined Fluffy
+class Cat {
+  constructor(name) {
+    this.name = name;
+  }
 
+  dance(style) {
+    return `Meow, I am ${this.name}` +
+        ` and I like to ${style}`;
+  }
+}
+ 
+// so… what’s happening here?
+let fluffy = new Cat("Fluffy");
+
+fluffy.name;             // "Fluffy"
+
+fluffy.dance("tango")    // works!
+
+let fDance = fluffy.dance;
+
+fDance("salsa");         // error?!
+fluffy.dance("tango");
+// Find the dance method on fluffy
+// Call the dance method on fluffy — yay!
+let fDance = fluffy.dance;
+fDance("tango");
+// Find the dance method on fluffy
+// Call the dance method on the global window — ut oh
 
 
 
