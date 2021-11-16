@@ -517,8 +517,21 @@ Math.max.apply(null, myNums);  // pass that array as indiv arguments
 
 Math.max(...myNums);
 
+// ** call is a way to manipulate 'this'. doesn't mutate it. just change how it is executed once.
 
+// ------------------------------------------------------
 
+// Bind
+// You can “perma-bind” a function to a context:
+
+fDance("tango");       // error -- this isn't the cat
+
+fDance.call(fluffy, "tango");   // ok but tedious to always do
+
+let betterDance = fDance.bind(fluffy);
+
+betterDance("tango");  // ok -- bound so that `this` is Fluffy
+// bind is a method on functions that returns a bound copy of the function.
 
 //test
 // QUESTIONS --------------------------------------------------
