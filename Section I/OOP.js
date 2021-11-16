@@ -489,6 +489,34 @@ fDance("tango");
 // Find the dance method on fluffy
 // Call the dance method on the global window — ut oh
 
+// ----------------------------------------------------
+
+// Call
+// Sometimes, you’ll need to say “call this function on this object”
+
+// That’s what call() is for!
+
+let fDance = fluffy.dance;
+
+// call on fluffy, passing "tango" as arg
+fDance.call(fluffy, "tango");
+whatIsThis.call(fluffy);       // this = fluffy
+apply()
+
+// There is a related function, apply(): for this, you can pass the list of arguments to the function as an array, rather than passing one-by-one.
+
+// This used to be a very important technique, since it was the only reasonable way to call a function that expected several individual arguments where you already had those arguments in a list:
+
+Math.max(1, 2, 3);       // Math.max expects indiv arguments
+
+let myNums = [1, 2, 3];  // If you already have an array ...
+
+Math.max.apply(null, myNums);  // pass that array as indiv arguments
+                               // (don't care what "this" is, so pass `null`)
+// Nowadays, however, this is much more easily done with the spread operator:
+
+Math.max(...myNums);
+
 
 
 
