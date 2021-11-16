@@ -533,7 +533,76 @@ let betterDance = fDance.bind(fluffy);
 betterDance("tango");  // ok -- bound so that `this` is Fluffy
 // bind is a method on functions that returns a bound copy of the function.
 
-//test
+// PRACTICE ---------------------------------------------
+const bDance = blue.dance;
+const boundDance = bDance.bind(blue);
+
+const rocketDance = blue.dance.bind(rocket); 
+// rocketDance('tango')  
+
+// even calling another object won't work since the method is bound.
+const dog = {
+  name :  'Tyson',
+  breed : 'Mini Aussie',
+  dance : rocketDance
+};
+
+dog.dance() // this will result in running rocket, not Tyson.
+
+// -----------------------------------------------------------
+
+// Binding Arguments
+// You can also bind arguments to functions. That will bake them into the function.
+
+function applySalesTax(taxRate, price) {
+  return price + price * taxRate;
+}
+
+// "null" for "this" means it doesn't matter what "this" is
+const applyCASalesTax = applySalesTax.bind(null, 0.0725); // null wont be bound
+applyCASalesTax(50);  // 53.63
+
+// ----------------------------------------------------------
+
+// Pre-Binding Calls
+// Imagine we want three buttons which call popUp, but with different args:
+
+<button id="a">A</button>
+<button id="b">B</button>
+<button id="c">C</button>
+ 
+ 
+function popUp(msg) {
+  alert("Secret message is " + msg);
+}
+
+function handleClick(evt) {
+  let id = evt.target.id;
+
+  if (id === "a") popUp("Apple");
+  else if (id === "b") popUp("Berry");
+  else if (id === "c") popUp("Cherry");
+}
+
+const get = document.getElementById.bind(document);
+
+get('a').addEventListener("click", handleClick);
+get('b').addEventListener("click", handleClick);
+get('c').addEventListener("click", handleClick);
+demo/buttons.html
+function popUp(msg) {
+  alert("Secret message is " + msg);
+}
+
+const get = document.getElementById.bind(document);
+
+get('a').addEventListener("click", popUp.bind(null, "Apple"));
+get('b').addEventListener("click", popUp.bind(null, "Berry"));
+get('c').addEventListener("click", popUp.bind(null, "Cherry"));
+
+
+
+
 // QUESTIONS --------------------------------------------------
 
 // prototypes, classes, constructors. class methods
