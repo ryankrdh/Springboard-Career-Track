@@ -600,9 +600,72 @@ get('a').addEventListener("click", popUp.bind(null, "Apple"));
 get('b').addEventListener("click", popUp.bind(null, "Berry"));
 get('c').addEventListener("click", popUp.bind(null, "Cherry"));
 
+// *** When passing object methods into events, you will need to bind.
 
+// -----------------------------------------------------------
 
+// Arrow Functions
+// Arrow functions don’t make their own this
+// arrow functions's 'this' is window. that's why you use factory function for objects.
+// arrow functions are useful for callbacks
+
+class Cat {
+  constructor(name) {
+    this.name = name;
+  }
+
+  superGreet() {
+    alert(`#1: I am ${this.name}`);   // works, obvs
+
+    setTimeout(function () {
+      alert(`#2 I am ${this.name}`);  // ut oh
+    }, 500);
+
+    setTimeout(() => {
+      alert(`#3 I am ${this.name}`);  // yay!
+    }, 1000);
+  }
+}
+
+let kitty = new Cat("Kitty");
+kitty.superGreet();
+
+// PRACTICE ---------------------------------------------------
+
+const greeter = {
+  msg : 'I like chickenz',
+  sayHi : () => {
+    alert(this.msg); // 'this' points to window. arrow functions wont work inside objects
+  },
+  waitAndGreet : function(delay) {
+    setTimeout(
+      function() {
+        alert(this.msg);
+      }.bind(this),
+      delay
+    );
+  }
+};
+
+// BETTER WAY with ARROW FUNCTION
+
+const greeter = {
+  msg : 'I like chickenz',
+  sayHi : () => {
+    alert(this.msg); // 'this' points to window. arrow functions wont work inside objects
+  },
+  waitAndGreet : function(delay) {
+    setTimeout(
+      () => {
+        alert(this.msg);
+      },
+      delay
+    );
+  }
+};
 
 // QUESTIONS --------------------------------------------------
 
 // prototypes, classes, constructors. class methods
+
+
