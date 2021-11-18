@@ -11,3 +11,5 @@
 // Cross-Browser Support
 // AJAX
 // 77% of the top 1,000,000 most visited pages use it
+
+// download jquery: https://code.jquery.com/
