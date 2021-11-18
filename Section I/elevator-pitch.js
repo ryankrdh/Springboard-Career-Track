@@ -28,15 +28,18 @@
 
 /*
 
-Hello, nice to meet you. My name is Ryan and I've been working in the dental field for about 9 years. I mainly work with patients that have severe anxiety at the moment.
+Hello, nice to meet you. My name is Ryan and I've been working in the dental field for about 9 years. I mainly work with patients that have severe anxiety.
 
 I recently joined a full stack boot camp back in 2021 planning to switch my career to a software engineer role. 
 
 I've built and maintained an accelerated hygiene program for couple dental offices doubling their hygiene revenue. 
 
-I'm particularly interested in working for startup-like environments where I can grow fast and be curious. During the quarantine, I know how kids are bored at home so I built a story driven app geared towards kids. 
+I'm particularly interested in working for startup-like environments where I can grow fast and be curious. During the quarantine, knowing how the kids are bored at home, I built a choice-driven story app. 
 
-I am very team-driven and passionate about creating programs that can make peoples' lives easier, and I'm sure I'll be a great addition to your team. 
+I highly value communication and teamwork because I believe that even as a programmer, there is a limit to what you can achieve alone. 
+
+I would like to meet others just as passionate about creating programs that can make peoples' lives easier. 
+
 
 Would you be interested in connecting with me to discuss any opportunities?
 
