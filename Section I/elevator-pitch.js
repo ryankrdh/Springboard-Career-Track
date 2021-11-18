@@ -23,15 +23,52 @@
 /*
 // ELEVATOR PITCH
 
-Hi! Nice to meet you! 
 
-My name is Ryan and I'll be graduating from Springboard in June of 2022.
+*/
 
-I am looking for a software engineering position in Seattle and I'm particularly interested in working for startup-like environments where I can grow fast. 
+/*
 
-I have experience in programming full-stack applications, working mainly on back-end. 
+Hello, nice to meet you. My name is Ryan and I've been working in the dental field for about 8 years. I mainly work with patients that have severe anxiety at the moment.
 
-I am very team-driven and passionate, and I'm sure I'll be a great addition to your team.
+I recently joined a full stack boot camp back in 2021 planning to switch my career to a software engineer roll. 
+
+I've built and maintained an accelerated hygiene program for couple dental offices doubling their hygiene revenue. 
+
+I'm particularly interested in working for startup-like environments where I can grow fast and be curious. During the quarantine, I know how kids are bored at home so I built a story driven app geared towards kids. 
+
+I am very team-driven and passionate about creating programs that can make peoples' lives easier, and I'm sure I'll be a great addition to your team. 
 
 Would you be interested in connecting with me to discuss any opportunities?
+
+
+------------------------------------------------------------
+
+
+Hello, nice to meet you. My name is Ryan and I've been working in the dental field for about 8 years. I mainly work with patients that have severe anxiety at the moment.
+
+
+
+*/
+
+/*
+* What am I doing right now. 
+
+* What did I do previously. What accomplishments do I have.
+
+* Aspirations. What we want to achieve as a career.
+
+
+
+Jeff 
+
+fire fighter 25 yrs. 
+
+freelance work. built a website
+
+training program
+
+automate hard processes focusing on daily life activities.
+
+
+
 */
