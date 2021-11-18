@@ -30,7 +30,7 @@
 
 Hello, nice to meet you. My name is Ryan and I've been working in the dental field for about 8 years. I mainly work with patients that have severe anxiety at the moment.
 
-I recently joined a full stack boot camp back in 2021 planning to switch my career to a software engineer roll. 
+I recently joined a full stack boot camp back in 2021 planning to switch my career to a software engineer role. 
 
 I've built and maintained an accelerated hygiene program for couple dental offices doubling their hygiene revenue. 
 
