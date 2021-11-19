@@ -108,8 +108,17 @@ $('#todo-container')
 
 // PRACTICE
 
+// to get a Nodelist from jQuery object
+let $listItems = $('li');
+$listItems.get();
+
 $('a').css('font-size'); // '18px'
 $('a').css('font-size', '30px'); // the second argument makes the font size into 30px.
 
 const $h1 = $('h1');
 $h1.addClass('highlight');
+
+$('h1')
+  .css('background-color', 'purple')
+  .addClass('highlight')
+  .text('CHAINING IS FUN!');
