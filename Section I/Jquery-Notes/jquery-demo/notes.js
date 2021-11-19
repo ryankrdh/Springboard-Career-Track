@@ -100,6 +100,21 @@ $('#todo-container')
 
 // ------------------------------------------------------------
 
+// Creating elements
+// Instead of using document.createElement("li") we can simply create an element using $("<li>")
+
+// $("<li>") Create a new li
+// $("li") Select existing `li`s
+// Waiting for the DOM to load
+// With vanilla JS we have DOMContentLoaded and window.onload, with jQuery we have:
+
+// waits for the DOM to load
+$(function () {});
+// You may see this version:
+
+// waits for the DOM to load
+$(document).ready(function () {});
+
 // ------------------------------------------------------------
 
 // ------------------------------------------------------------
@@ -112,13 +127,26 @@ $('#todo-container')
 let $listItems = $('li');
 $listItems.get();
 
+// getting and editing css with jQuery
 $('a').css('font-size'); // '18px'
 $('a').css('font-size', '30px'); // the second argument makes the font size into 30px.
 
+// saving jQuery in a variable.
 const $h1 = $('h1');
 $h1.addClass('highlight');
 
+// editing CSS by chaining.
 $('h1')
   .css('background-color', 'purple')
   .addClass('highlight')
   .text('CHAINING IS FUN!');
+
+// traversing in jQuery
+const $specialLI = $('li').eq(3);
+$specialLI.next(); // next sibling
+$specialLI.prev(); // previous sibling
+$specialLI.parent(); // direct parent
+$('ul').children(); // direct children not multi level children.
+$('ul').find('a'); // this will recurse down and find children of childrens.
+
+// Creating and appending elements
