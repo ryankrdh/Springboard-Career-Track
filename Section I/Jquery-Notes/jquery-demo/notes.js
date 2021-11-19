@@ -177,7 +177,7 @@ $('#meme-container').on('click', '.meme', function (evt) {
 
 // ------------------------------------------------------------
 
-// PRACTICE
+// PRACTICE -------------------------------------------------
 
 // to get a Nodelist from jQuery object
 let $listItems = $('li');
@@ -205,7 +205,8 @@ $specialLI.parent(); // direct parent
 $('ul').children(); // direct children not multi level children.
 $('ul').find('a'); // this will recurse down and find children of childrens.
 
-// Creating and appending elements
+// Creating and appending elements -----------------------------------------
+
 $('ul').append('<li class="highlight">I AM NEW!!!</li>'); // adding a new list
 $('li').append('<input type="checkbox"/>'); // adding checkbox at the end
 $('li').prepend('<input type="checkbox"/>'); // adding checkbox at the beginning
@@ -229,7 +230,7 @@ $('img').on('click', function () {
   $(this).css('border', '10px solid purple'); // $(this) is needed to use the keyword this in jQuery
 });
 
-// Event delegations
+// Event delegations --------------------------------------------------
 // use on() instead of regular click() because of event delegations.
 
 $('#add-input').on('click', function () {
@@ -243,3 +244,18 @@ $('input').on('focus', function () {
 $('#meme-container').on('click', '.meme', function (evt) {
   deleteMeme(evt.target);
 }); // listen for clicks in the element of class meme IN the #meme-container
+
+// jQuery animations ---------------------------------------------------
+
+$('img').on('click', function () {
+  // This will fade out the image and then remove it.
+  $(this).fadeOut(3000, function () {
+    $(this).remove();
+  });
+});
+
+$('img').on('click', function () {
+  $(this).animate({
+    opacity,
+  });
+});
