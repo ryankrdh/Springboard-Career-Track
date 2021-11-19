@@ -55,3 +55,47 @@ console.log(x);
 
 console.log($class2Elements);
 // nice, this is probably a jQuery object!
+
+// -------------------------------------------------------------------
+
+// jQuery Methods
+// Common jQuery Methods
+// A great way to learn these is to compare them to vanilla JS methods!
+
+// .val()
+// .text()
+// .attr()
+// .html()
+// .css()
+// .addClass() / .removeClass() / .toggleClass()
+// .empty() / .remove()
+// .append() / .prepend()
+// .find() / .closest() / .parent() / .next() / .prev()
+// jQuery getter / setter pattern
+// Vanilla JS: .getAttribute(attrName) and .setAttribute(attrName, newValue)
+// jQuery: .attr(attrName, newValue) (second param is optional)
+// This is common with jQuery methods
+// Chaining with jQuery
+// Almost all jQuery methods return a jQuery object, which allows for method chaining.
+
+// Instead of performing DOM operations line-by-line, we can chain method calls together on a single jQuery object.
+
+// Instead of:
+
+let todoContainer = document.querySelector('#todo-container');
+todoContainer.style.color = 'red';
+todoContainer.innerText = 'look at this!';
+todoContainer.addEventListener('click', function (evt) {
+  console.log('clicked!');
+});
+
+// We can have:
+
+$('#todo-container')
+  .css('color', 'red')
+  .text('look at this!')
+  .on('click', function (evt) {
+    console.log('clicked!');
+  });
+
+// ------------------------------------------------------------
