@@ -150,3 +150,25 @@ $('ul').children(); // direct children not multi level children.
 $('ul').find('a'); // this will recurse down and find children of childrens.
 
 // Creating and appending elements
+$('ul').append('<li class="highlight">I AM NEW!!!</li>'); // adding a new list
+$('li').append('<input type="checkbox"/>'); // adding checkbox at the end
+$('li').prepend('<input type="checkbox"/>'); // adding checkbox at the beginning
+$('<h1>'); // creates h1 instead of searching for it.
+$('<h1>HELLO!</h1>').css('color', 'orange'); // adding a new H1 with css.
+$('<h1>HELLO!</h1>').css('color', 'orange').appendTo('p'); // appends to each paragraph.
+
+$('li').after('<bold>HI</bold>'); // appends 'HI' to after evey li.
+// .append() puts data inside an element at last index and *makes it a child*
+// .prepend() puts the prepending elem at first index *makes it a parent*
+// .after() puts the element after the element *sibling*
+// .before() puts the element before the element *sibling*
+$('h1').remove(); // to remove all h1
+
+// Events and Delegation with jQuery.
+$('img').click(function () {
+  alert('HELLO!');
+}); // each image gets an alert when clicked.
+
+$('img').on('mouseenter', function () {
+    $(this).  // $(this) is needed to use the keyword this in jQuery
+})
