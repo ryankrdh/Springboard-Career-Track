@@ -255,7 +255,14 @@ $('img').on('click', function () {
 });
 
 $('img').on('click', function () {
-  $(this).animate({
-    opacity,
-  });
+  $(this).animate(
+    {
+      opacity: 0,
+      width: '50px', // DO NOT ANIMATE WIDTH (POOR PERFORMANCE)
+    },
+    3000,
+    function () {
+      $(this).remove();
+    }
+  );
 });
