@@ -117,6 +117,62 @@ $(document).ready(function () {});
 
 // ------------------------------------------------------------
 
+// Events and Delegation with jQuery
+// jQuery events
+// jQuery’s on() works similarly to addEventListener. It lets you specify the type of event to listen for.
+
+//prints when item with id "submit" is clicked
+$('#submit').on('click', function () {
+  console.log('Another click');
+});
+//alerts when ANY button is clicked
+$('button').on('click', function () {
+  console.log('button clicked!');
+});
+// Why Use on()?
+// In most cases, click() and on(“click”) will both get the job done. HOWEVER, there is one key difference:
+
+// .click(callback) is a shorthand for .on(“click”, callback)
+// on() accepts optional argument between type of event and callback
+// This flexibility allows us to leverage event delegation.
+// Event Delegation
+// Event delegation allows us to attach an event listener to a parent element, but only invoke the callback if the event target matches a certain selector.
+
+// This will work even if elements matching the selector don’t exist yet!
+
+$('#meme-container').on('click', '.meme', function (evt) {
+  deleteMeme(evt.target);
+});
+// Less code
+// More performant
+// Event Delegation: Vanilla JS vs. jQuery
+// Vanilla JS
+// deletes a meme when it is clicked
+// even if it doesn't exist on page load
+
+document
+  .getElementById('meme-container')
+  .addEventListener('click', function (evt) {
+    let target = evt.target;
+
+    // checking for "meme" class on target
+    // this logic would need to change a bit
+    // if we were searching by something
+    // else (eg tag name)
+
+    if (target.classList.contains('meme')) {
+      deleteMeme(target);
+    }
+  });
+
+jQuery;
+// deletes a meme when it is clicked
+// even if it doesn't exist on page load
+
+$('#meme-container').on('click', '.meme', function (evt) {
+  deleteMeme(evt.target);
+});
+
 // ------------------------------------------------------------
 
 // ------------------------------------------------------------
@@ -169,6 +225,21 @@ $('img').click(function () {
   alert('HELLO!');
 }); // each image gets an alert when clicked.
 
-$('img').on('mouseenter', function () {
-    $(this).  // $(this) is needed to use the keyword this in jQuery
-})
+$('img').on('click', function () {
+  $(this).css('border', '10px solid purple'); // $(this) is needed to use the keyword this in jQuery
+});
+
+// Event delegations
+// use on() instead of regular click() because of event delegations.
+
+$('#add-input').on('click', function () {
+  $('form').append('<input type="text"');
+});
+
+$('input').on('focus', function () {
+  $(this).val('BAMBOOZLED');
+});
+
+$('#meme-container').on('click', '.meme', function (evt) {
+  deleteMeme(evt.target);
+}); // listen for clicks in the element of class meme IN the #meme-container
