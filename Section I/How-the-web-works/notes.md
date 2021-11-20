@@ -37,3 +37,39 @@ There are a lot of advanced edges here that make this more complicated, but most
 there another whole way to specify networks, “IPv6”, that use a different numbering scheme.
 some computers can have multiple IP addresses they can be reached by
 under some circumstances, multiple computers can share an IP address and have this be handled by a special kind of router. If you’re interested in system administration details, you can learn about this by reading about “Network Address Translation”.
+
+127.0.0.1
+127.0.0.1 is special — it’s “this computer that you’re on”.
+
+In addition to their IP address on the network, all computers can reach themselves at this address.
+
+The name localhost always maps to 127.0.0.1.
+
+URLs
+http://site.com/some/page.html?x=1
+
+turns into:
+
+Protocol Hostname Port Resource Query
+http site.com 80 /some/page.html ?x=1
+Protocols
+Protocol Hostname Port Resource Query
+http site.com 80 /some/page.html ?x=1
+“Protocols” are the conventions and ways of one thing talking to another.
+
+http
+Hypertext Transfer Protocol (standard web) (How browsers and servers communicate)
+https
+HTTP Secure (How browsers and servers communicate with encryption)
+ftp
+File transfer protocol (An older protocol for sending files over internet)
+There are many others, but these are the common ones.
+
+In this lecture, we’ll be focusing only on HTTP.
+
+Hostname
+Protocol Hostname Port Resource Query
+http site.com 80 /some/page.html ?x=1
+DNS (domain name service) turns this into an IP address
+
+So site.com might resolve to 123.45.67.89
