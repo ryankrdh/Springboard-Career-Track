@@ -89,3 +89,23 @@ http site.com 80 /some/page.html ?x=1
 This always talks to some “web server” program on the server
 For some servers, may just have them read an actual file on disk: /some/page.html
 For many servers, “dynamically generates” a page
+
+Query String
+Protocol Hostname Port Resource Query
+http site.com 80 /some/page.html ?x=1
+This provides “extra information” — search terms, info from forms, etc
+The server is provided this info; might use to change page
+Sometimes, JavaScript will use this information in addition/instead
+Multiple arguments are separated by &: ?x=1&y=2
+Argument can be given several times: ?x=1&x=2
+So
+http://site.com/some/page.html?x=1
+
+means
+
+Turn “site.com” into 123.45.67.89
+Connect to 123.45.67.89
+On port 80 (the default)
+Using the HTTP protocol
+Ask for /some/page.html
+Pass along query string: x = 1
