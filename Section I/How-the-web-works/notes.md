@@ -109,3 +109,23 @@ On port 80 (the default)
 Using the HTTP protocol
 Ask for /some/page.html
 Pass along query string: x = 1
+
+What’s in a Request?
+Method (ex: GET)
+HTTP protocol version (almost always 1.1)
+Resource URL you want
+Headers
+Hostname you’re asking about
+Date your browser thinks it is
+Language your browser wants information in
+Any cookies that server has sent
+And more!
+What’s in a Response
+HTTP protocol version (almost always 1.1)
+Response Status Code (200, 404, etc)
+Headers
+Content Type (typically text/html for web pages)
+Date/time the server thinks it is
+Any cookies server wants to set
+Any caching information
+And more!
