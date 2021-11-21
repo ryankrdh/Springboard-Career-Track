@@ -73,3 +73,19 @@ http site.com 80 /some/page.html ?x=1
 DNS (domain name service) turns this into an IP address
 
 So site.com might resolve to 123.45.67.89
+
+Port
+Protocol Hostname Port Resource Query
+http site.com 80 /some/page.html ?x=1
+Every server has 65,535 unique “ports” you can talk to
+Services tend to have a default port
+For HTTP, is port 80
+For HTTPS, is port 443
+You don’t have to specify in URL unless you want a different port
+To do: http://site.com:12345/some/page.html
+Resource
+Protocol Hostname Port Resource Query
+http site.com 80 /some/page.html ?x=1
+This always talks to some “web server” program on the server
+For some servers, may just have them read an actual file on disk: /some/page.html
+For many servers, “dynamically generates” a page
