@@ -129,3 +129,5 @@ Date/time the server thinks it is
 Any cookies server wants to set
 Any caching information
 And more!
+
+**_ using Rested app for debugging _**
