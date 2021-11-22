@@ -131,3 +131,5 @@ Any caching information
 And more!
 
 **_ using Rested app for debugging _**
+can make requests without using a browser.
+only difference between the app and browser is what happens when we get the content back. The app doesn't show the content like the browser.
