@@ -133,3 +133,24 @@ And more!
 **_ using Rested app for debugging _**
 can make requests without using a browser.
 only difference between the app and browser is what happens when we get the content back. The app doesn't show the content like the browser.
+
+** OPENING YOUR OWN SERVER **
+
+1st server tool method:
+run this in the terminal:
+$ python3 -m http.server
+
+2nd server tool method:
+using vs code live server
+
+Methods: GET and POST
+GET vs POST
+GET: requests without side effects (ie, don’t change server data)
+Typically, arguments are passed along in query string
+If you know the arguments, you can change the URL
+Entering-URL-in-browser, clicking links, and some form submissions
+POST: requests with side effects (ie, change data on server)
+Typically, arguments sent as body of the request (not in query string)
+Some form submissions (but never entering-URL-in-browser or links)
+Always do this if there’s a side-effect: sending mail, charge credit card, etc
+“Are you sure you want to resubmit?”
