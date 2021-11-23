@@ -154,3 +154,26 @@ Typically, arguments sent as body of the request (not in query string)
 Some form submissions (but never entering-URL-in-browser or links)
 Always do this if there’s a side-effect: sending mail, charge credit card, etc
 “Are you sure you want to resubmit?”
+
+Sample GET Requests
+<a href="/about-us">About Us</a>
+
+<a href="/search?q=lemurs">Search For Lemurs!</a>
+
+<!-- will submit to URL like /search?q=value-in-input -->
+<form action="/search" method="GET">
+  Search for <input name="q">
+  <button type="submit">Search!</button>
+</form>
+Sample POST Request
+POST requests are always form submissions:
+
+<!-- will submit to URL add-comment, with value in body -->
+<form action="add-comment" method="POST">
+  <input name="comment">
+  <button type="submit">Add</button>
+</form>
+HTTP Methods
+GET and POST are “HTTP methods” (also called “HTTP verbs”)
+
+They’re the most common, by far, but there are others
