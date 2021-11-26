@@ -47,3 +47,23 @@ Or a newer-but-still-clunky built-in tool: (fetch)
 Or lots of other libraries (including jQuery)
 
 … but we’ll use axios for now! It’s featureful & popular
+
+Getting Axios
+Can easily include it using a CDN link:
+
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+
+Making a Simple Request
+axios.get(url)
+
+Make a GET request to that URL
+
+Not What We Expected
+let card = axios.get("/api/card");
+console.log(card);
+// "Promise {<pending>}"
+What’s A Promise???
+We’ll talk about it in more detail when we get to Node.
+For now, all you need to know is that a promise is like a placeholder for a future value.
+We want to wait for the promise to have that value before proceeding.
+But we don’t know when the promise will receive its value!
