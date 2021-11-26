@@ -67,3 +67,18 @@ We’ll talk about it in more detail when we get to Node.
 For now, all you need to know is that a promise is like a placeholder for a future value.
 We want to wait for the promise to have that value before proceeding.
 But we don’t know when the promise will receive its value!
+
+Handling Asynchronous Code
+Asynchronicity
+AJAX requests are asynchronous
+
+The axios.get() completes before the response is received
+This means that if we want to use the data we get back from our AJAX requests, we need to wait until the response has been given to us
+We’re going to use two newer keywords in JS to do this: async and await!
+Await
+Here’s what it looks like:
+
+await axios.get('/api/card');
+
+// returns response object, with `.data` as response body
+The code is asynchronous, but it “waits” for the AJAX request to complete.
