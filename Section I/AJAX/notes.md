@@ -101,3 +101,44 @@ Callbacks are what we’ve used for event handlers and timers
 But they’re tricky to nest or do other complex things
 async/await makes it easier to handle chains of requests
 Modern libraries like Axios return “promises”, which you await
+
+Axios API
+.get
+axios.get(url, [config])
+
+config is an optional object many Axios methods use
+
+It hold specific configuration for what you need.
+
+demo/templates/index.html
+
+<h2>Simple GET Request</h2>
+
+<button class="btn btn-primary"
+        id="card-btn"> Get Card </button>
+
+<div id="card" class="box"></div>
+
+<script src="/static/card.js"></script>
+
+demo/static/card.js
+/_ show ajax result directly in card box _/
+
+async function getCard() {
+let response = await axios.get(
+"/api/card");
+
+console.log("getCard resp=", response);
+$("#card").html(response.data);
+}
+
+$("#card-btn").on("click", getCard);
+To make request for /resource?a=1&b=2, can either use:
+
+axios.get("/resource?a=1&b=2")
+
+or
+
+axios.get("/resource", {params: {a: 1, b: 2}})
+
+Second form is better: you don’t have to worry about how to “url safe quote” characters that aren’t normally legal in URLs.
