@@ -82,3 +82,22 @@ await axios.get('/api/card');
 
 // returns response object, with `.data` as response body
 The code is asynchronous, but it “waits” for the AJAX request to complete.
+
+Async
+When you are using Chrome DevTools in the console, you can just use await. This is great for testing, but normally you will use ‘await’ in the context of an ‘async’ function.
+
+To use in a function, you must mark that function as async:
+
+async function getCardInfo() {
+let response = await axios.get("/api/card");
+console.log("got", response);
+return response.data;
+}
+When calling asnyc function, you should await it:
+
+let card = await getCardInfo();
+Callbacks Vs Async/Await
+Callbacks are what we’ve used for event handlers and timers
+But they’re tricky to nest or do other complex things
+async/await makes it easier to handle chains of requests
+Modern libraries like Axios return “promises”, which you await
