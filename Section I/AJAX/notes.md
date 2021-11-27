@@ -142,3 +142,43 @@ or
 axios.get("/resource", {params: {a: 1, b: 2}})
 
 Second form is better: you don’t have to worry about how to “url safe quote” characters that aren’t normally legal in URLs.
+
+.post
+Similar to axios.get, but uses a POST request
+
+axios.post(url, [data,] [config])
+
+axios.post(url, {a: 1, b: 2})
+
+This is passed as JSON to the server
+
+demo/templates/index.html
+
+<h2>Simple POST Request</h2>
+
+<input id="amount" placeholder="Amount" />
+<button class="btn btn-warning"
+        id="borrow-btn"> Borrow </button>
+
+<div id="borrowed" class="box"></div>
+
+<script src="/static/borrow.js"></script>
+
+demo/static/borrow.js
+/_ show result of borrowing in box _/
+
+function showBorrow(res) {
+$("#borrowed").html(res);
+}
+
+async function borrowMoney() {
+let amount = Number($("#amount").val());
+
+let response = await axios.post(
+"/api/borrow", { amount });
+
+console.log("borrow resp=", response);
+showBorrow(response.data)
+}
+
+$("#borrow-btn").on("click", borrowMoney);
