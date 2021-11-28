@@ -182,3 +182,46 @@ showBorrow(response.data)
 }
 
 $("#borrow-btn").on("click", borrowMoney);
+
+JSON
+JSON is a string that looks like a JS object
+Most APIs use JSON to communicate
+By default, Axios recognizes JSON response & turns into JS object
+By default, Axios sends POST data as JSON
+demo/templates/index.html
+
+<h2>Getting JSON Responses</h2>
+
+Get <input id="ncards" value="5" /> Cards
+
+<button class="btn btn-primary"
+        id="hand-btn">Go!</button>
+
+<div id="hand" class="box"></div>
+
+<script src="/static/hand.js"></script>
+
+demo/static/hand.js
+/_ show result of hand in box _/
+
+function showHand(hand) {
+let $box = $("#hand");
+$box.empty();
+
+for (let {rank, suit} of hand) {
+let t = `<p>${rank} of ${suit}</p>`;
+$box.append($(t));
+}
+}
+
+async function getHand() {
+let ncards = Number($("#ncards").val());
+
+let response = await axios.get(
+"/api/hand", { params: { ncards } });
+
+console.log("getHand resp=", response);
+showHand(response.data.hand);
+}
+
+$("#hand-btn").on("click", getHand);

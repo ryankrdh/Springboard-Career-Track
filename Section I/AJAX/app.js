@@ -18,34 +18,34 @@
 
 // ROCKET EXAMPLE --------------------------------------
 
-async function getLaunches() {
-  const res = await axios.get(
-    'https://api.spacexdata.com/v3/launches/upcoming'
-  );
-  renderLaunches(res.data);
-  //   console.log(res.data);
-}
+// async function getLaunches() {
+//   const res = await axios.get(
+//     'https://api.spacexdata.com/v3/launches/upcoming'
+//   );
+//   renderLaunches(res.data);
+//   //   console.log(res.data);
+// }
 
-function renderLaunches(launches) {
-  const ul = document.querySelector('#launches');
-  for (let launch of launches) {
-    ul.append(makeLaunchLI(launch));
-    // console.log(launch.mission_name);
-    // console.log(launch.rocket.rocket_name);
-  }
-}
+// function renderLaunches(launches) {
+//   const ul = document.querySelector('#launches');
+//   for (let launch of launches) {
+//     ul.append(makeLaunchLI(launch));
+//     // console.log(launch.mission_name);
+//     // console.log(launch.rocket.rocket_name);
+//   }
+// }
 
-function makeLaunchLI(launch) {
-  const newLI = document.createElement('LI');
-  const mission = document.createElement('B');
-  // newLI.innerText = launch.mission_name;
-  mission.innerText = launch.mission_name;
-  newLI.append(mission);
-  newLI.innerHTML += ` - ${launch.rocket.rocket_name}`;
-  return newLI;
-}
+// function makeLaunchLI(launch) {
+//   const newLI = document.createElement('LI');
+//   const mission = document.createElement('B');
+//   // newLI.innerText = launch.mission_name;
+//   mission.innerText = launch.mission_name;
+//   newLI.append(mission);
+//   newLI.innerHTML += ` - ${launch.rocket.rocket_name}`;
+//   return newLI;
+// }
 
-document.querySelector;
+// document.querySelector;
 
 // DOG EXAMPLE --------------------------------------
 
@@ -59,3 +59,9 @@ looping to create the table. this can determine the state of the box.
 
 transform the data 
 */
+
+// AXIOS POST EXAMPLE ---------------------------------
+
+async function getUsers() {
+  const res = await axios.get('https://reqres.in');
+}
