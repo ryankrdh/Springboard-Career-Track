@@ -225,3 +225,18 @@ showHand(response.data.hand);
 }
 
 $("#hand-btn").on("click", getHand);
+
+Wrap Up
+Big Ideas
+Traditional web requests:
+Made by browser (via link, form, URL bar, etc)
+Replace entire page with thing linked to
+AJAX requests:
+Made via JS AJAX calls
+JS get data; JS decides what to do with it
+Axios is the popular AJAX client we’ll use
+AJAX calls are asynchronous & return a “promise”
+You need to await those to get real results
+Functions that use await must be async
+JSON
+Axios parses JSON responses automatically for us
