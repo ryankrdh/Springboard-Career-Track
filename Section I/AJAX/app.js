@@ -62,18 +62,59 @@ transform the data
 
 // AXIOS POST EXAMPLE ---------------------------------
 
-async function getUsers() {
-  const res = await axios.get('https://reqres.in/api/users');
+// async function getUsers() {
+//   const res = await axios.get('https://reqres.in/api/users');
+//   console.log(res);
+// }
+
+// async function createUser() {
+//   const res = await axios.post('https://reqres.in/api/users', {
+//     username: 'ButtersTheChicken',
+//     email: 'butters@gmail.com',
+//     age: 1,
+//   });
+//   console.log(res);
+// }
+// // getUsers();
+// createUser();
+
+// CREATING USER WITH TOKEN --------------------------------
+
+async function getUsers(token) {
+  const res = await axios.get(
+    'https://hack-or-snooze.herokuapp.com/users?skip=0&limit=10',
+    { params: { token } }
+  );
   console.log(res);
 }
 
-async function createUser() {
-  const res = await axios.post('https://reqres.in/api/users', {
-    username: 'ButtersTheChicken',
-    email: 'butters@gmail.com',
-    age: 1,
-  });
+getUsers();
+
+async function signUp(username, password, name) {
+  const res = await axios.post(
+    'https://hack-or-snooze-v3.herokuapp.com/users',
+    {
+      user: { name, username, password },
+    }
+  );
   console.log(res);
 }
-// getUsers();
-createUser();
+
+async function login(username, password) {
+  const res = await axios.post(
+    'https://hack-or-snooze-v3.herokuapp.com/users',
+    {
+      user: { username, password },
+    }
+  );
+  console.log(res);
+  return res.data.token;
+}
+
+async function getUsersWithAuth() {
+  const token = await login('butterschicken', '23412432');
+  getUsers(token);
+}
+signUp('butterschicken', '23412432', 'butters the chicken');
+getUsersWithAuth();
+// login('butterschicken', '23412432');

@@ -240,3 +240,5 @@ You need to await those to get real results
 Functions that use await must be async
 JSON
 Axios parses JSON responses automatically for us
+
+\*\* When you send in get request with AXIOS, you can use params and what ever properties we add in will be added as key value pairs in the querystring automatically.
