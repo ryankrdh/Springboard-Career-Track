@@ -115,6 +115,24 @@ async function getUsersWithAuth() {
   const token = await login('butterschicken', '23412432');
   getUsers(token);
 }
+
+async function createStory() {
+  const token = await login('butterschicken', '23412432');
+  const newStory = {
+    token,
+    story: {
+      author: 'Butters',
+      title: 'BokBokBok',
+      url: 'http://chickens4lyfe.com',
+    },
+  };
+  const res = await axios.post(
+    'https://hack-or-snooze-v3.herokuapp.com/users',
+    newStory
+  );
+  console.log(res);
+}
+
 signUp('butterschicken', '23412432', 'butters the chicken');
 getUsersWithAuth();
 // login('butterschicken', '23412432');
