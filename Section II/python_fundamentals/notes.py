@@ -169,6 +169,7 @@
 # [1, 2, 3] == [1, 2, 3]
 # Use is to check obj identity
 # [1, 2] is [1, 2]  # False
+
 # Truthiness
 # In JS, these things are falsy:
 # 0, 0.0, "", undefined, null, NaN, false
@@ -326,3 +327,4 @@
 # In [1] help([])
 # q to quit that
 
+# to run python in terminal %run file name
