@@ -6,6 +6,8 @@
 # Length of Structure
 # Generic len(x) returns length of x:
 
+# In JS. you use "hello".length. in python you do len("hello")
+
 # # chars in string
 # # items in list
 # # items in dictionary
