@@ -328,3 +328,19 @@
 # q to quit that
 
 # to run python in terminal %run file name
+# Unlike JS python becomes undefined instead of ignored when there are too many/few arguments.
+
+# Do not put default argument first. for example:
+# (this will result in an error)
+# def power(num=1, power):
+#     return num ** power
+
+# However, order doesn't matter if all of the arguments have a default 
+
+def add_limited_numbers(a,b):
+    '''this is a docstring!'''
+    sum = a + b
+    print(f"this is the sum:{sum}")
+    '''this is a SECOND docstring'''
+
+add_limited_numbers(2, 3)
