@@ -12,6 +12,7 @@
 # # items in list
 # # items in dictionary
 # # items in a set
+
 # Lists
 # Like JS arrays:
 
@@ -37,6 +38,16 @@
 # Can retrieve/mutate item with [n]:
 
 # print(fav_foods[0])
+
+# vegan_no_nos = ['eggs', 'meat', 'milk', 'fish']
+# pie_ingredients = ['flour', 'apples', 'sugar', 'eggs']
+
+# for food in pie_ingredients:
+#     if food in vegan_no_nos:
+#         print(f"oh no, cannot eat {food}! not vegan")
+#     else:
+#         print(f"yum. I love {food}")
+
 
 # fav_foods[0] = "taco"
 # fav_foods[-1]   # last item
