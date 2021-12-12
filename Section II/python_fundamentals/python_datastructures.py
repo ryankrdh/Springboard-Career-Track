@@ -288,11 +288,10 @@
 # a_words = {w for w in words if w.startswith("a")}
 
 
+# //-----------------------------------------------------//
 
-# big (O) Notes:
-# Lists
+# Lists ---------------------------------------
 # Like JS arrays:
-
 # Mutable, ordered sequence
 # O(n) to search, add, delete
 # Except when at end: O(1)
@@ -300,7 +299,20 @@
 # alpha = ['a', 'b', 'c']
 # Can use constructor function, list()
 
-# Dictionaries:
+# Dictionaries ----------------------------------
 # Mutable, ordered mapping of keys -> values
 # O(1) runtime for adding, retrieving, deleting items 
 # (like JS object or Map)
+# every key in object in js becomes a string. However, python can use any immutable type.
+
+# Dictionaries in python are purely a data structure to store key value pairs. The keys can be anything that isn't immutable. 
+# in checks for membership of key ("apple" in fruit_colors)
+# [] retrieves item by key(fruit_colors['apple'])
+# cannot use dot notation (fruit_colors.apple) unlike JS
+# failure to find is error so use default. (.get(x, default))
+# ordered by insertion order. only holds key value pair.
+
+# sets ----------------------------------
+
+# unordered, unique cllection of items, like JS Set
+# O(1) runtime for adding, retrieving, deleting
