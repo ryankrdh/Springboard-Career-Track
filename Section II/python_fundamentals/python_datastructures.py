@@ -13,16 +13,6 @@
 # # items in dictionary
 # # items in a set
 
-# Lists
-# Like JS arrays:
-
-# Mutable, ordered sequence
-# O(n) to search, add, delete
-# Except when at end: O(1)
-# Making Lists
-# alpha = ['a', 'b', 'c']
-# Can use constructor function, list()
-
 # This will make list from iterating over argument:
 
 # letters = list("apple")   # ['a', 'p', 'p', 'l', 'e']
@@ -296,3 +286,21 @@
 # evens_to_doubled = {n: n * 2 for n in nums if n % 2 == 0}
 
 # a_words = {w for w in words if w.startswith("a")}
+
+
+
+# big (O) Notes:
+# Lists
+# Like JS arrays:
+
+# Mutable, ordered sequence
+# O(n) to search, add, delete
+# Except when at end: O(1)
+# Making Lists
+# alpha = ['a', 'b', 'c']
+# Can use constructor function, list()
+
+# Dictionaries:
+# Mutable, ordered mapping of keys -> values
+# O(1) runtime for adding, retrieving, deleting items 
+# (like JS object or Map)
