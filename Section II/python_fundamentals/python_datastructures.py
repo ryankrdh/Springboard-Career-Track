@@ -316,3 +316,5 @@
 
 # unordered, unique cllection of items, like JS Set
 # O(1) runtime for adding, retrieving, deleting
+# no duplicates. 
+# things that can go in the set: numbers, strings, boolean. No list since it only accepts immutable.
