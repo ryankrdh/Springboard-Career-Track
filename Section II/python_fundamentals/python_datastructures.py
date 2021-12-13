@@ -323,4 +323,9 @@
  
 # Set Operations:
 # x.union(y) OR x | y: combined set with no duplicates.
-# x.intersection(y) x & y: returns the duplicates only
+# x.intersection(y) OR x & y: returns the duplicates only
+# x.difference(y) OR x - y: returns whats left of x
+# y.difference(x) OR y - x: returns whats left of y
+# x.symmetric_difference(y) OR x ^ y: only returns things that are single. 
+ 
+# The shortcut operators will only work with sets. Named methods will work with iterables by turning them into sets. However, you need to call it on the set, not the iterable.
