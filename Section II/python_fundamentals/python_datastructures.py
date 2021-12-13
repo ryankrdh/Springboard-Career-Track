@@ -317,4 +317,10 @@
 # unordered, unique cllection of items, like JS Set
 # O(1) runtime for adding, retrieving, deleting
 # no duplicates. 
-# things that can go in the set: numbers, strings, boolean. No list since it only accepts immutable.
+# JS needs 
+# things that can go in the set: numbers, strings, boolean. No list/dict since it only accepts immutable.
+# python can only hash immutable items
+ 
+# Set Operations:
+# x.union(y) OR x | y: combined set with no duplicates.
+# x.intersection(y) x & y: returns the duplicates only
