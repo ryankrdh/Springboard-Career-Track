@@ -289,6 +289,8 @@
 
 
 # //-----------------------------------------------------//
+# //-----------------------------------------------------//
+# //-----------------------------------------------------//
 
 # Lists ---------------------------------------
 # Like JS arrays:
@@ -316,7 +318,7 @@
 
 # unordered, unique cllection of items, like JS Set
 # O(1) runtime for adding, retrieving, deleting
-# no duplicates. 
+# no duplicates. not ordered. lets are iterables
 # JS needs 
 # things that can go in the set: numbers, strings, boolean. No list/dict since it only accepts immutable.
 # python can only hash immutable items
@@ -328,4 +330,4 @@
 # y.difference(x) OR y - x: returns whats left of y
 # x.symmetric_difference(y) OR x ^ y: only returns things that are single. 
  
-# The shortcut operators will only work with sets. Named methods will work with iterables by turning them into sets. However, you need to call it on the set, not the iterable.
+# The shortcut operators will only work with sets. Named methods will work with iterables by turning them into sets. However, you need to call it on the set, not the iterable. 

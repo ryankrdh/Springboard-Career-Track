@@ -44,6 +44,14 @@ I would like to meet others just as passionate about creating programs that can 
 Would you be interested in connecting with me to discuss any opportunities?
 
 
+
+** have a bullet point format.
+
+first and last name.
+if you dont mind, can I connect with you on linkedin?
+
+
+
 ------------------------------------------------------------
 
 
