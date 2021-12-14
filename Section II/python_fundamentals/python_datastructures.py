@@ -301,6 +301,11 @@
 # alpha = ['a', 'b', 'c']
 # Can use constructor function, list()
 
+# ** difference between arrays and lists in python:
+# arrays need to be declared. Lists don't.
+# arrays can store data very compactly
+# arrays are great for numerical operations.
+
 # Dictionaries ----------------------------------
 # Mutable, ordered mapping of keys -> values
 # O(1) runtime for adding, retrieving, deleting items 
@@ -331,3 +336,18 @@
 # x.symmetric_difference(y) OR x ^ y: only returns things that are single. 
  
 # The shortcut operators will only work with sets. Named methods will work with iterables by turning them into sets. However, you need to call it on the set, not the iterable. 
+
+# Tuples -------------------------------------
+# They are like lists but immutable. Ordered sequence.
+# making tuples:
+# t1 = (1, 2, 3)
+# t2 = ()
+# t3 = (1,)
+#  advantages are that they are slightly smaller and faster than lists.
+#  Since they are immutable, they can be used as dict keys or put into sets. You can't add list to dict or set since items are mutable. 
+# (1, 2, 3, 1, 2).index(3) (first index where 3 occurs)
+# returns 2
+ 
+#  comprehensions --------------------------------
+# don't exist in js.
+# 
