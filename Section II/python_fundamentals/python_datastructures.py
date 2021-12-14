@@ -350,4 +350,58 @@
  
 #  comprehensions --------------------------------
 # don't exist in js.
-# 
+# Python has filter() and map(), like JS but comprehensions are even more flexible
+# Python's list comprehension is better than filter() and map()
+# [num * 2 for num in nums]
+# [what_to_append for thing in list]
+# combining both mappping and filtering:
+# [n * 2 for n in nums if n % 2 == 0]
+
+# nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# Turn this:
+# evens = []
+# for num in nums:
+#     if num % 2 == 0:
+#         evens.append(num)
+
+# print(evens)
+
+# Into this:
+# evens = [num for num in nums if num % 2 ==0]
+
+# grsdes = ["PASS" if score >= 70 else "FAIL" for score in scores]
+# return morse_code.get(ltr.upper(), '') use to this avoid edge cases
+# def get_morese_code(phrase):
+#   return " ".join([get_letter(char) for char in phrase])
+# -------------------------------
+# filter(function, iterable) example:
+# letters = ['a', 'b', 'd', 'e', 'i', 'j', 'o']
+
+# # a function that returns True if letter is vowel
+# def filter_vowels(letter):
+#     vowels = ['a', 'e', 'i', 'o', 'u']
+#     return True if letter in vowels else False
+
+# filtered_vowels = filter(filter_vowels, letters)
+
+# # converting to tuple
+# vowels = tuple(filtered_vowels)
+# print(vowels)
+
+# Output
+# ('a', 'e', 'i', 'o', 'u')
+
+# --------------------------------
+# map(function, iterable) example
+# def addition(n):
+#     return n + n
+  
+# # We double all numbers using map()
+# numbers = (1, 2, 3, 4)
+# result = map(addition, numbers)
+# print(list(result))
+# Output :
+
+# [2, 4, 6, 8]
+
+# ---------------------------------
