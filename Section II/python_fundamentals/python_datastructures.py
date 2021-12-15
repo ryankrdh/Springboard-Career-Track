@@ -370,9 +370,15 @@
 # evens = [num for num in nums if num % 2 ==0]
 
 # grsdes = ["PASS" if score >= 70 else "FAIL" for score in scores]
+
 # return morse_code.get(ltr.upper(), '') use to this avoid edge cases
+
 # def get_morese_code(phrase):
 #   return " ".join([get_letter(char) for char in phrase])
+
+# {num: num * num for num in range(1, 10) if num % 2 == 0}
+
+# {char for char in 'hello darkness my old friend' if char not in 'aeiou'}
 # -------------------------------
 # filter(function, iterable) example:
 # letters = ['a', 'b', 'd', 'e', 'i', 'j', 'o']
