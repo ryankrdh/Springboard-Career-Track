@@ -316,3 +316,8 @@
 # Python will keep that file open as long as you’re inside the with block. At the point the your code is no longer indented inside that block, it will automatically close the file you’ve used.
 
 # These with-blocks are used for other kinds of resources besides files; to learn more about them, you can search for “python context mananagers”.
+
+
+#  ------------------------------------------------------------
+
+
