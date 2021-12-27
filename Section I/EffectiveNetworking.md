@@ -7,3 +7,5 @@ How to use Meetups: https://www.springboard.com/archeio/download/d4cb7fe909d44e3
 Best Software Engineering conferences: https://techbeacon.com/app-dev-testing/best-software-engineering-conferences-2021
 
 how to write emails: https://80000hours.org/articles/email-scripts/
+
+https://www.wearedevelopers.com/event/python-day-1221

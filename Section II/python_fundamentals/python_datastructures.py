@@ -349,6 +349,7 @@
 # returns 2
  
 #  comprehensions --------------------------------
+# list, dict, set comprehensions.
 # don't exist in js.
 # Python has filter() and map(), like JS but comprehensions are even more flexible
 # Python's list comprehension is better than filter() and map()
@@ -369,7 +370,7 @@
 # Into this:
 # evens = [num for num in nums if num % 2 ==0]
 
-# grsdes = ["PASS" if score >= 70 else "FAIL" for score in scores]
+# grades = ["PASS" if score >= 70 else "FAIL" for score in scores]
 
 # return morse_code.get(ltr.upper(), '') use to this avoid edge cases
 
