@@ -139,3 +139,10 @@
 
 # >>> tri
 # <Triangle a=3 b=4>
+
+# -------------------------------------------------------
+
+# get/set attribute of object: o.name
+# call method: o.method()
+# retrieve value from dictionary: o['my-key']
+
