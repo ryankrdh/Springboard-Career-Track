@@ -362,6 +362,7 @@
 # pip install -r requirements.txt
 
 # writing to a file ------------------------------------------
+# a, w, r (append, write, read)
 # file = open('write_me.txt', 'a')
 # file.write('\nBYE!!!')
 # file.close()
