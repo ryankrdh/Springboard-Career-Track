@@ -360,3 +360,8 @@
 # // to install the requirements:
 #  create a virtual environment first.
 # pip install -r requirements.txt
+
+# writing to a file ------------------------------------------
+# file = open('write_me.txt', 'a')
+# file.write('\nBYE!!!')
+# file.close()
