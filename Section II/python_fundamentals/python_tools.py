@@ -353,3 +353,10 @@
 # source venv/bin/activate
 # pip freeze
 # pip freeze > requirements.txt
+
+# .gitignore
+    # include venv/
+
+# // to install the requirements:
+#  create a virtual environment first.
+# pip install -r requirements.txt
