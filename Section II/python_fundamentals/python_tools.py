@@ -321,3 +321,26 @@
 #  ------------------------------------------------------------
 
 
+# Error Handling Pattern
+
+def bounded_avg(nums):
+    # Return avg of nums (make sure nums are 1-100)
+
+    for n in nums:
+        if n < 1 or n > 100:
+            raise ValueError("Outside bounds of 1-100")
+
+    return sum(nums) / len(nums)
+
+def handle_data():
+    # Process data from database
+
+    ages = get_ages(from_my_db)
+
+    try:
+        avg = bounded_avg(ages)
+        print("average was", avg)
+
+    except ValueError as exc:
+        # exc is exception object -- you can examine it!
+        print("Invalid age in list of ages")
