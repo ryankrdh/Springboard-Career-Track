@@ -323,24 +323,33 @@
 
 # Error Handling Pattern
 
-def bounded_avg(nums):
-    # Return avg of nums (make sure nums are 1-100)
+# def bounded_avg(nums):
+#     """ Return avg of nums (make sure nums are 1-100) """
 
-    for n in nums:
-        if n < 1 or n > 100:
-            raise ValueError("Outside bounds of 1-100")
+#     for n in nums:
+#         if n < 1 or n > 100:
+#             raise ValueError("Outside bounds of 1-100")
 
-    return sum(nums) / len(nums)
+#     return sum(nums) / len(nums)
 
-def handle_data():
-    # Process data from database
+# def handle_data():
+#     """ Process data from database """
 
-    ages = get_ages(from_my_db)
+#     ages = get_ages(from_my_db)
 
-    try:
-        avg = bounded_avg(ages)
-        print("average was", avg)
+#     try:
+#         avg = bounded_avg(ages)
+#         print("average was", avg)
 
-    except ValueError as exc:
-        # exc is exception object -- you can examine it!
-        print("Invalid age in list of ages")
+#     except ValueError as exc:
+#         # exc is exception object -- you can examine it!
+#         print("Invalid age in list of ages")  
+
+
+# Virtual Environment ----------------------------------------------------
+
+# cd my_project_directory
+# python3 -m venv venv
+# source venv/bin/activate
+# pip freeze
+# pip freeze > requirements.txt
