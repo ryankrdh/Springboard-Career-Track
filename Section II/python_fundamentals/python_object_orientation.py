@@ -146,3 +146,10 @@
 # call method: o.method()
 # retrieve value from dictionary: o['my-key']
 
+
+# class methods with the dunder (Ex:__init__) will be called automatically when class is called.
+
+class Triangle:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
