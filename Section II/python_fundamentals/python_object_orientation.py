@@ -1,3 +1,20 @@
+# Object Oriented Programming
+# Python is a multi-paradigm programming language. It supports different programming approaches.
+
+# One of the popular approaches to solve a programming problem is by creating objects. This is known as Object-Oriented Programming (OOP).
+
+# An object has two characteristics:
+
+# attributes
+# behavior
+# Let's take an example:
+
+# A parrot is an object, as it has the following properties:
+
+# name, age, color as attributes
+# singing, dancing as behavior
+# The concept of OOP in Python focuses on creating reusable code. This concept is also known as DRY (Don't Repeat Yourself).
+
 # Python Object Orientation
 # Intro
 # OO Review
@@ -146,8 +163,8 @@
 # call method: o.method()
 # retrieve value from dictionary: o['my-key']
 
-
 # class methods with the dunder (Ex:__init__) will be called automatically when class is called.
+# __init__ is basically the constructor you write in js
 
 # class Triangle:
 #     def __init__(self, a, b):
