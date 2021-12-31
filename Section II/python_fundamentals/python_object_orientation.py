@@ -175,3 +175,9 @@
 
 # t = Triangle(3,4)
 # t.get_hypotenuse()
+
+
+# note: 
+# class decorators
+# @classmethod
+# super() is parent, super().__init__(...) is parent initializer
