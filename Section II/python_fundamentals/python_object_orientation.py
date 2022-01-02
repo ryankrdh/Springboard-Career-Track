@@ -181,3 +181,28 @@
 # class decorators
 # @classmethod
 # super() is parent, super().__init__(...) is parent initializer
+
+# inheritance -------------------------------------------
+
+class Triangle:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+    
+    @classmethod
+    def random(cls):
+        return cls(randint(1,20), randint(1,20))
+
+class ColoredTriangle(Triangle):
+
+    def __init__(self, a, b, color):
+        # instead of self.a = a use
+        super().__init__(a,b)
+        self.color = color
+
+# To run the code:
+# %run colored_triangle.py
+# t = ColoredTriangle(3, 4, purple)
+# t.a
+
+# class methods gets called automatically unlike object methods
