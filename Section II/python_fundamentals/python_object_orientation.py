@@ -199,6 +199,8 @@ class ColoredTriangle(Triangle):
         # instead of self.a = a use
         super().__init__(a,b)
         self.color = color
+    def __repr__(self):
+        return f"<Triangle(a={self.a}, b={self.b})>"
 
 # To run the code:
 # %run colored_triangle.py
