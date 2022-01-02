@@ -184,23 +184,23 @@
 
 # inheritance -------------------------------------------
 
-class Triangle:
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
+# class Triangle:
+#     def __init__(self, a, b):
+#         self.a = a
+#         self.b = b
     
-    @classmethod
-    def random(cls):
-        return cls(randint(1,20), randint(1,20))
+#     @classmethod
+#     def random(cls):
+#         return cls(randint(1,20), randint(1,20))
 
-class ColoredTriangle(Triangle):
+# class ColoredTriangle(Triangle):
 
-    def __init__(self, a, b, color):
-        # instead of self.a = a use
-        super().__init__(a,b)
-        self.color = color
-    def __repr__(self):
-        return f"<Triangle(a={self.a}, b={self.b})>"
+#     def __init__(self, a, b, color):
+#         # instead of self.a = a use
+#         super().__init__(a,b)
+#         self.color = color
+#     def __repr__(self):
+#         return f"<Triangle(a={self.a}, b={self.b})>"
 
 # To run the code:
 # %run colored_triangle.py
