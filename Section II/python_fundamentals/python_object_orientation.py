@@ -208,3 +208,6 @@ class ColoredTriangle(Triangle):
 # t.a
 
 # class methods gets called automatically unlike object methods
+
+# __repr__ is unambiguous, definitive, for developers
+# __str__ is for customers, looser, more informal.
