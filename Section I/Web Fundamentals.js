@@ -19,7 +19,7 @@ https://docs.google.com/document/d/1eygvKotStJ8NOVc6U-Cm31VQCASD2Du4hjk9y6oRsPs/
 */
 
 /* 
-******** QUESTIONS ********
+******** TODO ********
 
 Avoiding plagiarism.
 

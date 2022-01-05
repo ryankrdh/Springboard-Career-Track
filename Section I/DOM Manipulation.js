@@ -519,7 +519,6 @@ toggleSwitch.addEventListener('click', function (e) {
 
 
 
-// QUESTION:
 
 
 const toggleSwitch = document.querySelector('input[type="checkbox"]');

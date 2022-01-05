@@ -664,8 +664,5 @@ const greeter = {
   }
 };
 
-// QUESTIONS --------------------------------------------------
-
-// prototypes, classes, constructors. class methods
 
 
