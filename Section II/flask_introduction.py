@@ -76,3 +76,22 @@
 # ... lots of stuff ...
 # Successfully installed flask Werkzeug Jinja2 ...
 # Cleaning up...
+
+# Making An App
+# Need to create a “flask application”:
+
+# from flask import Flask
+
+# app = Flask(__name__)
+# When we create a Flask application, it needs to know what module to scan for things like routes (covered later)–so the __name__ is required and should always be written like that.
+
+# Running Flask App
+# (venv) $ flask run
+# (Control-C to quit)
+
+# If your Flask app file isn’t called app:
+
+# (venv) $ FLASK_APP=app.py flask run
+# FLASK_APP=app.py is passing an “environmental variable”
+
+# Only has this meaning while this program is running
