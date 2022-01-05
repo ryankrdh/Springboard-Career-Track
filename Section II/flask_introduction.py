@@ -57,3 +57,22 @@
 # Using Flask
 
 # from flask import Flask, request
+
+# What Do Web Applications Need To Do?
+# handle web requests
+# produce dynamic HTML
+# handle forms
+# handle cookies
+# connect to databases
+# provide user log-in/log-out
+# cache pages for performance
+# & more!
+# Flask Apps
+# Installing Flask
+# $ python3 -m venv venv
+# $ source venv/bin/activate
+
+# (venv)$ pip3 install flask
+# ... lots of stuff ...
+# Successfully installed flask Werkzeug Jinja2 ...
+# Cleaning up...
