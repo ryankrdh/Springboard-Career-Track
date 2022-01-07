@@ -206,3 +206,15 @@
 #     # TODO: save that into a database!
 
 #     return f'<h1>Received "{comment}".</h1>'
+
+# request.form is a dict-like object of POST parameters.
+
+# Variables in a URL
+# Motivation
+# Want user info pages for each user:
+# http://localhost:5000/user/whiskey
+# http://localhost:5000/user/spike
+# We don’t want every possible username as a separate route
+# Want to show blog posts (read from database) by id:
+# http://localhost:5000/post/1
+# http://localhost:5000/post/2
