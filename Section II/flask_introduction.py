@@ -160,3 +160,19 @@
 # What Routes Return
 # Routes should return strings!
 
+# GET and POST
+# Requests
+# Flask provides an object, request, to represent web requests
+
+# from flask import request
+# Handling Query Arguments
+# For a url like /search?term=fun
+
+# @app.route("/search")
+# def search():
+#     """Handle GET requests like /search?term=fun"""
+
+#     term = request.args["term"]
+#     return f"<h1>Searching for {term}</h1>"
+# request.args is a dict-like object of query parameters.
+
