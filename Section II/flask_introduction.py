@@ -251,3 +251,11 @@
 #     post = POSTS[post_id]
 
 #     return f"<h1>Post #{post_id}</h1><p>{post}</p>"
+
+# <int:variable_name> in @app.route
+# Converts to integer when calling function
+# Can have more than one:
+
+# @app.route("/products/<category>/<int:product_id>")
+# def product_detail(category, product_id):
+#    """Show detail page for product."""
