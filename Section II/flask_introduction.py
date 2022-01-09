@@ -305,3 +305,6 @@
 
 # if your Flask app file isn't called app:
 #     (venv) $ FLASK_APP=app.py flask run
+
+# environment: development vs production
+#     development main difference is we get debugger that will be shown for unhandled exceptions. And the server will be reloaded when the code changes
