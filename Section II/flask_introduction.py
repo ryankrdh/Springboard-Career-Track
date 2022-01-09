@@ -297,3 +297,8 @@
 # Handling users and log in
 # Flask Documentation
 # The Flask documentation (http://flask.pocoo.org/)
+
+
+# -------------------------------------------------------------------
+
+# from flask import Flask, request 
