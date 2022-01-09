@@ -286,3 +286,14 @@
 # Feels more like “extra info about page”
 
 # Often used when coming from form
+
+# Looking Ahead
+# Coming Up
+# HTML templates
+# Handling cookies
+# APIs and Flask
+# Using databases with Flask
+# Auto-generating forms
+# Handling users and log in
+# Flask Documentation
+# The Flask documentation (http://flask.pocoo.org/)
