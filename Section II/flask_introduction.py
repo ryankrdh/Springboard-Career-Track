@@ -308,3 +308,11 @@
 
 # environment: development vs production
 #     development main difference is we get debugger that will be shown for unhandled exceptions. And the server will be reloaded when the code changes
+
+# FLASK_ENV=development flask run
+
+# or we can set it as development so we dont have to set it every time we run the server
+# export FLASK_ENV=development
+# flask run 
+
+# @ traditionally means its a decorator  
