@@ -302,3 +302,6 @@
 # -------------------------------------------------------------------
 
 # from flask import Flask, request 
+
+# if your Flask app file isn't called app:
+#     (venv) $ FLASK_APP=app.py flask run
