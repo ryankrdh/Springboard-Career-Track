@@ -86,3 +86,8 @@ def find_post(id):
     # post = POSTS[id]
     post = POSTS.get(id, "Post not found")
     return f"<p>{post}</p>"
+
+@app.route("/r/<subreddit>/comments/<int:post_id>")
+def show_comments(subreddit, post_id):
+    return f"<rrh1>Viewing comments for post with id: {post_id} from the {subreddit} Subreddit</rrh1>"
+
