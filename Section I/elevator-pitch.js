@@ -44,6 +44,8 @@ I would like to meet others just as passionate about creating programs that can 
 Would you be interested in connecting with me to discuss any opportunities?
 
 
+Well I've been working in the dental field for about 9 years. I mainly work with patients that have severe dental anxiety.  I've built and maintained an accelerated hygiene program for couple dental offices doubling their hygiene revenue. During the pandemic I learned some basic programming and created a choice driven story game for kids and fell in love with the industry. I've been learning and improving my programming skills every night after work in the hopes of meeting others just as passionate about creating programs that can put a smile on peoples' faces. 
+
 
 ** have a bullet point format.
 

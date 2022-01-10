@@ -316,3 +316,9 @@
 # flask run 
 
 # @ traditionally means its a decorator  
+
+
+# --------------
+# QUESTIONS
+# I need explanations on how the code works in this video:
+# https://www.youtube.com/watch?v=MYAEv3JoenI
