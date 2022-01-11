@@ -72,3 +72,8 @@ def my_page():
     """Show mypage, an example of template inheritance"""
 
     return render_template("mypage.html")
+
+
+
+
+# -----------------------------------------NOTES--------------------------------------
