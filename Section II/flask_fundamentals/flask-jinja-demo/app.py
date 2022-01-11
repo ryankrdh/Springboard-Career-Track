@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 from random import choice, sample
+import code; code.interact(local=dict(globals(), **locals()))
 
 from flask_debugtoolbar import DebugToolbarExtension
 
@@ -76,4 +77,9 @@ def my_page():
 
 
 
-# -----------------------------------------NOTES--------------------------------------
+# -----------------------------------------NOTES-------------------------------------- 
+
+# How can templates help?
+# * Produce HTML
+# * Allows your responses to be dynamically created
+# * can use variables passed from your views
