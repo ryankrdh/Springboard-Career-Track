@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 from random import choice, sample
-import code; code.interact(local=dict(globals(), **locals()))
+# import code; code.interact(local=dict(globals(), **locals()))
 
 from flask_debugtoolbar import DebugToolbarExtension
 
@@ -83,3 +83,11 @@ def my_page():
 # * Produce HTML
 # * Allows your responses to be dynamically created
 # * can use variables passed from your views
+
+# for debugging
+# import code; code.interact(local=dict(globals(), **locals()))
+
+# Jinja
+# Jinja is a popular template system for Python, used by Flask.
+
+# There are many template systems for Python. Jinja is a particularly popular one. Django has its own template system, which served as an inspiration for Jinja.
