@@ -141,3 +141,13 @@ def my_page():
 # For now, that secret key doesn’t really have to be something secret (it’s fine to check this file into your GitHub, and you can use any string for the SECRET_KEY.
 
 # Later, when we talk about security & deployment, we’ll talk about when and how to actually keep this secret.
+
+# Using The Toolbar
+# Request Vars
+# Explore what Flask got in request from browser
+# HTTP Headers
+# Can be useful to explore all headers your browser sent
+# Templates
+# What templates were used, and what was passed to them?
+# Route List
+# What are all routes your app defines?
