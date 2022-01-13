@@ -91,3 +91,34 @@ def my_page():
 # Jinja is a popular template system for Python, used by Flask.
 
 # There are many template systems for Python. Jinja is a particularly popular one. Django has its own template system, which served as an inspiration for Jinja.
+
+# Templates Directory
+# Your templates directory lives under your project directory. Flask knows to look for them there.
+
+# my-project-directory/
+#   venv/
+#   app.py
+#   templates/
+#     hello.html
+# Our Template
+# demo/templates/hello.html
+# <!DOCTYPE html>
+# <html>
+# <head>
+#   <title>This is the hello page</title>
+# </head>
+# <body>
+#   <h1>HELLO!</h1>
+# </body>
+# </html>
+# Rendering a Template
+# @app.route('/')
+# def index():
+#     """Return homepage."""
+
+#     return render_template("hello.html")
+# Will find hello.html in templates/ automatically.
+
+# Flask Debug Toolbar
+# Ultra-useful add-on for Flask that shows, in browser, details about app.
+
