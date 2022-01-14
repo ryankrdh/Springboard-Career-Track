@@ -234,3 +234,21 @@ def my_page():
 #   </form>
 # </body>
 # </html>
+
+# Our Route
+# @app.route('/greet-2')
+# def offer_better_greeting():
+#     """Give player optional compliments."""
+
+#     player = request.args["person"]
+
+#     # if they didn't tick box, `wants_compliments` won't be
+#     # in query args -- so let's use safe `.get()` method of
+#     # dict-like things
+#     wants = request.args.get("wants_compliments")
+
+#     nice_things = sample(COMPLIMENTS, 3) if wants else []
+
+#     return render_template("compliments.html",
+#                            compliments=nice_things, 
+#                            name=player)
