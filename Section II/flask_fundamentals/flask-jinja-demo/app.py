@@ -151,3 +151,57 @@ def my_page():
 # What templates were used, and what was passed to them?
 # Route List
 # What are all routes your app defines?
+
+# Dynamic Templates
+# Jinja will replace things like {{ msg }} with value of msg passed when rendering:
+
+# templates/lucky.html
+# <h1>Hi!</h1>
+
+# <p>Lucky number: {{ lucky_num }}</p>
+ 
+# app.py
+# @app.route("/lucky")
+# def show_lucky_num():
+#     "Example of simple dynamic template"
+
+#     num = randint(1, 100)
+
+#     return render_template("lucky.html",
+#                           lucky_num=num)
+# Example: Greeting
+# Let’s make a form that gathers a user’s name.
+
+# On form submission, it should use that name & compliment the user.
+
+# Our Form
+# demo/templates/form.html
+# <!DOCTYPE html>
+# <html>
+# <body>
+#   <h1>Hi There!</h1>
+#   <form action="/greet">
+#     <p>What's your name?  <input name="person"></p>
+#     <button>Go!</button>
+#   </form>
+# </body>
+# </html>
+# Our Template
+# demo/templates/compliment.html
+# <!DOCTYPE html>
+# <html>
+# <body>
+#   <p>Hi {{ name }}! You're so {{ compliment }}!</p>
+# </body>
+# </html>
+# Our Route
+# @app.route('/greet')
+# def offer_greeting():
+#     """Give player compliment."""
+
+#     player = request.args["person"]
+#     nice_thing = choice(COMPLIMENTS)
+
+#     return render_template("compliment.html", 
+#                            name=player, 
+#                            compliment=nice_thing)
