@@ -205,3 +205,32 @@ def my_page():
 #     return render_template("compliment.html", 
 #                            name=player, 
 #                            compliment=nice_thing)
+
+# Example 2: Better Greeting!
+# Let’s improve this:
+
+# We’ll ask the user if they want compliments & only show if so
+
+# We’ll show a list of 3 random compliments, like this:
+
+# You're so:
+# <ul>
+#   <li>clever</li>
+#   <li>tenacious</li>
+#   <li>smart</li>
+# </ul>
+# Our Form
+# demo/templates/form-2.html
+# <!DOCTYPE html>
+# <html>
+# <body>
+#   <h1>Better Hi There!</h1>
+#   <form action="/greet-2">
+#     <p>What's your name? <input name="person"></p>
+#     <p>Want compliments?
+#       <input type="checkbox" name="wants_compliments">
+#     </p>  
+#     <button>Go!</button>
+#   </form>
+# </body>
+# </html>
