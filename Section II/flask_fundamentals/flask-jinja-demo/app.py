@@ -252,3 +252,40 @@ def my_page():
 #     return render_template("compliments.html",
 #                            compliments=nice_things, 
 #                            name=player)
+
+# Example: Greeting
+# Let’s make a form that gathers a user’s name.
+
+# On form submission, it should use that name & compliment the user.
+
+# Our Form
+# demo/templates/form.html
+# <!DOCTYPE html>
+# <html>
+# <body>
+#   <h1>Hi There!</h1>
+#   <form action="/greet">
+#     <p>What's your name?  <input name="person"></p>
+#     <button>Go!</button>
+#   </form>
+# </body>
+# </html>
+# Our Template
+# demo/templates/compliment.html
+# <!DOCTYPE html>
+# <html>
+# <body>
+#   <p>Hi {{ name }}! You're so {{ compliment }}!</p>
+# </body>
+# </html>
+# Our Route
+# @app.route('/greet')
+# def offer_greeting():
+#     """Give player compliment."""
+
+#     player = request.args["person"]
+#     nice_thing = choice(COMPLIMENTS)
+
+#     return render_template("compliment.html", 
+#                            name=player, 
+#                            compliment=nice_thing)
