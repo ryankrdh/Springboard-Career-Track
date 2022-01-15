@@ -19,8 +19,7 @@ def show_form():
     """Shows greeter V1 Form"""
     return render_template("form.html")
 
-
-@app.route('/form-2')
+app.route('/form-2')
 def show_form_2():
     """Shows greeter V2 Form"""
     return render_template("form_2.html")
