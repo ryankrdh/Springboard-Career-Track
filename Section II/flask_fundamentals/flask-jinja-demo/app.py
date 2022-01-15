@@ -289,3 +289,56 @@ def my_page():
 #     return render_template("compliment.html", 
 #                            name=player, 
 #                            compliment=nice_thing)
+
+# Example 2: Better Greeting!
+# Let’s improve this:
+
+# We’ll ask the user if they want compliments & only show if so
+
+# We’ll show a list of 3 random compliments, like this:
+
+# You're so:
+# <ul>
+#   <li>clever</li>
+#   <li>tenacious</li>
+#   <li>smart</li>
+# </ul>
+# Our Form
+# demo/templates/form-2.html
+# <!DOCTYPE html>
+# <html>
+# <body>
+#   <h1>Better Hi There!</h1>
+#   <form action="/greet-2">
+#     <p>What's your name? <input name="person"></p>
+#     <p>Want compliments?
+#       <input type="checkbox" name="wants_compliments">
+#     </p>  
+#     <button>Go!</button>
+#   </form>
+# </body>
+# </html>
+# Our Route
+# @app.route('/greet-2')
+# def offer_better_greeting():
+#     """Give player optional compliments."""
+
+#     player = request.args["person"]
+
+#     # if they didn't tick box, `wants_compliments` won't be
+#     # in query args -- so let's use safe `.get()` method of
+#     # dict-like things
+#     wants = request.args.get("wants_compliments")
+
+#     nice_things = sample(COMPLIMENTS, 3) if wants else []
+
+#     return render_template("compliments.html",
+#                            compliments=nice_things, 
+#                            name=player)
+# Conditionals in Jinja
+# {% if CONDITION_EXPR %} ... {% endif %}
+
+# {% if compliments %}
+#   You're so:
+#   ...
+# {% endif %}
