@@ -21,7 +21,7 @@
     <section class='messages'>
       <!-- with_categories=true allows you to access the 'error' or 'success' -->
       {% for category, msg in get_flashed_messages(with_categories=true)%}
-      <p class="{{category}}">{{msg}}</p>
+      <p class='{{category}}'>{{msg}}</p>
       {% endfor %} 
     </section>
     {% block content %} {% endblock %}
