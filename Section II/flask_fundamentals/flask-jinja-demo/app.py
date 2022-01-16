@@ -11,12 +11,6 @@ debug = DebugToolbarExtension(app)
 
 COMPLIMENTS = ["cool", "clever", "tenacious", "awesome", "Pythonic"]
 
-@app.route('/old-home-page')
-def redirect_to_home():
-    """redirects to new home page"""
-    return redirect("/")
-
-MOVIES = ['Amadeus', 'chicken Run', 'Dances With Wolves']
 
 @app.route('/')
 def index():
@@ -80,21 +74,7 @@ def my_page():
     return render_template("mypage.html")
 
 
-# ----------------------------movies app-----------------------------
 
-@app.route('/movies')
-def show_all_movies():
-    """Show list of all movies in fake DB"""
-    return render_template('movies.html', movies=MOVIES)
-
-@app.route('/movies/new', methods=["POST"])
-def add_movie():
-    title = request.form['title']
-    # Add to pretend DB
-    MOVIES.append(title)
-    flash("Created your movie!")
-    flash("Good choice!")
-    return redirect('/movies')
 
 
 # -----------------------------------------NOTES-------------------------------------- 
