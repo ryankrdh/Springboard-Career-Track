@@ -1,3 +1,4 @@
+from operator import truediv
 from flask import Flask, request, render_template, redirect, flash
 from random import choice, sample
 # import code; code.interact(local=dict(globals(), **locals()))
