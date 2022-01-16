@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, redirect
 
 app = Flask(__name__)
 
@@ -26,6 +26,7 @@ def say_hello():
     </html>
     """
     return html
+
 
 @app.route('/goodbye')
 def say_bye():

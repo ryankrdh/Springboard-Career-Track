@@ -24,3 +24,21 @@
 #  If not click the link.</p>
 # Your browser won’t typically show you this page — it makes the re-request so fast you don’t even notice it happened!
 
+
+
+# --------------------------- EXAMPLES ----------------------------
+
+from flask import Flask, request, render_template
+from random import choice, sample
+# import code; code.interact(local=dict(globals(), **locals()))
+
+from flask_debugtoolbar import DebugToolbarExtension
+
+
+COMPLIMENTS = ["cool", "clever", "tenacious", "awesome", "Pythonic"]
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = "oh-so-secret"
+# To remove debug tool interception
+app.config['DEBUG_TB_INTERCEPT_REDIRECTS']
+debug = DebugToolbarExtension(app)

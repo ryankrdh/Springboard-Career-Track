@@ -9,7 +9,6 @@ COMPLIMENTS = ["cool", "clever", "tenacious", "awesome", "Pythonic"]
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "oh-so-secret"
-
 debug = DebugToolbarExtension(app)
 
 
