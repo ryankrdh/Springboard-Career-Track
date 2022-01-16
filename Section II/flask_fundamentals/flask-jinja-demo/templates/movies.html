@@ -1,6 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movies list</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <script src="http://unpkg.com/jquery"></script>
+</head> 
+<body>
+
 <h1>All Movies</h1>
 {% for msg in get_flashed_messages()%}
-    <p>{{msg}}</p>
+<p>{{msg}}</p>
 {% endfor %} 
 <ul>
     {% for movie in movies %}
@@ -12,3 +21,4 @@
     <input type="text" placeholder="movie title" name='title'>
     <button>Submit</button>
 </form>
+</body>

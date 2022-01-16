@@ -6,7 +6,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "oh-so-secret"
 # To remove debug tool interception
-app.config['DEBUG_TB_INTERCEPT_REDIRECTS']
+app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 debug = DebugToolbarExtension(app)
 
 COMPLIMENTS = ["cool", "clever", "tenacious", "awesome", "Pythonic"]
