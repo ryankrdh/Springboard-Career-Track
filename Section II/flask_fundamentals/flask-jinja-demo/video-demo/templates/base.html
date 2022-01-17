@@ -18,13 +18,19 @@
     <a href="/hello">Hello</a>
   </nav>
   <main id="content">
+  <!-- declares a variable you can use within the template, to check if there are "messages" -->
+  <!-- makes it so that the flash section wont show up needlessly -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
     <section class='messages'>
       <!-- with_categories=true allows you to access the 'error' or 'success' -->
-      {% for category, msg in get_flashed_messages(with_categories=true)%}
+      {% for category, msg in messages %}
       <p class='{{category}}'>{{msg}}</p>
       {% endfor %} 
     </section>
-  {% block content %} {% endblock %}
+    {% endif %}
+    {% endwith %}
+    {% block content %} {% endblock %}
   </main>
 
   <script src="/static/app.js"></script>

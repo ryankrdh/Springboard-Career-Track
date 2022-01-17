@@ -1,5 +1,6 @@
 from operator import truediv
-from flask import Flask, request, render_template, redirect, flash
+from optparse import AmbiguousOptionError
+from flask import Flask, request, render_template, redirect, flash, jsonify
 from random import choice, sample
 # import code; code.interact(local=dict(globals(), **locals()))
 from flask_debugtoolbar import DebugToolbarExtension
@@ -164,3 +165,8 @@ def add_movie():
         MOVIES.add(title)
         flash("Created your movie!", 'success')
     return redirect('/movies')
+
+@app.route('/movies/json')
+def json_text():
+    # info = {"name": "Whiskey", "animal": "dog"}
+    return jsonify(list(MOVIES))
