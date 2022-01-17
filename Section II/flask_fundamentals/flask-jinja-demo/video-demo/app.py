@@ -7,7 +7,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "oh-so-secret"
-# To remove debug tool interception
+# To remove debug tool interception during redirects
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 debug = DebugToolbarExtension(app)
 
@@ -123,16 +123,13 @@ def save_comment():
       </ul>
     """
 
-
 @app.route('/r/<subreddit>')
 def show_subreddit(subreddit):
     return f"<h1>Browsing The {subreddit} Subreddit</h1>"
 
-
 @app.route("/r/<subreddit>/comments/<int:post_id>")
 def show_comments(subreddit, post_id):
     return f"<h1>Viewing comments for post with id: {post_id} from the {subreddit} Subreddit</h1>"
-
 
 POSTS = {
     1: "I like chicken tenders",
@@ -141,12 +138,10 @@ POSTS = {
     4: "YOLO OMG (kill me)"
 }
 
-
 @app.route('/posts/<int:id>')
 def find_post(id):
     post = POSTS.get(id,  "Post not found")
     return f"<p>{post}</p>"
-
 
 # ----------------------------movies app-----------------------------
 
