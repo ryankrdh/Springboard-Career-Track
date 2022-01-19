@@ -92,7 +92,6 @@ automate hard processes focusing on daily life activities.
 */
 
 /* 
-cheat sheets
 
 
 ***** When you message me or another recruiter about interest in our open positions, include your resume, the role you are interested in, and then tell me your why. Bonus points if you personalize the message.
