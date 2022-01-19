@@ -92,6 +92,12 @@ automate hard processes focusing on daily life activities.
 */
 
 /* 
+
+
+***** When you message me or another recruiter about interest in our open positions, include your resume, the role you are interested in, and then tell me your why. Bonus points if you personalize the message.
+*****
+
+
 I'm not good at estimating how long a project will take me.
 I tend to derail when I learn things. curious about everything.
 
