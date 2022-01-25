@@ -28,6 +28,16 @@
 
 /*
 
+TELL ME ABOUT YOURSELF.
+
+Well, my name is Ryan, and I've been working in the dental field for about 9 years. I got into programming back in Nov 2020 during the quarantine. I took a tutorial on javascript, html, css, python and jumped into solving algorithms and datastructures for fun. 
+
+The reason I got into coding was because in dental, you study the medicine, anatomy, and learn the clinical skills and then you work on patients. There really is no challenges you face in my field that you can face in programming. I would constantly get stuck when programming, I feel helpless and hopeless but by learning how to take bite sized challenges of the problem itself, I can understand it and come up with a solution. 
+
+Eventually I found myself programing every night after work because I loved the feeling of overcoming constant hurdles the programming has to offer. So I wanted to take this to the next level and make it my career. I joined a bootcamp back in sept 2021. What I'm looking for is, a group of people passionate about tech. priortizing communciation, teamwork, and empathy. Because I believe that to have a healthy work culture and to achieve maximum efficiency, communication, teamwork and empathy has to be there. 
+
+
+
 Hello, nice to meet you. My name is Ryan and I've been working in the dental field for about 9 years. I mainly work with patients that have severe anxiety.
 
 I recently joined a full stack boot camp back in 2021 planning to switch my career to a software engineer role. 
@@ -36,6 +46,7 @@ I've built and maintained an accelerated hygiene program for couple dental offic
 
 I'm particularly interested in working for startup-like environments where I can grow fast and be curious. During the quarantine, knowing how the kids are bored at home, I built a choice-driven story app. 
 
+* In dental, you study the medications, anatomy, and improve your clinical skills and perform on patients. You just can't find difficult problems to challenge yourself in my field. 
 I highly value communication and teamwork because I believe that even as a programmer, there is a limit to what you can achieve alone. 
 
 I would like to meet others just as passionate about creating programs that can make peoples' lives easier. 
