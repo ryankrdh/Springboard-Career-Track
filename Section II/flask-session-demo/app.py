@@ -258,8 +258,8 @@ def show_secret_invite():
 # Expiration: how long should the browser remember this?
 # Can be set to a time; default is “as long as web browser is running” (session cookie)
 # Domain: which domains should this cookie be sent to?
-# Send only to books.site.com or everything at site.com?
-# HttpOnly - HTTP-only cookies aren’t accessible via any kind of JavaScript
+# Send only to books.site.com or everything at site.com? 
+# HttpOnly - HTTP-only cookies aren’t accessible via any kind of J avaScript
 # Useful for cookies that contain server-side information and don’t need to be available to JavaScript.
 
 # Comparison of Types of Browser Storage
@@ -274,3 +274,30 @@ def show_secret_invite():
 # Cookies can be made secure by setting the httpOnly flag as true for that cookie. This prevents client-side access to that cookie
 # Sent from the browser to the server for every request to the same domain
 # Set usually from server-side. Can we read by a server
+
+# Using Session in Flask
+# Import session from flask
+# Set a secret_key
+# from flask import Flask, session
+
+# app = Flask(__name__)
+# app.config["SECRET_KEY"] = "SHHHHHHHHHHH SEEKRIT"
+# Now, in routes, you can treat session as a dictionary:
+
+# @app.route('/some-route')
+# def some_route():
+#     """Set fav_number in session."""
+
+#     session['fav_number'] = 42
+#     return "Ok, I put that in the session."
+# To get things out, treat it like a dictionary:
+
+# from flask import session
+
+# @app.route('/my-route')
+# def my_route():
+#     """Return information using fav_number from session."""
+
+#     return f"Favorite number is {session['fav_number']}"
+# It will stay the same kind of data (in this example, an integer)
+
