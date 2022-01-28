@@ -301,3 +301,20 @@ def show_secret_invite():
 #     return f"Favorite number is {session['fav_number']}"
 # It will stay the same kind of data (in this example, an integer)
 
+# Are “Sessions” Related to “Session Cookies”?
+# Not directly, no.
+
+# They both just use the term “session” but to mean something different.
+
+# By default: Flask sessions use browser-lifetime cookies (“session cookies”). So a Flask session lasts as long as your browser window.
+
+# Yes, you can change that (read the Flask docs!)
+
+# This distinction isn’t too important right now, but the terminology sometimes comes up in interviews, so be sure to review this material!
+
+# Server-Side Sessions
+# Some web frameworks store session data on the server instead
+# Often, in a relational database
+# Send a cookie with “session key”, which tells server how to get the real data
+# Useful when you have lots of session data, or for complex setups
+# Flask can do this with the add-on Flask-Session
