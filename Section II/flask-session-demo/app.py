@@ -319,11 +319,6 @@ def show_secret_invite():
 # Useful when you have lots of session data, or for complex setups
 # Flask can do this with the add-on Flask-Session
 
-
-# from flask import Flask
-# from datetime import datetime
-# import re
-
 # app = Flask(__name__)
 
 # @app.route("/")
