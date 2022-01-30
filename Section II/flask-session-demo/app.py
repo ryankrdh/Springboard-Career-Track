@@ -348,3 +348,8 @@ def show_secret_invite():
 # from werkzeug.middleware.proxy_fix import ProxyFix
 # app.wsgi_app = ProxyFix(app.wsgi_app)
 # Wrapping app.wsgi_app instead of app means that app still points at your Flask application, not at the middleware, so you can continue to use and configure app directly.
+
+# Message Flashing
+# Good applications and user interfaces are all about feedback. If the user does not get enough feedback they will probably end up hating the application. Flask provides a really simple way to give feedback to a user with the flashing system. The flashing system basically makes it possible to record a message at the end of a request and access it on the next (and only the next) request. This is usually combined with a layout template to expose the message.
+
+# To flash a message use the flash() method, to get hold of the messages you can use get_flashed_messages() which is also available in the templates. See Message Flashing for a full example.
