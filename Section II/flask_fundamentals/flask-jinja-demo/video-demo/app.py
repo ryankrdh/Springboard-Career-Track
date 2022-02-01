@@ -1,5 +1,6 @@
 from operator import truediv
 from optparse import AmbiguousOptionError
+import pdb
 from flask import Flask, request, render_template, redirect, flash, jsonify
 from random import choice, sample
 # import code; code.interact(local=dict(globals(), **locals()))
@@ -155,6 +156,7 @@ def add_movie():
     title = request.form['title']
     # Add to pretend DB
     if title in MOVIES:
+        #  'error' is flashing with categories
         flash('Movie already exists!', 'error')
     else:
         MOVIES.add(title)
@@ -165,3 +167,8 @@ def add_movie():
 def json_text():
     # info = {"name": "Whiskey", "animal": "dog"}
     return jsonify(list(MOVIES))
+
+
+{% for msg in get_flashed_messages() %}
+    <p> {{ msg }} </p>
+{% endfor %}
