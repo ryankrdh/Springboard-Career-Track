@@ -56,14 +56,63 @@ def adder(x, y):
     print("INSIDE ADDER!")
     return x + y
 
-
-
 assert adder(2, 7) == 10, "expected 2+7 to be 10"
 
-
-
-      
 '''
 assert expects some condition to be true, if it isn't it will raise an error
+assert will stop the rest of the code from running so it's bad for comprehensive coding. It doesn't print out expected value or feedback.
+python -O app.py will run the app ignoring the assert.
+
+'''
+# ------------------------------------------------------------------------
+
+def adder(x, y):
+    """ adds two numbers 
+    >>> adder(3,5)
+    8
+
+    >>> adder(-1, 50)
+    49
+    """
+
+    return x + y
+
+'''
+DocTests:
+
+run "python" on terminal. 
+type: from app import adder
+adder(3,5)
+
+copy the output you get in the terminal in the doctest.
+
+To run the test "verbosely":
+python -m doctest -v app.py
+
+*it makes functions ugly if we are testing a complex long function.
+'''
+
+# ----------------------------------------------------------
+import arithmetic
+from unittest import TestCase
+
+class AdditionTestCase(TestCase):
+    """
+    Examples of unit tests.
+    """
+
+    def test_adder(self):
+        assert arithmetic.adder(2, 3) == 5
+
+    # this one will give a better feedback
+    def test_adder_2(self):
+        self.assertEqual(arithmetic.adder(2,2), 4)
+        self.assertEqual(arithmetic.adder(40,50), 90)
+
+'''
+Unittest module:
+
+to run:
+python -m unittest app.py
 
 '''
