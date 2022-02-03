@@ -140,5 +140,5 @@ def factorial(n):
     return 
     
 """
-
+assertRaises(escdption, callable, *args, **kwrds)
 """
