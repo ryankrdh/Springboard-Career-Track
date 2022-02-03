@@ -413,4 +413,213 @@ A: event propagation in the HTML DOM API. The event is first captured and handle
 Q: What’s the difference between “target” and “currentTarget” in an event listener.
 A: target is the thing actually clicked(actual element that triggered it). currentTarget is what you attach the event listener to. 
 
- 
+
+Q: what is an expression.
+A: a statement that produces a value. Conditional is an expression that evaluates to true or false.
+
+Q: What is an IIFE (Immediately Invoked Function Expression):
+A: IIFE is a design pattern for js. It’s a JS function that runs as soon as it is defined. Also known as (Self-Executing Anonymous Function). The parenthesis around the function prevents it from polluting the global scope and preventing the variable in it to be used elsewhere. And () at the end will interpret the function. 
+(Function () {
+	statements
+})();
+
+
+
+Q: Explain why the following doesn’t work as an IIFE(Immediately Invoked Function Expression):
+Function foo() {
+	statement
+}();
+A: 
+1st example:
+function foo() {
+	// This is a definition or statement
+}
+
+2nd example:
+Var foo = function() {
+	// this is an expression. It resolves to a value even if just “undefined”
+};
+
+*The 1st example won’t run since it’s not an actual value more of a reference. However, you can make it run by putting (…) around the functions making js is going to interpret it as an expression not a statement like:
+(Function foo() {
+	statement
+})();
+
+
+
+Q: Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it? 
+A: reduces collision(you never know what libraries you will use in the future). Global scope is the javascript environment), maintain independence (helps you write your own code since its self contained).
+So example, you don’t want to do this:
+X = 5; 
+Js will let you assign a value to a variable that has not been declared and it will attach that value to the global scope. This is not good. So declared global scope(when var is declared outside of a function) vs automatically global scope (when you set a value to a variable without declaring it ex: x = 2). That’s why we use strict mode (this prevents undeclared variables from automatically being global. 
+In HTML, the global scope is the window object.
+Global variables defined with the var keyword belongs in window object. Global variables defined with the let keyword does not belong in the window object.
+
+
+
+Q: What is Lexical Scope?
+A: means a local region or a restricted region. (lexical scope is the definition area of an expression.) In other words, an ITEM’s lexical scope is the place in which the ITEM got CREATED. Not the place the item got invoked but created.
+
+Example:
+Const fullName = “shiba inu”
+
+Function profile() {
+	Function sayName() {
+		Function writeName() {
+			Return fullName
+		}
+	}
+}
+
+From the function writeName, computer will call fullName but it won’t go to global scope directly, it will go step by step through the scope chain to look for the LEXICAL SCOPE of fullName. Therefore, fullName’s lexical scope is the global scope.
+
+To see another example.
+https://www.freecodecamp.org/news/javascript-lexical-scope-tutorial/
+
+
+
+Q: What are truthy and falsy:
+A: falsy: false, 0, -0, BitInt zero(0n), empty string, null, undefined, NaN
+Truthy: true, ‘0’(string 0), ‘false’ (string false), [] (empty array), {} (empty object), function(){} (an empty function)
+
+
+
+Q: Async vs Sync
+A: a thread can perform multiple requests for async, and the thread on sync can only perform one request at a time.
+setTimeout is an async function. 
+Promise can handle nested callbacks better. Better readability.
+Await can’t be used at a global level. It needs to be wrapped in a function. The await keyword is used in an async function to ensure that all promises returned in the async function are synchronized, Await eliminates the use of call backs then and catch.
+
+
+Q: what are Callbacks.
+A: In javascript, functions are objects. We can pass objects to functions as parameters. We can pass functions as a parameters to other functions and call them inside the outer functions. Callback is a function that is passed to another function.
+Closure is a function combined with references to the variables defined outside of it.
+
+
+
+Q: What is DOM and eventlistener?
+A: Document Object Model is an interface that treats XML or HTML as a tree of Objects. Browser creates a DOM of the page when a webpage is loaded.
+Eventlistener interface represents an object that can handle an event.
+
+
+Q: Tell me what you know about this keyword.
+A: this keyword basically represents 
+
+———————————————————————————————————————
+
+BACK-END INTERVIEW
+
+Q: Reverse a binary tree problem
+
+
+Q: Given a string (array of bytes) return a string that contains the hex value of each character.
+A: For loop through each character in the string, get the character's ASCII value and convert that value into a hex value, adding to a new string as you go. It's critical to remember how to convert from decimal to hex here!
+
+
+Q: Find the max value in a binary tree
+A: recursion.
+A: Begin at the root Node, recursively traverse to the right until you can no longer do so, then return the value You end up at.
+
+
+Q: Find the max value in a binary tree, but do it iteratively.
+A: Breadths-First-Search. I had a queue that pushed the head if it was not null and then continued to do that for each left and right node using a while loop.
+
+
+Q: bit operator question: out put of (3<<2) & (3>>2)
+A: bitwise operators
+
+
+
+———————————————————————————————————————
+SQL(relational database) NOSQL(non-relational database)
+
+Q: SQL vs NOSQL
+Sql database are vertically scalable(increase the load on a single server by increasing RAM, SSD, CPU. while Nosql are horizontally scalable(adding more servers). SQL databases are table based while NoSQL databases can be document based, key-value pairs, graph databases.
+
+
+
+Q: In SQL database tables, why is redundant data (i.e. the same data stored in multiple tables) generally a bad thing. 
+A: When you modify the data, it needs to be done in multiple places. Increases the size of the database and cost, decreases efficiency. Data inconsistency
+
+
+
+Q: In SQL database tables, why might redundant data be necessary in real world applications?
+A: recovery purposes. Data reliability, faster data access
+
+
+
+Q: Benefits of relational database
+A: * speed is higher because of its ease and simplicity.
+* Secure because certain tables can be confidential.
+* Simple because it does not use query processing and complex structuring.
+Accurate since it uses primary and foreign keys. All data is non-repetitive.
+Multi access at the same time. Even if it is updated.
+
+
+Disadvantages:
+If there are too many tables, the response given to the queries will be slower.
+physical storage. Vertical scaling. More cpu, ssd, ram. 
+Even though it is free from complex structuring, it can become complex when the amount of data in a relational database increases. 
+
+Specifications, consideration (use case, performance, resiliency(recover the data, redundancy)), input, output, who is the customer. 
+———————————————————————————————————————
+SPECIFIC TECHNICAL QUESTIONS/NOTES
+
+FLASK NOTES:
+Flask sessions are more secure in a way. 
+Sessions are “signed” so users can’t modify data and the data is stored as readable language.
+
+In Flask, the sessions are stored in the browser as a cookie (client side session). Session in flask is different than session storage.
+In Flask-Session, the sessions are stored in the server side.
+
+LocalStorage: stores data with no expiration date, and gets cleared only through Javascript, or clearing the Browser
+
+SessionStorage: Stores data only for until the browser or tab is closed. Larger than a cookie.
+
+Cookie: cookies can be made secure by setting the httpOnly flag as true for that cookie. This prevents client-side access to that cookie. Sent from the browser to the server for every request to the same domain. Set usually from server-side. Can be read by a server.
+
+
+
+———————————————————————————————————————
+
+PYTHON TEST NOTES:
+
+Unit tests promote modular programming.
+Assert will stop the rest of the code from running so it’s not good for comprehensive testing. It does not give feedback.
+
+
+
+———————————————————————————————————————
+
+
+———————————————————————————————————————
+
+
+———————————————————————————————————————
+
+
+———————————————————————————————————————
+
+
+———————————————————————————————————————
+
+
+———————————————————————————————————————
+
+
+———————————————————————————————————————
+
+
+———————————————————————————————————————
+
+
+———————————————————————————————————————
+
+
+———————————————————————————————————————
+
+
+———————————————————————————————————————
+
+
+*/
