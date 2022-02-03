@@ -1,4 +1,3 @@
-/*
 Springboot. backend
 Javascript, react 
 Node.js
@@ -17,85 +16,6 @@ Why do you want to work for us:
 One of your mission statement from the job application really stood out for me. “Making a difference in our members’ and customers’ lives is what we do. Even when it’s hard, we do the right thing for the right reasons.”
 
 
-——————————————————————————————————————————
-
-ALGORITHMS TO KNOW:
-
-Junior def algo: fizzbuzz, foobar, palindrome, anagram, most frequent item in an array, fibonnacci using recursion.
-
-* reverse a string with no shortcuts
-
-
-
-——————————————————————————————————————————
-GENERAL PROGRAMMING KNOWLEDGE
-
-Q: Functional programming vs OOP
-A: Functional programming emphasizes on evaluation of functions(bug-free code, easily invoked and reused so very good for modular programming) while OOP is based on concept of objects. In OOP, when increasing the level of inheritance, it can break the principle of encapsulation.
-DATA: FP uses immutable data. OOP uses mutable data.
-MODEL: FP uses declarative programming model. OOP uses imperative. Imperative you decide step by step what you want. Declarative focuses on end result and imperative focuses on how to get there.
-SUPPORT: parallel programming is supported by FP and NOT OOP. Parallel programming is beneficial when dealing with large data. Ex: videos, encryption, images. 
-EXECUTION: FP can be executed in any order. OOP need to be executed in particular order.
-ITERATION: FP uses recursion and OOP uses loops 
-ELEMENT: FP uses variables and functions. OOP uses Objects and methods
- 
-For reusability. OOP is not as reusable since some functions depend on the class that is using them. Makes it less efficient and more complex. 
-OOP is good when you have fixed set of operations on things. FP is good when you have fixed set of things.
-* If we are on front end, functional programming is better because we are working with mostly JSON objects. We don’t have to mess with object in an object.
-
-
-
-Q: single vs double quotes for python.
-A: Normally single quotes are used for regex, dict keys, and SQL. Double quotes for strings.
-
-
-
-Q: people will be building things at the same time at diff times, what is your solution to this? How would you manage this.
-A: version control like git and subversion. I like git better because if the central repo goes down on subversion, all other developers can’t commit their code until it’s fixed. Also git can work offline.
-
-
-
-Q: Modern websites often need to take into account the form of device a visitor is viewing the site on (tablet, pc, phone) what design pattern would you use?
-A: Responsive design. Using bootstrap.
-
-
-
-Q: what is responsive web design?
-A: responsive web design uses media queries to target breakpoints that scale images, wrap text, and adjust the layout. Fluid web design uses percentages as relative indicators. Fixed design uses fixed pixel widths.
-
-
-
-Q: explain what object oriented programming and the benefits of using an OOP.
-A: OOP encourages developers to think of their applications like a real object. With OOP, each object is defined as a class and an instance of this class is created to form the object. Benefits are: code-reusability, modular programming, flexibility. I like OOP because I can break down the problem into bite sized chunks.
-encapsulation(when each object maintains a private state. It means no other class can alter it.), 
-abstraction (selecting data from a larger data source to only show relevant details. This means that we can use it for more than one applications with little modification),
-inheritance (you don’t want to repeat code if you don’t have to), having a child class under a parent class and inherit some of the parent class’s attributes.
-Polymorphism (being able to present the same interface for different underlying data types. For example by making the class responsible for its own data, we can do shape.Draw() instead of drawSquare(), drawCircle() etc. 
-
-
-
-Q: in an ecommerce application, with discrete levels of stock, how would you manage a situation where two customers were interested in buying the last unit of stock for an item? How would your solution ensure the greatest possibility of the item being sold?
-A: If there was an item on amazon, and it says one item left. If someone puts it in their shopping cart, I would lock the item out so that other people can’t put it in their cart as well. After like 5-10min. I would just make the item available again. 
-
-
-
-Q: How would you refactor code?
-BUD approach for code efficiency:
-Bottlenecks, unnecessary work, duplicated work
-
-
-
-Q: Tell me the greatest challenge you’ve faced
-A: helping a teammate that’s not doing much work get better instead of doing it for them.
-Algorithm question reversing a matrix. Step by step. Small chunks. 
-
-Q: Tell me your greatest accomplishment. 
-A: Even though its not impressive. Just show confidence in what you know.
- 
-
-
-Q: Tell me about your previous projects
-A:
 
 During the pandemic, after taking a javascript tutorial. I created this choice-driven story app for kids. My main aim for this project was to improve my skills in constructor functions, Dom manipulations, local storage. 
 Improvement: make it into a responsive design. I’ve mostly used vanilla javascript, so I would love to refactor the whole program. use css to make it prettier. 
@@ -174,90 +94,94 @@ Reliable, organized, and flexible. I’m organized but I’m very flexible. If t
 
 
 
-Think about a difficult boss, professor or coworker. What made him or her difficult? How did you successfully interact with this person?
-
-
-In order to work for Accolade, you must be able to pass a full criminal background check. Do you consent to a full background check?
-
-
-What part of your healthcare career brings you the most stress?
-
-
-Tell me about your healthcare related education and training.
-
-
-Accolade has a diverse workforce. When have you worked among a diverse group of people?
-
-
-At Accolade we take pride in our great relationships with clients, vendors, coworkers, and patients. Do you consider yourself to be a strong relationship builder?
-
-
-In the healthcare services industry there are many emotions in a day. Have your emotions ever been in the way of your productivity?
-
-
-At Accolade we seek to hire individuals who display a keen interest in the healthcare arena. Would you consider yourself dedicated to a career in healthcare services?
-
-
-What is your patient care philosophy?
-
-Healthcare service companies require strong organizational skills and attention to detail. How do you ensure that your work is properly organized, and highly accurate?
-
-
-If you could expand your knowledge and expertise in any area of healthcare services, which would you choose?
-
-
-Have you ever been involved in ordering medical supplies, maintaining inventory, or other types of healthcare-related administrative duties?
-
-
-At Accolade we seek to hire individuals who have ambitions of growing their career. Where do you see yourself in 3-5 years?
-
-
-Do you prefer to work in a team based position or individually?
-
-
-Accolade supports a healthy work/life balance for all employees. How do you balance life and work?
-
-
-If you could expand your knowledge and expertise in any healthcare service area, which would you choose?
-
-
-If Accolade hired you today, what would you accomplish first?
-
-
-With the ongoing changes in the healthcare services industry, how do you keep your knowledge current?
-
-
-Rate your problem solving skills from 1-10. How do you justify your rating?
-
-
-What is your greatest weakness?
-
-
-Why do you think you will be successful in this role with Accolade?
-
-
-Accolade was initially looking for someone with 5 years' experience in a similar role. Considering you have just 2 years' experience, would you be willing to accept this position at a lower salary?
-
-
-Talk about a time when you were in a team situation everyone was not on the same page.
-
-
-How would you brand yourself?
-
-
-What is a situation where you had to do something you didn't want to do but had to out of obligation and what did you do?
-
-
-What’s one thing your team is hoping to get or expect from an intern?
-
-What stacks will the interns be using?
-
-Will the interns be mainly front or back end?
-
 
 
 ———————————————————————————————————————
 
+
+
+——————————————————————————————————————————
+
+ALGORITHMS TO KNOW:
+
+Junior def algo: fizzbuzz, foobar, palindrome, anagram, most frequent item in an array, fibonnacci using recursion.
+
+* reverse a string with no shortcuts
+
+
+
+———————————————————————————————————————
+GENERAL PROGRAMMING KNOWLEDGE
+
+Q: Functional programming vs OOP
+A: Functional programming emphasizes on evaluation of functions(bug-free code, easily invoked and reused so very good for modular programming) while OOP is based on concept of objects. In OOP, when increasing the level of inheritance, it can break the principle of encapsulation.
+DATA: FP uses immutable data. OOP uses mutable data.
+MODEL: FP uses declarative programming model. OOP uses imperative. Imperative you decide step by step what you want. Declarative focuses on end result and imperative focuses on how to get there.
+SUPPORT: parallel programming is supported by FP and NOT OOP. Parallel programming is beneficial when dealing with large data. Ex: videos, encryption, images. 
+EXECUTION: FP can be executed in any order. OOP need to be executed in particular order.
+ITERATION: FP uses recursion and OOP uses loops 
+ELEMENT: FP uses variables and functions. OOP uses Objects and methods
+ 
+For reusability. OOP is not as reusable since some functions depend on the class that is using them. Makes it less efficient and more complex. 
+OOP is good when you have fixed set of operations on things. FP is good when you have fixed set of things.
+* If we are on front end, functional programming is better because we are working with mostly JSON objects. We don’t have to mess with object in an object.
+
+
+
+Q: single vs double quotes for python.
+A: Normally single quotes are used for regex, dict keys, and SQL. Double quotes for strings.
+
+
+
+Q: people will be building things at the same time at diff times, what is your solution to this? How would you manage this.
+A: version control like git and subversion. I like git better because if the central repo goes down on subversion, all other developers can’t commit their code until it’s fixed. Also git can work offline.
+
+
+
+Q: Modern websites often need to take into account the form of device a visitor is viewing the site on (tablet, pc, phone) what design pattern would you use?
+A: Responsive design. Using bootstrap.
+
+
+
+Q: what is responsive web design?
+A: responsive web design uses media queries to target breakpoints that scale images, wrap text, and adjust the layout. Fluid web design uses percentages as relative indicators. Fixed design uses fixed pixel widths.
+
+
+
+Q: explain what object oriented programming and the benefits of using an OOP.
+A: OOP encourages developers to think of their applications like a real object. With OOP, each object is defined as a class and an instance of this class is created to form the object. Benefits are: code-reusability, modular programming, flexibility. I like OOP because I can break down the problem into bite sized chunks.
+encapsulation(when each object maintains a private state. It means no other class can alter it.), 
+abstraction (selecting data from a larger data source to only show relevant details. This means that we can use it for more than one applications with little modification),
+inheritance (you don’t want to repeat code if you don’t have to), having a child class under a parent class and inherit some of the parent class’s attributes.
+Polymorphism (being able to present the same interface for different underlying data types. For example by making the class responsible for its own data, we can do shape.Draw() instead of drawSquare(), drawCircle() etc. 
+
+
+
+Q: in an ecommerce application, with discrete levels of stock, how would you manage a situation where two customers were interested in buying the last unit of stock for an item? How would your solution ensure the greatest possibility of the item being sold?
+A: If there was an item on amazon, and it says one item left. If someone puts it in their shopping cart, I would lock the item out so that other people can’t put it in their cart as well. After like 5-10min. I would just make the item available again. 
+
+
+
+Q: How would you refactor code?
+BUD approach for code efficiency:
+Bottlenecks, unnecessary work, duplicated work
+
+
+
+Q: How do you make your pages performant(improve performance)?
+A: Instead of rendering the entire page when there is an application state change, just update the widget or the component that is related to the state change.
+
+
+
+Q: Difference between semantic tags vs non-semantic. 
+A: Semantic are self-explanatory like <img><table><form>.
+Non-semantic are <span><div><p>
+———————————————————————————————————————
+FULL STACK GENERAL QUESTIONS
+
+Q: What are the advantages of using React.
+A: React is more powerful and faster because instead of re-rendering the whole web page, React will just re-render the individual component that has a state change.
+Easier debugging due to declarative programming (focused on end result, oppose of imperative programming)
 
 
 
@@ -345,12 +269,13 @@ They are both Falsy.
 
 
 Q: Difference between var, let and const?
-A: var is function scoped. Counts and let are block-scoped. EX: you can access the var in a block scope such as if or for loop statement outside the block. But you can’t access the var in a FUNCTION outside the block.
-Let and const are block scoped(In curly braces) Var is global when it is declared outside a function.
-* Var can be updated and re-declared within its scope. Let variables can be updated but not re-declared. Const CANNOT be redeclared nor updated.
-*There’s one more thing with var, let and const. Var and let can be declared and not be defined and will result in undefined. HOWEVER the typeof you get from the declared let says undefined IN STRING. BUT if you do compare it with triple equal (foo === undefined), it will return True. BUT THEN if you declare let variable with the string ‘undefined’ and compare it with triple equal, you will get False. Const cannot be declared without being defined.
+A: So let’s start with Var. Var is function scoped if in a function and global scoped if its outside of a function. For example, var can’t be accessed in a FUNCTION BLOCK from outside of that block. HOWEVER, var CAN be accessed if in a IF/ForLoop block from outside of that block since it is function scoped. Var can be updated and re-declared within its scope. 
 
-*fun fact: declared variable with null will result in typeof ‘object’ in string.
+Now for Let and const, they are block-scoped. For example, let and const can’t be accessed if in any block outside from outside of that block.
+Let CAN be updated but not re-declared. Const CANNOT be redeclared nor updated.
+
+*There’s one more thing with var, let and const. Var and let can be declared and not be defined and will result in undefined. HOWEVER the typeof you get from the declared let says undefined IN STRING. BUT if you compare it with triple equal to undefined(foo === undefined), it will return True. BUT THEN if you declare let variable with the string ‘undefined’ and compare it with triple equal, you will get False. Not sure if that’s a bug but that’s how it works. And Const cannot be declared without being defined(initialized).
+Speaking of bugs, a declared(var/let/const) NULL will have typeof ‘object’ IN STRING.
 
 EXAMPLE:
 Let foo;
@@ -364,15 +289,16 @@ console.log(boo === undefined); // false boolean.
 
 
 
-Q: What is the event loop? What is the difference between call stack and task queue?
-A: javascript is a single threaded programming language. This means that javascript can do only one thing at a single point in time.
-
-
-
-
 Q: What is hoisting 
-A: VAR: It’s when variables and function declarations(functions written as statements) are moved to the top of their scope before code execution. 
-LET/CONST: people mistakenly think that let and const DO NOT get hoisted but they do. let and const declarations are hoisted to the top like var. Unlike var which is initialized(When you declare a variable, it is automatically initialized(allocates memory for the variable)) as undefined, the let and const keyword is not initialized. So you will get a reference error instead of undefined (var will get undefined).
+A: VAR: It’s when variables and function declarations(functions written as statements NOT expressions) are moved to the top of their scope before code execution. 
+LET/CONST: Some people think that let and const DO NOT get hoisted but they actually do. let and const declarations are hoisted to the top like var. Unlike var which is initialized(When you declare a variable, it is automatically initialized(allocates memory for the variable)) as undefined, the let and const keyword is not initialized. So you will get a reference error instead of undefined (var will get undefined).
+
+
+
+Q: What is the event loop? What is the difference between call stack and task queue?
+A: javascript is a single threaded programming language. This means that javascript can do only one command at a time(synchronous). Event loop is responsible for monitoring both the callback queue and the call stack
+So There’s call stack, event queue, and event table(web APIs). So data enters the call stack and gets executed (Last In, First Out). If the data is asynchronous, then it will be pushed to the Event Table until a specified time, then pushed to the Event queue. Once event loop finishes executing the datas in the call stack, it will check the event queue for any data that needs to be ran in the call stack.
+
 
 
 
@@ -413,7 +339,7 @@ A: event propagation in the HTML DOM API. The event is first captured and handle
 Q: What’s the difference between “target” and “currentTarget” in an event listener.
 A: target is the thing actually clicked(actual element that triggered it). currentTarget is what you attach the event listener to. 
 
-
+ 
 Q: what is an expression.
 A: a statement that produces a value. Conditional is an expression that evaluates to true or false.
 
@@ -492,9 +418,28 @@ Await can’t be used at a global level. It needs to be wrapped in a function. T
 
 
 Q: what are Callbacks.
-A: In javascript, functions are objects. We can pass objects to functions as parameters. We can pass functions as a parameters to other functions and call them inside the outer functions. Callback is a function that is passed to another function.
-Closure is a function combined with references to the variables defined outside of it.
+A: In javascript, functions are objects. We can pass objects to functions as parameters. We can pass functions as a parameters to other functions and call them inside the outer functions. Callback is a function that is passed as an argument to another function. ANY functions can be a callback function if it is passed as an argument. HOWEVER, callbacks are not asynchronous by nature but can be used for asynchronous purposes
+EX (just with callback function):
+Function myCalculator(num1, num2, myCallback) {
+	Let sum = num1 + num2;
+	myCallback(sum);
+}
 
+EX: (callback function with setTimeout):
+Function second() {
+	setTimeout(() => {
+	console.log(2)
+	}, 0)
+}
+
+
+Q: what are Closures.
+A: Closure is a function combined with references to the variables defined outside of it.
+A closure is an inner function having access to the parent scope, even after the parent function has closed or returned.
+
+
+
+Q: What are promises. Creating vs consuming.
 
 
 Q: What is DOM and eventlistener?
@@ -502,12 +447,70 @@ A: Document Object Model is an interface that treats XML or HTML as a tree of Ob
 Eventlistener interface represents an object that can handle an event.
 
 
-Q: Tell me what you know about this keyword.
-A: this keyword basically represents 
+
+Q: Tell me what you know about THIS keyword.
+A: this keyword basically refers to an object that it is being INVOKED on.
+
+
+
+Q: What does this function print?
+
+let number;
+for(var i = 0; i < 5; i++){
+	number = i;
+	setTimeout(function(){
+console.log(number);
+	}, 1000);
+}
+
+It’s NOT 0, 1, 2, 3, 4 with one second in between. 
+Since let number is GLOBAL scoped, it will only reference 4 (the number is held outside the scope). If it was inside the for loop. It will hold reference for 0, 1, 2, 3, 4. So every time the console.log calls number, it’s calling 4.
+The answer is 4 five times. 
+
+*but if you delete let number and console.log(i)...
+
+for(var i=0; i<5; i++){
+	setTimeout(function(){
+console.log(i);
+	}, 1000);	
+}
+You would get 5 five times. Because the loop will last until i is NO LONGER less than 5. When the loop is done, the i will result in 5 and the for loop wont run again since we stated i < 5.
+
+To make it 0, 1, 2, 3, 4. Change var to let
+for(let i=0; i<5; i++){
+	setTimeout(function(){
+console.log(i);
+	}, 1000);	
+}
+
 
 ———————————————————————————————————————
 
-BACK-END INTERVIEW
+Algorithms and Database
+
+Q: What is caching.
+A: In-memory data caching can improve overall application performance and reduce database cost. It can be applied to any type of database including relational and non-relational database. Caching is a buffering technique that stores frequently-queried data in a temporary memory.
+
+
+
+Q: What is a circular linked list? 
+A: Linked list is circular when a tail is connected to a head.
+Linked list is a linear collection of elements that points to the next. The order is not given by their physical placement in memory.
+
+
+
+Q: What is stack and queue
+A: A stack is an ordered list in which all insertions and deletions are made at one end.
+A queue is an ordered list in which all insertions take place at one end, the read, while all deletions take place at the other end, the front.
+
+
+
+Q: Multiply Two integers without using signs(multiplication, division, and bitwise operators, and no loops)
+A: By making use of recursion. Recursively add x y times.
+Recursion is a programming technique using function or algorithm that calls itself one or more times until a specified condition is met.
+https://www.geeksforgeeks.org/multiply-two-numbers-without-using-multiply-division-bitwise-operators-and-no-loops/
+
+
 
 Q: Reverse a binary tree problem
 
@@ -563,7 +566,7 @@ Even though it is free from complex structuring, it can become complex when the 
 
 Specifications, consideration (use case, performance, resiliency(recover the data, redundancy)), input, output, who is the customer. 
 ———————————————————————————————————————
-SPECIFIC TECHNICAL QUESTIONS/NOTES
+
 
 FLASK NOTES:
 Flask sessions are more secure in a way. 
@@ -622,4 +625,3 @@ Assert will stop the rest of the code from running so it’s not good for compre
 ———————————————————————————————————————
 
 
-*/
