@@ -1,7 +1,13 @@
 /*
+
 Springboot. backend
 Javascript, react 
 Node.js
+
+THINGS TO KNOW CHECKLIST:
+HTML5: master the basics, semantic html, basic SEO, accessibility
+CSS3: master the basics, making layouts(display, positioning, box model, flex box, css grid, media queries.
+
 
 
 Tell me about yourself
@@ -184,8 +190,14 @@ Q: What are the advantages of using React.
 A: React is more powerful and faster because instead of re-rendering the whole web page, React will just re-render the individual component that has a state change.
 Easier debugging due to declarative programming (focused on end result, oppose of imperative programming)
 
+About ReactJS: components based architecture, virtual DOM, JSX for templating, Faster Rendering, One-Way Data Binding, SEO-Friendly, Boost Productivity, Strong Community Support
 
+Q: What is Redux used for
+A: Redux is most useful when you have large amounts of application state that are needed in many places in the app. It solves state management.
 
+Q: FlexBox vs BootStrap.
+Flexbox is a technique and bootstrap is a framework.
+Bootstrap is great for responsive website. Good for speed. 
 ———————————————————————————————————————
 ES6 UPDATES
 
@@ -356,6 +368,8 @@ Q: Explain why the following doesn’t work as an IIFE(Immediately Invoked Funct
 Function foo() {
 	statement
 }();
+
+
 A: 
 1st example:
 function foo() {
@@ -411,7 +425,7 @@ Truthy: true, ‘0’(string 0), ‘false’ (string false), [] (empty array), {
 
 
 
-Q: Async vs Sync
+Q: Async/await vs Sync
 A: a thread can perform multiple requests for async, and the thread on sync can only perform one request at a time.
 setTimeout is an async function. 
 Promise can handle nested callbacks better. Better readability.
@@ -441,7 +455,7 @@ A closure is an inner function having access to the parent scope, even after the
 
 
 Q: What are promises. Creating vs consuming.
-
+A: Axios is a promise based library for making HTTP requests. Promises in javascript are objects. They 
 
 Q: What is DOM and eventlistener?
 A: Document Object Model is an interface that treats XML or HTML as a tree of Objects. Browser creates a DOM of the page when a webpage is loaded.
@@ -483,6 +497,27 @@ for(let i=0; i<5; i++){
 console.log(i);
 	}, 1000);	
 }
+
+
+
+
+———————————————————————————————————————
+HTML
+
+What does a doctype do?
+How do you serve a page with content in multiple languages?
+What kind of things must you be wary of when designing or developing for multilingual sites?
+What are data- attributes good for?
+Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+Describe the difference between a cookie, sessionStorage and localStorage.
+Describe the difference between <script>, <script async> and <script defer>.
+Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
+What is progressive rendering?
+Why you would use a srcset attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
+Have you used different HTML templating languages before?
+What is the difference between canvas and svg?
+What are empty elements in HTML ?
+
 
 
 ———————————————————————————————————————
@@ -624,8 +659,6 @@ Assert will stop the rest of the code from running so it’s not good for compre
 
 
 ———————————————————————————————————————
-
-
 
 
 */
