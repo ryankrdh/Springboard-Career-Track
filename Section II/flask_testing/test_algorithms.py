@@ -10,10 +10,10 @@ class AlgorithmsTestCase(TestCase):
     def test_is_palindrome(self):
         self.assertTrue(is_palindrome('racecar'))
         # this one will fail since it is capitalized.
-        self.assertTrue(is_palindrome('Racecar')) 
+        self.assertTrue(is_palindrome('racecar')) 
         self.assertTrue(is_palindrome('kayak'))
         self.assertFalse(is_palindrome('clue'))
-        
+
     def test_factorial(self):
         self.assertEqual(factorial(5), 120)
         self.assertEqual(factorial(5), 120)

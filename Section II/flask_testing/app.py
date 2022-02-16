@@ -51,12 +51,12 @@
 
 # --------------------------------------------------------------------
 
-def adder(x, y):
-    """ adds two numbers"""
-    print("INSIDE ADDER!")
-    return x + y
+# def adder(x, y):
+#     """ adds two numbers"""
+#     print("INSIDE ADDER!")
+#     return x + y
 
-assert adder(2, 7) == 10, "expected 2+7 to be 10"
+# assert adder(2, 7) == 10, "expected 2+7 to be 10"
 
 '''
 assert expects some condition to be true, if it isn't it will raise an error
@@ -66,16 +66,16 @@ python -O app.py will run the app ignoring the assert.
 '''
 # ------------------------------------------------------------------------
 
-def adder(x, y):
-    """ adds two numbers 
-    >>> adder(3,5)
-    8
+# def adder(x, y):
+#     """ adds two numbers 
+#     >>> adder(3,5)
+#     8
 
-    >>> adder(-1, 50)
-    49
-    """
+#     >>> adder(-1, 50)
+#     49
+#     """
 
-    return x + y
+#     return x + y
 
 '''
 DocTests:
@@ -93,27 +93,24 @@ python -m doctest -v app.py
 '''
 
 # ----------------------------------------------------------
-import arithmetic
-from unittest import TestCase
+# import arithmetic
+# from unittest import TestCase
 
-class AdditionTestCase(TestCase):
-    """
-    Examples of unit tests.
-    """
+# class AdditionTestCase(TestCase):
+#     """
+#     Examples of unit tests.
+#     """
 
-    def test_adder(self):
-        assert arithmetic.adder(2, 3) == 5
+#     def test_adder(self):
+#         assert arithmetic.adder(2, 3) == 5
 
-    # this one will give a better feedback
-    def test_adder_2(self):
-        self.assertEqual(arithmetic.adder(2,2), 4)
-        self.assertEqual(arithmetic.adder(40,50), 90)
+#     # this one will give a better feedback
+#     def test_adder_2(self):
+#         self.assertEqual(arithmetic.adder(2,2), 4)
+#         self.assertEqual(arithmetic.adder(40,50), 90)
 
 '''
-Unittest module:
 
-to run:
-python -m unittest app.py
 
 '''
 
@@ -123,7 +120,7 @@ def reverse_str(s):
     """Returns reverse of input str (s)"""
     return s[::-1]
 
-def isPalindrome(s):
+def is_palindrome(s):
     """Boolean method to check whether given string is a palindrome"""
     rev = reverse_str(s)
     return s == rev
