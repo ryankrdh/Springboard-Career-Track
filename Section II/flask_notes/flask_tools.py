@@ -79,7 +79,7 @@ def redirect_to_home():
     return redirect("/")
 
 
-
+ 
     # call backs and errors 
 
 #     Flask dispatches a request in multiple stages which can affect the request, response, and how errors are handled. The contexts are active during all of these stages.

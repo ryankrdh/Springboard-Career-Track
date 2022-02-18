@@ -139,3 +139,13 @@ def factorial(n):
 """
 assertRaises(escdption, callable, *args, **kwrds)
 """
+
+
+
+'''
+FLASK TESTING NOTES:
+
+making testing easier: app.config['TESTING'] = True
+app.config['DEBUG_TB_HOSTS'] = ['dont-show-debug-tooolbar']
+
+'''
