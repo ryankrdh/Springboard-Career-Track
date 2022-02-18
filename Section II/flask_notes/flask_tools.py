@@ -77,3 +77,32 @@ COMPLIMENTS = ["cool", "clever", "tenacious", "awesome", "Pythonic"]
 def redirect_to_home():
     """redirects to new home page"""
     return redirect("/")
+
+
+
+    # call backs and errors 
+
+#     Flask dispatches a request in multiple stages which can affect the request, response, and how errors are handled. The contexts are active during all of these stages.
+
+# A Blueprint can add handlers for these events that are specific to the blueprint. The handlers for a blueprint will run if the blueprint owns the route that matches the request.
+
+# Setting up MongoDB
+# To begin setting up MongoDB in our application, we need to create an app.py file at the project root folder. This will be our main file.
+
+# In this app.py file, add the following block of code:
+
+# from flask import Flask
+# from flask_pymongo import PyMongo
+
+# app = Flask(__name__)
+# app.config["MONGO_URI"] = "mongodb://localhost:27017/flaskCrashCourse"
+# mongo = PyMongo(app)
+
+# if __name__ == "__main__":
+#     app.run(debug=True)
+# Here, we have done basic configuration for a basic Flask app. We;
+
+# Have imported the necessary packages.
+# Set up the main app variable.
+# Initialized an instance of PyMongo.
+# Started the app in debug mode. This means that each change we make to the app will be reloaded automatically.
