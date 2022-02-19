@@ -146,6 +146,8 @@ assertRaises(escdption, callable, *args, **kwrds)
 FLASK TESTING NOTES:
 
 making testing easier: app.config['TESTING'] = True
+
+*flask debug redirects might be messing with the tests. To turn off default 
 app.config['DEBUG_TB_HOSTS'] = ['dont-show-debug-tooolbar']
 
 '''
