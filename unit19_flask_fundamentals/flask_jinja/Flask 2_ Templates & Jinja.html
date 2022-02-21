@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://curric.rithmschool.com/springboard/lectures/flask-jinja/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Flask 2: Templates &amp; Jinja</title>
+
+    <link rel="stylesheet" href="./Flask 2_ Templates &amp; Jinja_files/pygments.css" type="text/css">
+    <link rel="stylesheet" href="./Flask 2_ Templates &amp; Jinja_files/handouts-sphinx.css">
+
+    
+    <link href="./Flask 2_ Templates &amp; Jinja_files/css" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+<div id="page-wrapper">
+    <div id="page-sidebar">
+        <header>
+            <p class="project">Springboard</p>
+
+            <p class="title">Flask 2: Templates &amp; Jinja</p>
+
+            <p class="backlink"><a href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/"> « Back to Homepage</a></p>
+
+        </header>
+        <div id="toc">
+            <ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#">Flask 2: Templates &amp; Jinja</a><ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#goals">Goals</a><ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#id1">Goals</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#review">Review</a><ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#views">Views</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#routes">Routes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#templates">Templates</a><ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#how-can-templates-help">How Can Templates Help?</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#jinja">Jinja</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#templates-directory">Templates Directory</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#our-template">Our Template</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#rendering-a-template">Rendering a Template</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#flask-debug-toolbar">Flask Debug Toolbar</a><ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#id2">Flask Debug Toolbar</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#using-the-toolbar">Using The Toolbar</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#dynamic-templates">Dynamic Templates</a><ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#id3">Dynamic Templates</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#example-greeting">Example: Greeting</a><ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#id4">Example: Greeting</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#our-form">Our Form</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#id5">Our Template</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#our-route">Our Route</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#example-2-better-greeting">Example 2: Better Greeting!</a><ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#id6">Example 2: Better Greeting!</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#id7">Our Form</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#id8">Our Route</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#conditionals-in-jinja">Conditionals in Jinja</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#loops-in-jinja">Loops in Jinja</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#id9">Our Template</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#template-inheritance">Template Inheritance</a><ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#motivation">Motivation</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#repetition-is-boring">Repetition is Boring</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#how-to-use-template-inheritance">How to Use Template Inheritance</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#sample-base-template">Sample Base Template</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#page-using-template">Page Using Template</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#where-other-project-files-go">Where Other Project Files Go</a><ul>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#do-i-need-routes-for-css-or-js-etc">Do I Need Routes for CSS (or JS, etc)?</a></li>
+<li><a class="reference internal" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja/#static-files-css-and-js">Static Files: CSS and JS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+    </div>
+    <div id="page-content">
+        
+  <div class="section" id="flask-2-templates-jinja">
+<h1>Flask 2: Templates &amp; Jinja</h1>
+<p><a class="reference external" href="http://curric.rithmschool.com/springboard/lectures/flask-jinja-demo.zip">Download Demo Code</a></p>
+<div class="section" id="goals">
+<h2>Goals</h2>
+<div class="section" id="id1">
+<div class="docutils container">
+<ul class="simple">
+<li>Explain what HTML templates are, and why they are useful</li>
+<li>Use Jinja to create HTML templates for our Flask applications</li>
+<li>Debug our Flask applications more quickly by installing the Flask Debug Toolbar</li>
+<li>Serve static files (CSS, JS, etc) with Flask</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="review">
+<h2>Review</h2>
+<div class="section" id="views">
+<h3>Views</h3>
+<p>Views are functions that return a <strong>string</strong> (a string of HTML)</p>
+</div>
+<div class="section" id="routes">
+<h3>Routes</h3>
+<p>Routes define the URL that will run a view function.</p>
+<p>They are declared by using <em>decorators</em>.</p>
+<p>A route and view function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/form'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">show_form</span><span class="p">():</span>
+    <span class="sd">"""Show greeting form."""</span>
+
+    <span class="k">return</span> <span class="s2">"""</span>
+<span class="s2">      &lt;!DOCTYPE html&gt;</span>
+<span class="s2">      &lt;html&gt;</span>
+<span class="s2">        &lt;head&gt;</span>
+<span class="s2">          &lt;title&gt;Hi There!&lt;/title&gt;</span>
+<span class="s2">        &lt;/head&gt;</span>
+<span class="s2">        &lt;body&gt;</span>
+<span class="s2">          &lt;h1&gt;Hi There!&lt;/h1&gt;</span>
+<span class="s2">          &lt;form action="/greet"&gt;</span>
+<span class="s2">            What's your name? &lt;input name="person"&gt;</span>
+<span class="s2">            &lt;button&gt;Go!&lt;/button&gt;</span>
+<span class="s2">          &lt;/form&gt;</span>
+<span class="s2">        &lt;/body&gt;</span>
+<span class="s2">      &lt;/html&gt;</span>
+<span class="s2">    """</span>
+</pre></div>
+</div>
+<p>This is kind of messy to read through (and we don’t get nice things like
+color-highlighting in editors). Much better to keep HTML in a separate
+file.</p>
+</div>
+</div>
+<div class="section" id="templates">
+<h2>Templates</h2>
+<div class="section" id="how-can-templates-help">
+<h3>How Can Templates Help?</h3>
+<div class="docutils container">
+<ul class="simple">
+<li>Produce HTML</li>
+<li>Allows your responses to be dynamically created<ul>
+<li>Can use variables passed from your views</li>
+<li>For loops, if/else statements</li>
+</ul>
+</li>
+<li>Can inherit from other templates to minimize repetition</li>
+</ul>
+</div>
+</div>
+<div class="section" id="jinja">
+<h3>Jinja</h3>
+<p><strong>Jinja</strong> is a popular template system for Python, used by Flask.</p>
+<p>There are many template systems for Python.  Jinja is a particularly popular
+one. Django has its own template system, which served as an inspiration for
+Jinja.</p>
+</div>
+<div class="section" id="templates-directory">
+<h3>Templates Directory</h3>
+<p>Your templates directory lives under your project directory. Flask knows to
+look for them there.</p>
+<pre class="literal-block"><strong>my-project-directory/</strong>
+  <strong>venv/</strong>
+  app.py
+  <strong>templates/</strong>
+    hello.html
+</pre>
+</div>
+<div class="section" id="our-template">
+<h3>Our Template</h3>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">demo/templates/hello.html</span></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>This is the hello page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>HELLO!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="rendering-a-template">
+<h3>Rendering a Template</h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="sd">"""Return homepage."""</span>
+
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">"hello.html"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Will find <cite>hello.html</cite> in <cite>templates/</cite> automatically.</p>
+</div>
+</div>
+<div class="section" id="flask-debug-toolbar">
+<h2>Flask Debug Toolbar</h2>
+<div class="section" id="id2">
+<p>Ultra-useful add-on for Flask that shows, in browser, details about app.</p>
+<div class="docutils container">
+<p>Install add-on product:</p>
+<pre class="console literal-block">(venv) $ <span class="cmd">pip3 install flask-debugtoolbar</span>
+</pre>
+</div>
+<p>Add the following to your Flask <cite>app.py</cite>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">render_template</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">flask_debugtoolbar</span> <span class="kn">import</span> <span class="n">DebugToolbarExtension</span>
+</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="hll"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SECRET_KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"oh-so-secret"</span>
+</span>
+<span class="hll"><span class="n">debug</span> <span class="o">=</span> <span class="n">DebugToolbarExtension</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</span>
+<span class="o">...</span> <span class="c1"># rest of file continues</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p>SECRET_KEY</p>
+<p>For now, that secret key doesn’t really have to be something secret
+(it’s fine to check this file into your GitHub, and you can use any
+string for the SECRET_KEY.</p>
+<p class="last">Later, when we talk about security &amp; deployment, we’ll talk about
+when and how to actually keep this secret.</p>
+</div>
+</div>
+<div class="section" id="using-the-toolbar">
+<h3>Using The Toolbar</h3>
+<dl class="docutils">
+<dt><cite>Request Vars</cite></dt><dd>Explore what Flask got in request from browser</dd>
+<dt><cite>HTTP Headers</cite></dt><dd>Can be useful to explore all headers your browser sent</dd>
+<dt><cite>Templates</cite></dt><dd>What templates were used, and what was passed to them?</dd>
+<dt><cite>Route List</cite></dt><dd>What are all routes your app defines?</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="dynamic-templates">
+<h2>Dynamic Templates</h2>
+<div class="section" id="id3">
+<p>Jinja will replace things like <cite>{{ msg }}</cite> with value of <cite>msg</cite>
+passed when rendering:</p>
+<div class="compare docutils container">
+<div class="docutils container">
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">templates/lucky.html</span></div>
+<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;h1&gt;Hi!&lt;/h1&gt;</span>
+
+<span class="x">&lt;p&gt;Lucky number: </span><span class="cp">{{</span> <span class="nv">lucky_num</span> <span class="cp">}}</span><span class="x">&lt;/p&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="docutils container">
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">app.py</span></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/lucky"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">show_lucky_num</span><span class="p">():</span>
+    <span class="s2">"Example of simple dynamic template"</span>
+
+    <span class="n">num</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">"lucky.html"</span><span class="p">,</span>
+                          <span class="n">lucky_num</span><span class="o">=</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-greeting">
+<h2>Example: Greeting</h2>
+<div class="section" id="id4">
+<p>Let’s make a form that gathers a user’s name.</p>
+<p>On form submission, it should use that name &amp; compliment the user.</p>
+</div>
+<div class="section" id="our-form">
+<h3>Our Form</h3>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">demo/templates/form.html</span></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hi There!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">"/greet"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>What's your name?  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">"person"</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Go!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Our Template</h3>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">demo/templates/compliment.html</span></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hi {{ name }}! You're so {{ compliment }}!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="our-route">
+<h3>Our Route</h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/greet'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">offer_greeting</span><span class="p">():</span>
+    <span class="sd">"""Give player compliment."""</span>
+
+    <span class="n">player</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="s2">"person"</span><span class="p">]</span>
+    <span class="n">nice_thing</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">COMPLIMENTS</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">"compliment.html"</span><span class="p">,</span> 
+                           <span class="n">name</span><span class="o">=</span><span class="n">player</span><span class="p">,</span> 
+                           <span class="n">compliment</span><span class="o">=</span><span class="n">nice_thing</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="example-2-better-greeting">
+<h2>Example 2: Better Greeting!</h2>
+<div class="section" id="id6">
+<p>Let’s improve this:</p>
+<ul>
+<li><p class="first">We’ll ask the user if they want compliments &amp; only show if so</p>
+</li>
+<li><p class="first">We’ll show a list of <em>3</em> random compliments, like this:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>You're so:
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>clever<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>tenacious<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>smart<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>Our Form</h3>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text">demo/templates/form-2.html</span></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Better Hi There!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="hll">  <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">"/greet-2"</span><span class="p">&gt;</span>
+</span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>What's your name? <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">"person"</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="hll">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Want compliments?
+</span><span class="hll">      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"checkbox"</span> <span class="na">name</span><span class="o">=</span><span class="s">"wants_compliments"</span><span class="p">&gt;</span>
+</span>    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>  
+    <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Go!<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>Our Route</h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/greet-2'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">offer_better_greeting</span><span class="p">():</span>
+    <span class="sd">"""Give player optional compliments."""</span>
+
+    <span class="n">player</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="s2">"person"</span><span class="p">]</span>
+
+    <span class="c1"># if they didn't tick box, `wants_compliments` won't be</span>
+    <span class="c1"># in query args -- so let's use safe `.get()` method of</span>
+    <span class="c1"># dict-like things</span>
+    <span class="n">wants</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"wants_compliments"</span><span class="p">)</span>
+
+    <span class="n">nice_things</span> <span class="o">=</span> <span class="n">sample</span><span class="p">(</span><span class="n">COMPLIMENTS</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="k">if</span> <span class="n">wants</span> <span class="k">else</span> <span class="p">[]</span>
+
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">"compliments.html"</span><span class="p">,</span>
+                           <span class="n">compliments</span><span class="o">=</span><span class="n">nice_things</span><span class="p">,</span> 
+                           <span class="n">name</span><span class="o">=</span><span class="n">player</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="conditionals-in-jinja">
+<h3>Conditionals in Jinja</h3>
+<p><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">CONDITION_EXPR</span> <span class="pre">%}</span> <span class="pre">...</span> <span class="pre">{%</span> <span class="pre">endif</span> <span class="pre">%}</span></code></p>
+<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">compliments</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  You're so:</span>
+<span class="x">  ...</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loops-in-jinja">
+<h3>Loops in Jinja</h3>
+<p><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">VAR</span> <span class="pre">in</span> <span class="pre">ITERABLE</span> <span class="pre">%}</span> <span class="pre">...</span> <span class="pre">{%</span> <span class="pre">endfor</span> <span class="pre">%}</span></code></p>
+<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;ul&gt;</span>
+<span class="x">  </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">compliment</span> <span class="k">in</span> <span class="nv">compliments</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;li&gt;</span><span class="cp">{{</span> <span class="nv">compliment</span> <span class="cp">}}</span><span class="x">&lt;/li&gt;</span>
+<span class="x">  </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;/ul&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>Our Template</h3>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">demo/templates/compliments.html</span></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hi {{ name }}!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+{% if compliments %}
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You're so:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    {% for compliment in compliments %}
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ compliment }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    {% endfor %}
+  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+{% endif %}
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="template-inheritance">
+<h2>Template Inheritance</h2>
+<div class="section" id="motivation">
+<h3>Motivation</h3>
+<p>Different pages on the same site are often 95% the same.</p>
+</div>
+<div class="section" id="repetition-is-boring">
+<h3>Repetition is Boring</h3>
+<p>Your templates have many things in common</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="hll">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span> TITLE GOES HERE <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"/static/css/styles.css"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"http://unpkg.com/jquery"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Our Site<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="hll">  BODY CONTENT GOES HERE
+</span>  <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>Copyright by Whiskey.<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>If you want the same stylesheet everywhere, you have to remember to include
+it in every template. If you forget in one template, that page won’t have
+your custom css that you spent so much time getting right. The same goes for
+scripts. If you want jquery everywhere, do you really want to have to
+remember to include it in the head in every template.</p>
+</div>
+<div class="section" id="how-to-use-template-inheritance">
+<h3>How to Use Template Inheritance</h3>
+<ul class="simple">
+<li>Make a <cite>base.html</cite> that will hold all the repetitive stuff</li>
+<li>“Extend” that base template in your other pages</li>
+<li>Substitute blocks in your extended pages</li>
+</ul>
+</div>
+<div class="section" id="sample-base-template">
+<h3>Sample Base Template</h3>
+<p><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">block</span> <span class="pre">BLOCKNAME</span> <span class="pre">%}</span> <span class="pre">...</span> <span class="pre">{%</span> <span class="pre">endblock</span> <span class="pre">%}</span></code></p>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text">templates/base.html</span></div>
+<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="hll"><span class="x">  &lt;title&gt;</span><span class="cp">{%</span> <span class="k">block</span> <span class="nv">title</span> <span class="cp">%}</span><span class="x">TITLE GOES HERE</span><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x">&lt;/title&gt;</span>
+</span><span class="x">  &lt;link rel="stylesheet" href="/static/css/styles.css"&gt;</span>
+<span class="x">  &lt;script src="http://unpkg.com/jquery"&gt;&lt;/script&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">  &lt;h1&gt;Our Site&lt;/h1&gt;</span>
+<span class="hll"><span class="x">  </span><span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span><span class="x">BODY CONTENT GOES HERE</span><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
+</span><span class="x">  &lt;footer&gt;Copyright by Whiskey.&lt;/footer&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="page-using-template">
+<h3>Page Using Template</h3>
+<p><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">block</span> <span class="pre">BLOCKNAME</span> <span class="pre">%}</span> <span class="pre">...</span> <span class="pre">{%</span> <span class="pre">endblock</span> <span class="pre">%}</span></code></p>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">templates/my-page.html</span></div>
+<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s1">'base.html'</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">title</span> <span class="cp">%}</span><span class="x">My awesome page title</span><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">  &lt;h2&gt;I'm a header!&lt;/h2&gt;</span>
+<span class="x">  &lt;p&gt;I'm a paragraph!&lt;/p&gt;</span>
+
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="where-other-project-files-go">
+<h2>Where Other Project Files Go</h2>
+<div class="section" id="do-i-need-routes-for-css-or-js-etc">
+<h3>Do I Need Routes for CSS (or JS, etc)?</h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"my-css.css"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_css</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">"""</span>
+<span class="s2">       b { color: red }</span>
+<span class="s2">       ...</span>
+<span class="s2">     """</span>
+</pre></div>
+</div>
+<div class="docutils container">
+<p>No! That would be tedious — plus, everyone gets the <em>same</em> CSS</p>
+</div>
+</div>
+<div class="section" id="static-files-css-and-js">
+<h3>Static Files: CSS and JS</h3>
+<p>In <cite>static/</cite> directory:</p>
+<pre class="literal-block">my-project-directory/
+  venv/
+  app.py
+  templates/
+    hello.html
+  <strong>static/</strong>
+    my-css.css
+    my-script.js
+</pre>
+<div class="docutils container">
+<p>Find files like:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"/static/my-css.css"</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>The static directory is where you put files that don’t change, unlike
+templates, which are parsed. The static directory can be divided in to
+the types of files that it contains: js for javascript, css for css files,
+img for images, etc., but that isn’t necessary.</p>
+</div>
+</div>
+</div>
+
+
+
+    </div>
+</div>
+<script type="text/javascript" src="./Flask 2_ Templates &amp; Jinja_files/jquery.js"></script>
+<script type="text/javascript" src="./Flask 2_ Templates &amp; Jinja_files/underscore.js"></script>
+<script type="text/javascript" src="./Flask 2_ Templates &amp; Jinja_files/doctools.js"></script>
+<script type="text/javascript" src="./Flask 2_ Templates &amp; Jinja_files/language_data.js"></script> 
+
+</body></html>

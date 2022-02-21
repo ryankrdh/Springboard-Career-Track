@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://curric.rithmschool.com/springboard/lectures/flask-tools/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Flask Tools</title>
+
+    <link rel="stylesheet" href="./Flask Tools_files/pygments.css" type="text/css">
+    <link rel="stylesheet" href="./Flask Tools_files/handouts-sphinx.css">
+
+    
+    <link href="./Flask Tools_files/css" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+<div id="page-wrapper">
+    <div id="page-sidebar">
+        <header>
+            <p class="project">Springboard</p>
+
+            <p class="title">Flask Tools</p>
+
+            <p class="backlink"><a href="https://curric.rithmschool.com/springboard/lectures/flask-tools/"> « Back to Homepage</a></p>
+
+        </header>
+        <div id="toc">
+            <ul>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#">Flask Tools</a><ul>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#goals">Goals</a><ul>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#id1">Goals</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#redirecting">Redirecting</a><ul>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#id2">Redirecting</a></li>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#flask-debug-toolbar-redirects">Flask Debug Toolbar &amp; Redirects</a></li>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#common-pattern-redirect-post-to-get">Common Pattern: Redirect POST to GET</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#message-flashing">Message Flashing</a><ul>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#id3">Message Flashing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#returning-json">Returning JSON</a><ul>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#id4">Returning JSON</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#flask-debugging">Flask Debugging</a><ul>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#id5">Flask Debugging</a></li>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#debugging-errors">Debugging Errors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#python-debugger">Python Debugger</a><ul>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#id6">Python Debugger</a></li>
+<li><a class="reference internal" href="https://curric.rithmschool.com/springboard/lectures/flask-tools/#debugger-basics">Debugger Basics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+    </div>
+    <div id="page-content">
+        
+  <div class="section" id="flask-tools">
+<h1>Flask Tools</h1>
+<p><a class="reference external" href="https://curric.rithmschool.com/springboard/lectures/flask-tools-demo.zip">Download Demo Code</a></p>
+<div class="section" id="goals">
+<h2>Goals</h2>
+<div class="section" id="id1">
+<div class="docutils container">
+<ul class="simple">
+<li>Explore other common features of web frameworks like Flask, including:<ul>
+<li>Redirecting</li>
+<li>Flash messaging</li>
+<li>Returning JSON data</li>
+</ul>
+</li>
+<li>Debug Flask errors from the error page</li>
+<li>Set break points in Python code with <cite>pdb</cite></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="redirecting">
+<h2>Redirecting</h2>
+<div class="section" id="id2">
+<p>What is an HTTP redirect?</p>
+<div class="docutils container">
+<ul class="simple">
+<li>An HTTP response</li>
+<li>The status code is a “redirect code” (often, 302)</li>
+<li>It contains a URL for browser to re-request</li>
+<li>Typically, for ancient browsers, contains HTML with a link</li>
+</ul>
+</div>
+<pre class="console literal-block">$ <span class="cmd">curl -v http://localhost:5000/redirect-me</span>
+
+&lt; HTTP/1.0 302 FOUND
+&lt; Content-Type: text/html; charset=utf-8
+&lt; Location: <a class="reference external" href="http://localhost:5002/somewhere-else">http://localhost:5002/somewhere-else</a>
+
+&lt;h1&gt;Redirecting...&lt;/h1&gt;
+&lt;p&gt;You should be redirected automatically to target URL:
+ &lt;a href="/somewhere-else"&gt;/somewhere-else&lt;/a&gt;.
+ If not click the link.&lt;/p&gt;
+</pre>
+<div class="docutils container">
+<p>Your browser won’t typically show you this page — <span class="raw-reveal"><br></span>
+it makes the re-request so fast you don’t even notice it happened!</p>
+</div>
+</div>
+<div class="section" id="flask-debug-toolbar-redirects">
+<h3>Flask Debug Toolbar &amp; Redirects</h3>
+<p>The Debug Toolbar makes redirects explicit</p>
+<p>This is very useful for debugging!</p>
+<div class="docutils container">
+<p>If you don’t want this, you can turn it off:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'DEBUG_TB_INTERCEPT_REDIRECTS'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="common-pattern-redirect-post-to-get">
+<h3>Common Pattern: Redirect POST to GET</h3>
+<div class="docutils container">
+<ul class="simple">
+<li>POST requests are often from a form<ul>
+<li>And change data on the server</li>
+</ul>
+</li>
+<li>If you return HTML from a POST request, the browser shows it fine<ul>
+<li>But if the user hits “Refresh”, they get weird “ok to resubmit” dialog</li>
+</ul>
+</li>
+<li>Better strategy:<ul>
+<li>Do the work you want inside your POST route</li>
+<li>Then <em>redirect to</em> a page that shows the confirmation</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">demo/app.py</span></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/post-example"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">"POST"</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">post_example</span><span class="p">():</span>
+    <span class="sd">"""An example of good POST handling."""</span>
+
+    <span class="n">isbn</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s2">"isbn"</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">Buying Book: </span><span class="si">{isbn}</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># flash message: we'll talk about this soon</span>
+    <span class="c1"># flash(f"Book {isbn} bought!")</span>
+
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s2">"/thanks"</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/thanks"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">say_thanks</span><span class="p">():</span>
+    <span class="sd">"""Thank user for buying a book."""</span>
+
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">"thanks.html"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="message-flashing">
+<h2>Message Flashing</h2>
+<div class="section" id="id3">
+<p>Often you want to provide feedback at “the next page user sees”</p>
+<p>This is most common when you will redirect</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">flash</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/your/route"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">your_route</span><span class="p">():</span>
+  <span class="sd">"""Some route that redirects."""</span>
+
+  <span class="n">flash</span><span class="p">(</span><span class="s2">"Message for user!"</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s2">"/somewhere/else"</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="docutils container">
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">template used by /somewhere/else</span></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% for msg in get_flashed_messages() %}
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ msg }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+{% endfor %}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="returning-json">
+<h2>Returning JSON</h2>
+<div class="section" id="id4">
+<p>JSON is just a string — so you don’t <em>need</em> to do anything special</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/some/route"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">some_route</span><span class="p">():</span>
+    <span class="sd">"""Route that returns JSON."""</span>
+
+    <span class="k">return</span> <span class="s1">'{"name": "Whiskey", "cute": "hella"}'</span>
+</pre></div>
+</div>
+<p>Two considerations:</p>
+<ul class="simple">
+<li>It’s finicky to hand-write JSON and get it right</li>
+<li>It’s sometimes helpful to send header to browser that “this is JSON”<ul>
+<li>Some AJAX plugins are better than others in guessing in absence of this</li>
+</ul>
+</li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">demo/app.py</span></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/example-json"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">example_json_route</span><span class="p">():</span>
+    <span class="sd">"""Return some JSON."""</span>
+
+    <span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Whiskey"</span><span class="p">,</span> <span class="s2">"cute"</span><span class="p">:</span> <span class="s2">"Hella"</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+
+    <span class="c1"># Alternate syntax</span>
+    <span class="c1"># return jsonify(name="Whiskey", cute="Hella")</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="flask-debugging">
+<h2>Flask Debugging</h2>
+<div class="section" id="id5">
+<p>Strategies:</p>
+<ul class="simple">
+<li>as always <cite>print()</cite> <em>(appears in terminal)</em></li>
+<li>Flask Debug Toolbar</li>
+<li>Get an error? You can debug on the error page!</li>
+</ul>
+</div>
+<div class="section" id="debugging-errors">
+<h3>Debugging Errors</h3>
+<p>Click the black “Terminal” symbol in a traceback</p>
+<p>You’ll need to enter “PIN code” (printed out to terminal at start)</p>
+<p>That will give you a Python interpreter right there!</p>
+<div class="docutils container">
+<p>You can examine variables, try out code, etc.</p>
+</div>
+</div>
+</div>
+<div class="section" id="python-debugger">
+<h2>Python Debugger</h2>
+<div class="section" id="id6">
+<p>Python includes a built-in debugger, <cite>pdb</cite></p>
+<p>To add a breakpoint to your code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="o">...</span>
+
+    <span class="kn">import</span> <span class="nn">pdb</span>
+    <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="docutils container">
+<p>When you hit that <cite>set_trace()</cite>, Python will stop so you can
+debug this</p>
+</div>
+</div>
+<div class="section" id="debugger-basics">
+<h3>Debugger Basics</h3>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="16%">
+<col width="84%">
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Command</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>?</td>
+<td>Get help</td>
+</tr>
+<tr class="row-odd"><td>l</td>
+<td>List code where I am</td>
+</tr>
+<tr class="row-even"><td>p</td>
+<td>Print this expression</td>
+</tr>
+<tr class="row-odd"><td>pp</td>
+<td>Pretty print this expression</td>
+</tr>
+<tr class="row-even"><td>n</td>
+<td>Go to next line (step over)</td>
+</tr>
+<tr class="row-odd"><td>s</td>
+<td>Step into function call</td>
+</tr>
+<tr class="row-even"><td>r</td>
+<td>Return from function call</td>
+</tr>
+<tr class="row-odd"><td>c</td>
+<td>Continue to next breakpoint</td>
+</tr>
+<tr class="row-even"><td>w</td>
+<td>Print “frame” (where am I?)</td>
+</tr>
+<tr class="row-odd"><td>q</td>
+<td>Quit debugger</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+
+    </div>
+</div>
+<script type="text/javascript" src="./Flask Tools_files/jquery.js"></script>
+<script type="text/javascript" src="./Flask Tools_files/underscore.js"></script>
+<script type="text/javascript" src="./Flask Tools_files/doctools.js"></script>
+<script type="text/javascript" src="./Flask Tools_files/language_data.js"></script> 
+
+</body></html>
