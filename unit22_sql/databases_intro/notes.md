@@ -10,6 +10,19 @@ SQL - structured query language, a human-readable language for querying.
 PostgreSQL is a relational database that uses SQL and is an open source RDBMS we'll use here.
 Powerful, popular, follows the SQL standard closely (it does not add bunch of features that are not standard SQL).
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+setting the terminal:
+export PATH="/Users/ryankrdh/Library/Application Support/Postgres/var-14/bin:$PATH"
+
+createdb "database name"
+psql < my_database.sql
+
 # POSTGRESQL CHEATSHEET
 
 ## PSQL
