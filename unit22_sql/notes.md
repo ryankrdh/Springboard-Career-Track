@@ -3,7 +3,7 @@
 model data as rows and columns of tabular data (like spreadsheets)
 RDBMS - relational database management system. Allows us to interact with the database.
 schema - a logical representation of a database including its tables. a representation of our database.
-SQL - structured query language, a human-readable language for querying.
+SQL - structured query language, a human>readable language for querying.
 
 <br/>
 
@@ -81,26 +81,26 @@ DELETE: DELETE FROM
 
 Using WHERE to filter which rows get included:
 
-- SELECT title, price FROM books WHERE price > 10;
+> SELECT title, price FROM books WHERE price > 10;
 
 filter books with page count from 400 to 700
 
-- SELECT title, page_count FROM books WHERE page_count < 700 and page_count > 400;
+> SELECT title, page_count FROM books WHERE page_count < 700 and page_count > 400;
 
 filter where author is Ari Berman or Trevor Noah:
 
-- SELECT title, author FROM books WHERE author IN ('Ari Berman', 'Trevor Noah');
+> SELECT title, author FROM books WHERE author IN ('Ari Berman', 'Trevor Noah');
 
 counts how many rows:
 
-- SELECT COUNT(\*) FROM books;
+> SELECT COUNT(\*) FROM books;
 
 finding max, min, avg, sum from books:
 
-- SELECT MIN(price) FROM books;
-  - SELECT AVG(page_count) FROM books;
-  - SELECT AVG(page_count) FROM books WHERE author = 'J. K. Rowling';
-  - SELECT SUM(price) FROM books;
+> SELECT MIN(price) FROM books;
+> SELECT AVG(page_count) FROM books;
+> SELECT AVG(page_count) FROM books WHERE author = 'J. K. Rowling';
+> SELECT SUM(price) FROM books;
 
 <br/>
 
@@ -108,23 +108,46 @@ finding max, min, avg, sum from books:
 
 filtering how many rows by author:
 
-- SELECT author, COUNT(\*) FROM books GROUP BY author;
-- SELECT author, COUNT(\*), AVG(page_count) FROM books GROUP BY author;
+> SELECT author, COUNT(\*) FROM books GROUP BY author;
+> SELECT author, COUNT(\*), AVG(page_count) FROM books GROUP BY author;
 
 ## GROUP BY + HAVING
 
 decide which group, if grouped, to keep:
 
-- SELECT author, COUNT(\*) FROM books GROUP BY author HAVING COUNT(\*) > 2;
+> SELECT author, COUNT(\*) FROM books GROUP BY author HAVING COUNT(\*) > 2;
 
 <br/>
+
+## ORDER BY
+
+in alphabetical order by author names:
+
+> SELECT id, author FROM books ORDER BY author;
+
+in descending order:
+
+> SELECT id, author FROM books ORDER BY author desc;
+
+in slphabetical order by author, when there's a tie, break it with title:
+
+> SELECT author, title FROM books ORDER BY author, title;
+
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+
+## LIMIT
+
+only show n number of rows:
+
+> SELECT title, author, price FROM books ORDER BY price LIMIT 5;
+> SELECT \* FROM books WHERE page_count > 500 ORDER BY author LIMIT 2;
+
+> <br/>
+> <br/>
+> <br/>
+> <br/>
+> <br/>
+> <br/>
+> <br/>
+> <br/>
+> <br/>
