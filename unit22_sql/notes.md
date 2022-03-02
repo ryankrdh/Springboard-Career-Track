@@ -197,6 +197,16 @@ using 'total' ALIAS for ORDER BY
 
 > INSERT INTO books (title, author) VALUES ('Life of Shiba', 'Ryan'), ('Life of Cats', 'Janet')
 
+## UPDATE
+
+> UPDATE books SET author = 'Colt Steele' WHERE author = 'J. K. Rowling';
+
+## DELETE
+
+delete all books with certain page number
+
+> DELETE FROM books WHERE page_count > 500;
+
 > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
 SQL Constraints
