@@ -170,15 +170,34 @@ returns if partial matches. ex:
 
 > SELECT id, title FROM books WHERE title LIKE '%T%';
 
-> <br/>
-> <br/>
-> <br/>
-> <br/>
-> <br/>
-> <br/>
-> <br/>
-> <br/>
-> <br/>
+** ILIKE will match case-insensitive **
+
+end with letter g:
+
+> SELECT author FROM books WHERE author ILIKE '%g';
+
+all authors that begin with J or a K:
+
+> SELECT author FROM books WHERE author ILIKE 'J%' OR author ILIKE 'K%';
+
+## ALIASES
+
+getting average page count and prices:
+using Aliases gives column name
+
+> SELECT AVG(page_count) AS avg_pages, AVG(price) AS avg_prices FROM books GROUP BY author;
+
+using 'total' ALIAS for ORDER BY
+
+> SELECT author, SUM(page_count) AS total FROM books GROUP BY author ORDER BY total;
+
+## INSERT
+
+> INSERT INTO books (title, author, price) VALUES ('Life of Shiba', 'Ryan', 59.99)
+
+> INSERT INTO books (title, author) VALUES ('Life of Shiba', 'Ryan'), ('Life of Cats', 'Janet')
+
+> <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
 SQL Constraints
 Constraints are the rules enforced on data columns on a table. These are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the database.
