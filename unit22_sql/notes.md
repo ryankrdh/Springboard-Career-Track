@@ -143,11 +143,15 @@ only show n number of rows:
 > SELECT \* FROM books WHERE page_count > 500 ORDER BY author LIMIT 2;
 > SELECT \* FROM books WHERE page_count > 500 ORDER BY author desc LIMIT 2;
 
+<br/>
+
 ## OFFSET
 
 skip n number of rows. Used in combination with LIMIT to paginate results.
 
 > SELECT id, author FROM books LIMIT 5 OFFSET 10;
+
+<br/>
 
 ## SQL OPERATORS
 
@@ -180,6 +184,8 @@ all authors that begin with J or a K:
 
 > SELECT author FROM books WHERE author ILIKE 'J%' OR author ILIKE 'K%';
 
+<br/>
+
 ## ALIASES
 
 getting average page count and prices:
@@ -191,21 +197,29 @@ using 'total' ALIAS for ORDER BY
 
 > SELECT author, SUM(page_count) AS total FROM books GROUP BY author ORDER BY total;
 
+<br/>
+
 ## INSERT
 
 > INSERT INTO books (title, author, price) VALUES ('Life of Shiba', 'Ryan', 59.99)
 
 > INSERT INTO books (title, author) VALUES ('Life of Shiba', 'Ryan'), ('Life of Cats', 'Janet')
 
+<br/>
+
 ## UPDATE
 
 > UPDATE books SET author = 'Colt Steele' WHERE author = 'J. K. Rowling';
+
+<br/>
 
 ## DELETE
 
 delete all books with certain page number
 
 > DELETE FROM books WHERE page_count > 500;
+
+<br/>
 
 > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
