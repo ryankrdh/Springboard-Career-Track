@@ -141,6 +141,34 @@ only show n number of rows:
 
 > SELECT title, author, price FROM books ORDER BY price LIMIT 5;
 > SELECT \* FROM books WHERE page_count > 500 ORDER BY author LIMIT 2;
+> SELECT \* FROM books WHERE page_count > 500 ORDER BY author desc LIMIT 2;
+
+## OFFSET
+
+skip n number of rows. Used in combination with LIMIT to paginate results.
+
+> SELECT id, author FROM books LIMIT 5 OFFSET 10;
+
+## SQL OPERATORS
+
+IN, NOT IN: gives title in the given id
+
+> SELECT id, title FROM books WHERE id IN (1, 7, 9);
+> SELECT id, title FROM books WHERE id NOT IN (1, 7, 9);
+
+BETWEEN, AND, OR:
+
+> SELECT id, title FROM books WHERE id BETWEEN >=20 and id <=25;
+> SELECT id, title FROM books WHERE id BETWEEN >=20 and id <=25 AND price > 12;
+> SELECT id, title FROM books WHERE id NOT BETWEEN >=20 and id <=25;
+
+LIKE:
+
+returns if partial matches. ex:
+'abc' LIKE 'a%' more than one can character be matched
+'abc' LIKE '_b_' only one character can be matched.
+
+> SELECT id, title FROM books WHERE title LIKE '%T%';
 
 > <br/>
 > <br/>
