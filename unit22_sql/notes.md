@@ -97,9 +97,9 @@ counts how many rows:
 
 finding max, min, avg, sum from books:
 
-> SELECT MIN(price) FROM books;
-> SELECT AVG(page_count) FROM books;
-> SELECT AVG(page_count) FROM books WHERE author = 'J. K. Rowling';
+> SELECT MIN(price) FROM books;  
+> SELECT AVG(page_count) FROM books;  
+> SELECT AVG(page_count) FROM books WHERE author = 'J. K. Rowling';  
 > SELECT SUM(price) FROM books;
 
 <br/>
@@ -160,11 +160,13 @@ IN, NOT IN: gives title in the given id
 > SELECT id, title FROM books WHERE id IN (1, 7, 9);
 > SELECT id, title FROM books WHERE id NOT IN (1, 7, 9);
 
-BETWEEN, AND, OR:
+BETWEEN, AND, OR, XOR:
+\*XOR is One of the other (but NOT both)
 
-> SELECT id, title FROM books WHERE id BETWEEN >=20 and id <=25;
-> SELECT id, title FROM books WHERE id BETWEEN >=20 and id <=25 AND price > 12;
-> SELECT id, title FROM books WHERE id NOT BETWEEN >=20 and id <=25;
+> SELECT id, title FROM books WHERE id BETWEEN >=20 and id <=25;  
+> SELECT id, title FROM books WHERE id BETWEEN >=20 and id <=25 AND price > 12;  
+> SELECT id, title FROM books WHERE id NOT BETWEEN >=20 and id <=25;  
+> SELECT name, population, area FROM world WHERE area > 3000000 XOR population > 250000000;
 
 LIKE:
 
@@ -221,7 +223,15 @@ delete all books with certain page number
 
 <br/>
 
-> <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
+## ROUND
+
+For South America show population in millions and GDP in billions both to 2 decimal places.
+
+> SELECT name, round(population/1000000, 2), round(gdp/1000000000, 2) FROM world WHERE continent = ('South America')
+
+<br/>
+
+<br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
 SQL Constraints
 Constraints are the rules enforced on data columns on a table. These are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the database.
