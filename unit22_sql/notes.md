@@ -311,3 +311,24 @@ Chicago
 Madison
 Boston
 Denver
+
+SELECT DISTINCT city
+FROM contact_details;
+BETWEEN Operator
+The BETWEEN operator can be used to filter by a range of values. The range of values can be text, numbers, or date data. The given query will match any movie made between the years 1980 and 1990, inclusive.
+
+SELECT \*
+FROM movies
+WHERE year BETWEEN 1980 AND 1990;
+LIMIT Clause
+The LIMIT clause is used to narrow, or limit, a result set to the specified number of rows. The given query will limit the result set to 5 rows.
+
+SELECT \*
+FROM movies
+LIMIT 5;
+NULL Values
+Column values can be NULL, or have no value. These records can be matched (or not matched) using the IS NULL and IS NOT NULL operators in combination with the WHERE clause. The given query will match all addresses where the address has a value or is not NULL.
+
+SELECT address
+FROM records
+WHERE address IS NOT NULL;
