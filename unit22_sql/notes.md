@@ -229,7 +229,11 @@ For South America show population in millions and GDP in billions both to 2 deci
 
 > SELECT name, round(population/1000000, 2), round(gdp/1000000000, 2) FROM world WHERE continent = ('South America')
 
-<br/>
+## FUNCTIONS and OPERATORS
+
+- round(name, -3) will give 0 up to 1000.
+- <> means not equal.
+  <br/>
 
 <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
@@ -332,3 +336,10 @@ Column values can be NULL, or have no value. These records can be matched (or no
 SELECT address
 FROM records
 WHERE address IS NOT NULL;
+
+WHERE Clause
+The WHERE clause is used to filter records (rows) that match a certain condition. The given query will select all records where the pub_year equals 2017.
+
+SELECT title
+FROM library
+WHERE pub_year = 2017;
