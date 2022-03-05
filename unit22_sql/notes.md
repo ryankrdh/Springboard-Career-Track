@@ -343,3 +343,29 @@ The WHERE clause is used to filter records (rows) that match a certain condition
 SELECT title
 FROM library
 WHERE pub_year = 2017;
+
+The Foreign Key Constraint
+Setting up a foreign key constraint with DDL:
+
+CREATE TABLE studios
+(id SERIAL PRIMARY KEY,
+name TEXT,
+founded_in TEXT);
+
+CREATE TABLE movies
+(id SERIAL PRIMARY KEY,
+title TEXT,
+studio_id INTEGER REFERENCES studios (id));
+Constraints are specified by the DDL, but affect DML query behavior.
+
+INSERT INTO studios (name, founded_in) VALUES
+('Walt Disney Studios Motion Pictures', '1953-06-23'),
+('20th Century Fox', '1935-05-31'),
+('Universal Pictures', '1912-04-30');
+-- reference Disney's primary key
+INSERT INTO movies (title, studio_id)
+VALUES ('Star Wars: The Force Awakens', 1);
+-- Throws an Foreign Key Constraint Error...
+-- There is no studio with a primary key of 1000
+INSERT INTO movies (title, studio_id)
+VALUES ('Black Panther', 1000);
