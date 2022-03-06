@@ -418,3 +418,13 @@ VALUES
 ('Black Panther', 2018, 140, 'PG-13', 1),
 ('Jurassic World', 2015, 124, 'PG-13', 3),
 ('Marvel’s The Avengers', 2012, 142, 'PG-13', 1);
+
+Our First Join
+SELECT title, name
+FROM movies
+JOIN studios
+ON movies.studio_id = studios.id;
+SELECT title, name
+FROM movies
+INNER JOIN studios
+ON movies.studio_id = studios.id;
