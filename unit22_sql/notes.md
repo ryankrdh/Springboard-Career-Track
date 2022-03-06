@@ -369,3 +369,19 @@ VALUES ('Star Wars: The Force Awakens', 1);
 -- There is no studio with a primary key of 1000
 INSERT INTO movies (title, studio_id)
 VALUES ('Black Panther', 1000);
+
+Deleting Data Examples
+When trying to delete a studio…
+
+We cannot delete it outright while movies still reference it.
+
+DELETE FROM studios WHERE id=1; -- error
+Option 1: Clear out the studio_id columns of movies that reference it.
+
+UPDATE movies SET studio_id=NULL WHERE studio_id=1;
+DELETE FROM studios WHERE id=1;
+Option 2: Delete the movies associated with that studio first.
+
+DELETE FROM movies WHERE studio_id=1;
+DELETE FROM studios WHERE id=1;
+What are the trade-offs? We will revisit this when we look at how to implement each of the two options above in the DDL.
