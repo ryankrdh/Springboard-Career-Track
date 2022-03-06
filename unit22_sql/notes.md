@@ -155,6 +155,15 @@ skip n number of rows. Used in combination with LIMIT to paginate results.
 
 ## SQL OPERATORS
 
+IN Operator :
+The IN operator is used with Where Clause to test if the expression matches any value in the list of values. The advantage of using IN operator is that it avoids the use of multiple OR Operator.
+
+Query :
+To fetch record of students with address as Delhi or ROHTAK.
+The SQL query using IN operator would be,
+
+> SELECT \* FROM Student WHERE ADDRESS IN ('Delhi', 'ROHTAK');
+
 IN, NOT IN: gives title in the given id
 
 > SELECT id, title FROM books WHERE id IN (1, 7, 9);
@@ -163,9 +172,9 @@ IN, NOT IN: gives title in the given id
 BETWEEN, AND, OR, XOR:
 \*XOR is One of the other (but NOT both)
 
-> SELECT id, title FROM books WHERE id BETWEEN >=20 and id <=25;  
-> SELECT id, title FROM books WHERE id BETWEEN >=20 and id <=25 AND price > 12;  
-> SELECT id, title FROM books WHERE id NOT BETWEEN >=20 and id <=25;  
+> SELECT id, title FROM books WHERE id BETWEEN 20 and 25;  
+> SELECT id, title FROM books WHERE id BETWEEN 20 and 25 AND price > 12;  
+> SELECT id, title FROM books WHERE id NOT BETWEEN 20 and id 25;  
 > SELECT name, population, area FROM world WHERE area > 3000000 XOR population > 250000000;
 
 LIKE:
