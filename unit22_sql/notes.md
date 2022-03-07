@@ -379,7 +379,84 @@ SELECT age, COUNT(_) AS total_people FROM people GROUP BY age HAVING COUNT(_) >=
 
 <br/>
 
--- 1.
+--#1
+/_
+Show the total population of the world.
+_/
+SELECT SUM(population)
+FROM world
+
+<br/>
+
+--#2
+/_
+List all the continents - just once each.
+_/
+SELECT DISTINCT(continent)
+FROM world
+
+<br/>
+
+--#3
+/_
+Give the total GDP of Africa
+_/
+SELECT SUM(gdp)
+FROM world
+WHERE continent = 'Africa'
+
+<br/>
+
+--#4
+/_
+How many countries have an area of at least 1000000
+_/
+SELECT COUNT(name)
+FROM world
+WHERE area >= 1000000
+
+<br/>
+
+--#5
+/_
+What is the total population of ('France','Germany','Spain')
+_/
+SELECT SUM(population)
+FROM world
+WHERE name IN ('France', 'Germany', 'Spain')
+
+<br/>
+
+--#6
+/_
+For each continent show the continent and number of countries.
+_/
+SELECT continent, COUNT(name)
+FROM world
+GROUP BY continent
+
+<br/>
+
+--#7
+/_
+For each continent show the continent and number of countries with populations of at least 10 million.
+_/
+SELECT continent, COUNT(name)
+FROM world
+WHERE population >= 10000000
+GROUP BY continent
+
+<br/>
+
+--#8
+/_
+List the continents that have a total population of at least 100 million.
+_/
+SELECT continent
+FROM world
+GROUP BY continent
+HAVING SUM(population) > 100000000
+
 <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
 SQL Constraints
