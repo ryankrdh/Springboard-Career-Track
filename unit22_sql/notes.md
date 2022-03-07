@@ -340,6 +340,45 @@ FROM nobel
 WHERE yr=1984
 ORDER BY subject IN ('Physics','Chemistry'), subject,winner;
 
+<br/>
+
+-- 1. For this challenge you need to create a simple SELECT statement that will return all columns from the people table WHERE their age is over 50
+
+SELECT \* FROM people WHERE age > 50 ORDER BY age DESC;
+
+<br/>
+
+-- 2. For this challenge you need to create a simple SUM statement that will sum all the ages.
+
+SELECT SUM(age) AS age_sum FROM people;
+
+<br/>
+
+-- 3. For this challenge you need to create a simple MIN / MAX statement that will return the Minimum and Maximum ages out of all the people.
+
+SELECT MIN(age) AS age_min, MAX(age) AS age_max FROM people;
+
+<br/>
+
+-- 4. Create a simple SELECT query to display student information of all ACTIVE students.
+True or False answer. 1 = true -1 = false
+
+SELECT \* FROM students WHERE isActive = 1;
+
+<br/>
+
+-- 5. For this challenge you need to create a simple GROUP BY statement, you want to group all the people by their age and count the people who have the same age.
+
+SELECT age, COUNT(\*) AS people_count FROM people GROUP BY age ORDER BY age DESC;
+
+<br/>
+
+-- 6. For this challenge you need to create a simple HAVING statement, you want to count how many people have the same age and return the groups with 10 or more people who have that age.
+
+SELECT age, COUNT(_) AS total_people FROM people GROUP BY age HAVING COUNT(_) >= 10;
+
+<br/>
+
 <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
 SQL Constraints
