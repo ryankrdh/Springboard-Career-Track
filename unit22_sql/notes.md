@@ -379,6 +379,7 @@ SELECT age, COUNT(_) AS total_people FROM people GROUP BY age HAVING COUNT(_) >=
 
 <br/>
 
+-- 1.
 <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
 SQL Constraints
