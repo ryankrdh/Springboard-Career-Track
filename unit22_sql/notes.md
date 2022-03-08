@@ -459,23 +459,8 @@ HAVING SUM(population) > 100000000
 
 <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
-1.
-
-To see all of the columns/fields from all of the rows/records in the projects table:
-
-SELECT \*
-FROM projects;
-
-Note that the line breakdown is for form and ease of reading, the statement could also be written as:
-
-SELECT \* FROM projects;
-
-Note also that the instruction itself is not case sensitive and could be written as:
-
-select \* from projects;
-
-or as
-
-SELECT \* FROM PROJECTS;
-
-The format of the select is the verb SELECT followed by a list of the columns/fields that the user wants displayed followed by the clause FROM and the name of the table/file that contains the columns/fields. The use of the \* means that all columns/fields are to be displayed.
+One-to-Many (1:M)
+Our studio_id column provides us with a reference to the corresponding record in the studios table by its primary key.
+Typically this is implemented with a foreign key constraint, which makes sure every studio_id exists somewhere in the studios table.
+One-to-Many (1:M) in the sense that one studio has many movies, but each movie has one studio.
+In this example, we can say movies is the referencing table, and studios is the referenced table.
