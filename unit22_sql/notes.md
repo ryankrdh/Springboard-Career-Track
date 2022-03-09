@@ -457,23 +457,19 @@ FROM world
 GROUP BY continent
 HAVING SUM(population) > 100000000
 
-<br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
+<br/> 
+------------------------------------------------------------------------- 
+<br/>
+
+# SQL RELATIONSHIPS
 
 One-to-Many (1:M)
 Our studio_id column provides us with a reference to the corresponding record in the studios table by its primary key.
+
 Typically this is implemented with a foreign key constraint, which makes sure every studio_id exists somewhere in the studios table.
+
 One-to-Many (1:M) in the sense that one studio has many movies, but each movie has one studio.
+
 In this example, we can say movies is the referencing table, and studios is the referenced table.
 
-The Foreign Key Constraint
-Setting up a foreign key constraint with DDL:
-
-CREATE TABLE studios
-(id SERIAL PRIMARY KEY,
-name TEXT,
-founded_in TEXT);
-
-CREATE TABLE movies
-(id SERIAL PRIMARY KEY,
-title TEXT,
-studio_id INTEGER REFERENCES studios (id));
+> <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
