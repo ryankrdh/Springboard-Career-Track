@@ -35,6 +35,10 @@ setting the terminal:
 
 > export PATH="/Users/ryankrdh/Library/Application Support/Postgres/var-14/bin:$PATH"
 
+modifying .zshrc:
+
+> PSQL_PATH="/Applications/Postgres.app/Contents/Versions/latest/bin"PATH="$PATH:$PSQL_PATH"
+
 Create DB:
 
 > createdb "database name"
