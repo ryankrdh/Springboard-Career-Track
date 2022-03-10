@@ -477,3 +477,7 @@ One-to-Many (1:M) in the sense that one studio has many movies, but each movie h
 In this example, we can say movies is the referencing table, and studios is the referenced table.
 
 > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
+
+In SQL, there are three types of relationships--one-to-one (1:1), one-to-many (1:N) or many-to-many (M:N)--which can be modeled. The six tables (Students, Lecturers, Courses, StudentLecturer, StudentCourse and LecturerCourse) will be used to illustrate these relationships. The Students, Lecturers and Courses tables are the master tables and relationships are built using the other three tables, the StudentLecturer, StudentCourse and LecturerCourse.
+
+Let's first discuss the concept of primary and foreign keys. The keys can be a single field or formed using a combination of fields in the table. Every table can have only one primary key and the primary key must be unique (i.e. the value of a primary key must be different for each row of data in the table). In the diagram from a moment ago, the vertical key symbol shows the field which is the primary key of the table.
