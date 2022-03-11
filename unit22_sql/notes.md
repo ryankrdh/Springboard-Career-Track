@@ -487,3 +487,6 @@ Let’s start with a one-to-many relationship as it is the most commonly used ty
 
 One-to-one relationship
 A one-to-one relationship in a database occurs when each row in table 1 has only one related row in table 2. For example, a department may have only one head manager, a husband — only one wife, an employee — one company car, etc.
+
+Many-to-many relationship
+A many-to-many relationship occurs when multiple records in one table are related to multiple records in another table. For example, products and suppliers: one supplier may deliver one or many products and at the same time, the company may order one product from one or many suppliers.
