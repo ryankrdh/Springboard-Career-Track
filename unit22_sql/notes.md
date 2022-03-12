@@ -493,3 +493,6 @@ A many-to-many relationship occurs when multiple records in one table are relate
 
 Example of creating many-to-many relation in SQL
 Relational databases don’t support direct many-to-many relationships between two tables. Then, how to implement many-to-many relationships in SQL? To create a many-to-many relationship in a database, you’ll need to create a third table to connect the other two. This new table (also known as a linking, joining, bridging, or junction table) will contain the primary key columns of the two tables you want to relate and will serve as an intermediate table between them.
+
+Example of creating many-to-many relation in SQL
+Relational databases don’t support direct many-to-many relationships between two tables. Then, how to implement many-to-many relationships in SQL? To create a many-to-many relationship in a database, you’ll need to create a third table to connect the other two. This new table (also known as a linking, joining, bridging, or junction table) will contain the primary key columns of the two tables you want to relate and will serve as an intermediate table between them.
