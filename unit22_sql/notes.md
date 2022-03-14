@@ -476,6 +476,19 @@ One-to-Many (1:M) in the sense that one studio has many movies, but each movie h
 
 In this example, we can say movies is the referencing table, and studios is the referenced table.
 
+# Many to Many
+
+CREATE TABLE actors
+(id SERIAL PRIMARY KEY,
+first_name TEXT,
+last_name TEXT,
+birth_date TEXT);
+
+CREATE TABLE roles
+(id SERIAL PRIMARY KEY,
+movie_id INTEGER REFERENCES movies (id),
+actor_id INTEGER REFERENCES actors (id));
+
 > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
 In SQL, there are three types of relationships--one-to-one (1:1), one-to-many (1:N) or many-to-many (M:N)--which can be modeled. The six tables (Students, Lecturers, Courses, StudentLecturer, StudentCourse and LecturerCourse) will be used to illustrate these relationships. The Students, Lecturers and Courses tables are the master tables and relationships are built using the other three tables, the StudentLecturer, StudentCourse and LecturerCourse.
