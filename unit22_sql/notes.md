@@ -499,3 +499,6 @@ Relational databases don’t support direct many-to-many relationships between t
 
 Self-referencing relationships
 A self-referencing relationship (also known as a recursive relationship) in a database occurs when a column in a table relates to another column in the same table. In such a relationship, only one table is involved. For example, the Staff table contains information about company employees and their managers, however, managers themselves belong to staff too.
+
+Create table relationships in SQL Server using SQL Designer
+The methods to define relationships in a SQL Server database described above are not so easy and straightforward. They involve a bit of coding and demand a certain level of SQL expertise. Is there an easier way to create relationships? Let’s have a look at the method to implement relations visually—using the SQL Designer that comes with dbForge Studio for SQL Server.
