@@ -495,19 +495,72 @@ CREATE TABLE movies
 title TEXT,
 studio_id INTEGER REFERENCES studios (id));
 
-Constraints are specified by the DDL, but affect DML query behavior.
+## Constraints are specified by the DDL, but affect DML query behavior.
 
 INSERT INTO studios (name, founded_in) VALUES
 ('Walt Disney Studios Motion Pictures', '1953-06-23'),
 ('20th Century Fox', '1935-05-31'),
 ('Universal Pictures', '1912-04-30');
+
 -- reference Disney's primary key
 INSERT INTO movies (title, studio_id)
 VALUES ('Star Wars: The Force Awakens', 1);
+
 -- Throws an Foreign Key Constraint Error...
 -- There is no studio with a primary key of 1000
 INSERT INTO movies (title, studio_id)
 VALUES ('Black Panther', 1000);
+
+## Deleting Data Examples
+
+When trying to delete a studio…
+We cannot delete it outright while movies still reference it.
+
+DELETE FROM studios WHERE id=1; -- error
+
+Option 1: Clear out the studio_id columns of movies that reference it.
+UPDATE movies SET studio_id=NULL WHERE studio_id=1;
+DELETE FROM studios WHERE id=1;
+
+Option 2: Delete the movies associated with that studio first.
+DELETE FROM movies WHERE studio_id=1;
+DELETE FROM studios WHERE id=1;
+
+# JOIN Operation
+
+The JOIN operation allows us to create a table in memory by combining information from different tables
+Data from tables is matched according to a join condition
+Most commonly, the join condition involves comparing a foreign key from one table and a primary key in another table
+Setting Up the Data
+
+CREATE TABLE studios
+(id SERIAL PRIMARY KEY,
+name TEXT,
+founded_in TEXT);
+
+CREATE TABLE movies
+(id SERIAL PRIMARY KEY,
+title TEXT,
+release_year INTEGER,
+runtime INTEGER,
+rating TEXT,
+studio_id INTEGER REFERENCES studios (id));
+
+INSERT INTO studios
+(name, founded_in)
+VALUES
+('Walt Disney Studios Motion Pictures', '1953-06-23'),
+('20th Century Fox', '1935-05-31'),
+('Universal Pictures', '1912-04-30');
+
+INSERT INTO movies
+(title, release_year, runtime, rating, studio_id)
+VALUES
+('Star Wars: The Force Awakens', 2015, 136, 'PG-13', 1),
+('Avatar', 2009, 160, 'PG-13', 2),
+('Black Panther', 2018, 140, 'PG-13', 1),
+('Jurassic World', 2015, 124, 'PG-13', 3),
+('Marvel’s The Avengers', 2012, 142, 'PG-13', 1);
 
 # Many to Many
 
