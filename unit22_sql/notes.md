@@ -476,6 +476,39 @@ One-to-Many (1:M) in the sense that one studio has many movies, but each movie h
 
 In this example, we can say movies is the referencing table, and studios is the referenced table.
 
+# One to Many
+
+Our studio_id column provides us with a reference to the corresponding record in the studios table by its primary key.
+Typically this is implemented with a foreign key constraint, which makes sure every studio_id exists somewhere in the studios table.
+One-to-Many (1:M) in the sense that one studio has many movies, but each movie has one studio.
+In this example, we can say movies is the referencing table, and studios is the referenced table.
+
+## Setting up FOREIGN KEY CONSTRAINT
+
+CREATE TABLE studios
+(id SERIAL PRIMARY KEY,
+name TEXT,
+founded_in TEXT);
+
+CREATE TABLE movies
+(id SERIAL PRIMARY KEY,
+title TEXT,
+studio_id INTEGER REFERENCES studios (id));
+
+Constraints are specified by the DDL, but affect DML query behavior.
+
+INSERT INTO studios (name, founded_in) VALUES
+('Walt Disney Studios Motion Pictures', '1953-06-23'),
+('20th Century Fox', '1935-05-31'),
+('Universal Pictures', '1912-04-30');
+-- reference Disney's primary key
+INSERT INTO movies (title, studio_id)
+VALUES ('Star Wars: The Force Awakens', 1);
+-- Throws an Foreign Key Constraint Error...
+-- There is no studio with a primary key of 1000
+INSERT INTO movies (title, studio_id)
+VALUES ('Black Panther', 1000);
+
 # Many to Many
 
 CREATE TABLE actors
