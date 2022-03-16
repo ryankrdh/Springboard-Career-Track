@@ -526,7 +526,7 @@ Option 2: Delete the movies associated with that studio first.
 DELETE FROM movies WHERE studio_id=1;
 DELETE FROM studios WHERE id=1;
 
-# JOIN Operation
+## JOIN Operation
 
 The JOIN operation allows us to create a table in memory by combining information from different tables
 Data from tables is matched according to a join condition
@@ -562,7 +562,7 @@ VALUES
 ('Jurassic World', 2015, 124, 'PG-13', 3),
 ('Marvel’s The Avengers', 2012, 142, 'PG-13', 1);
 
-# Our First Join
+## Our First Join
 
 SELECT title, name
 FROM movies
@@ -574,7 +574,30 @@ FROM movies
 INNER JOIN studios
 ON movies.studio_id = studios.id;
 
-# Many to Many
+JOIN and INNER JOIN are the same, the INNER keyword is optional.
+
+# Types of Joins
+
+There are two primary types of joins: inner and outer.
+
+## Inner
+
+Only the rows that match the condition in both tables.
+
+## Outer
+
+Left - All of the rows from the first table (left), combined with matching rows from the second table (right).
+
+Right - The matching rows from the first table (left), combined with all the rows from the second table (right).
+
+Full - All the rows from both tables (left and right).
+
+> SELECT \* FROM movies INNER JOIN studios ON movies.studio_id = studios.id;
+> SELECT \* FROM movies RIGHT JOIN studios ON movies.studio_id = studios.id;
+> SELECT \* FROM movies LEFT JOIN studios ON movies.studio_id = studios.id;
+> SELECT \* FROM movies FULL JOIN studios ON movies.studio_id = studios.id;
+
+## Many to Many
 
 CREATE TABLE actors
 (id SERIAL PRIMARY KEY,
