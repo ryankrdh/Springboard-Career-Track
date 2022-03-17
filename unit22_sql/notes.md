@@ -638,6 +638,26 @@ ON movies.id = roles.movie_id
 JOIN actors
 ON roles.actor_id = actors.id;
 
+Selecting certain columns, using table alias shorthand:
+
+SELECT m.title, a.first_name, a.last_name
+FROM movies m
+JOIN roles r
+ON m.id = r.movie_id
+JOIN actors a
+ON r.actor_id = a.id;
+
+Get all the id, first name and last name of the actors that have been in more than one movie
+
+SELECT a.id, a.first_name, a.last_name
+FROM movies m
+JOIN roles r
+ON m.id = r.movie_id
+JOIN actors a
+ON r.actor_id = a.id
+GROUP BY a.id, a.first_name, a.last_name
+HAVING count(\*) >= 2;
+
 > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
 In SQL, there are three types of relationships--one-to-one (1:1), one-to-many (1:N) or many-to-many (M:N)--which can be modeled. The six tables (Students, Lecturers, Courses, StudentLecturer, StudentCourse and LecturerCourse) will be used to illustrate these relationships. The Students, Lecturers and Courses tables are the master tables and relationships are built using the other three tables, the StudentLecturer, StudentCourse and LecturerCourse.
