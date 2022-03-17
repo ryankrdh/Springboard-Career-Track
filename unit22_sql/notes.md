@@ -597,6 +597,10 @@ Full - All the rows from both tables (left and right).
 > SELECT \* FROM movies LEFT JOIN studios ON movies.studio_id = studios.id;
 > SELECT \* FROM movies FULL JOIN studios ON movies.studio_id = studios.id;
 
+## Grouping example with JOIN
+
+> SELECT name, COUNT(\*) AS totalFROM movies JOIN studios ON movies.studio_id = studios.id GROUP BY studios.name ORDER BY total DESC;;
+
 ## Many to Many
 
 CREATE TABLE actors
@@ -609,6 +613,20 @@ CREATE TABLE roles
 (id SERIAL PRIMARY KEY,
 movie_id INTEGER REFERENCES movies (id),
 actor_id INTEGER REFERENCES actors (id));
+
+INSERT INTO actors
+(first_name, last_name, birth_date)
+VALUES
+('Scarlett', 'Johansson', '1984-11-22'),
+('Samuel L', 'Jackson', '1948-12-21'),
+('Kristen', 'Wiig', '1973-08-22');
+
+INSERT INTO roles
+(movie_id, actor_id)
+VALUES
+(1, 1),
+(1, 2),
+(3, 2);
 
 > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
