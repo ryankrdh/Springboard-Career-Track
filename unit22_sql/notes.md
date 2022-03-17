@@ -628,6 +628,16 @@ VALUES
 (1, 2),
 (3, 2);
 
+## Querying a Many-to-Many
+
+Connecting movies and actors:
+
+SELECT \* FROM movies
+JOIN roles
+ON movies.id = roles.movie_id
+JOIN actors
+ON roles.actor_id = actors.id;
+
 > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
 In SQL, there are three types of relationships--one-to-one (1:1), one-to-many (1:N) or many-to-many (M:N)--which can be modeled. The six tables (Students, Lecturers, Courses, StudentLecturer, StudentCourse and LecturerCourse) will be used to illustrate these relationships. The Students, Lecturers and Courses tables are the master tables and relationships are built using the other three tables, the StudentLecturer, StudentCourse and LecturerCourse.
