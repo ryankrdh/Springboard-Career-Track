@@ -666,6 +666,18 @@ HAVING count(\*) >= 2;
 
 > DROP DATABASE yet_another_db;
 
+## Creating Tables
+
+CREATE TABLE books (
+id SERIAL PRIMARY KEY,
+title TEXT,
+author TEXT,
+price FLOAT,
+page_count INTEGER,
+publisher TEXT,
+publication_date DATE
+);
+
 > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
 In SQL, there are three types of relationships--one-to-one (1:1), one-to-many (1:N) or many-to-many (M:N)--which can be modeled. The six tables (Students, Lecturers, Courses, StudentLecturer, StudentCourse and LecturerCourse) will be used to illustrate these relationships. The Students, Lecturers and Courses tables are the master tables and relationships are built using the other three tables, the StudentLecturer, StudentCourse and LecturerCourse.
