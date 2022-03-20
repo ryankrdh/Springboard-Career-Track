@@ -603,6 +603,8 @@ Full - All the rows from both tables (left and right).
 
 ## Many to Many
 
+**_ NOT NULL means you can't leave it blank _**
+
 CREATE TABLE actors
 (id SERIAL PRIMARY KEY,
 first_name TEXT,
@@ -677,6 +679,14 @@ page_count INTEGER,
 publisher TEXT,
 publication_date DATE
 );
+
+Inspecting Tables in PostgreSQL
+Listing the tables in the database
+
+library=# \dt
+Listing the column names and types in a specific table
+
+library=# \d+ books
 
 > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
