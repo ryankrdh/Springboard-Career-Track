@@ -33,3 +33,10 @@ GROUP BY
 HAVING 
   COUNT(owner_id) > 1 AND ROUND(AVG(price)) > 10000 
 ORDER BY first_name DESC;
+
+-- my answer: 
+SELECT first_name, last_name, ROUND(AVG(price)) as average_price, COUNT(*) AS vehicle_count
+FROM owners INNER JOIN vehicles on owners.id = vehicles.owner_id
+GROUP BY (first_name, last_name)
+HAVING COUNT(*) > 1 AND ROUND(AVG(price)) > 10000
+ORDER BY first_name DESC;

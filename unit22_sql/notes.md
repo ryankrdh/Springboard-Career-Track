@@ -688,6 +688,51 @@ Listing the column names and types in a specific table
 
 library=# \d+ books
 
+## ASSIGNMENT NOTES
+
+-- first query
+-- Join the two tables so that every column and record appears, regardless of if there is not an owner_id.
+
+SELECT \* FROM owners o
+FULL OUTER JOIN vehicles v
+ON o.id=v.owner_id;
+
+-- my answer:
+SELECT \* FROM owners LEFT JOIN vehicles on owners.id = vehicles.owner_id
+
+-- second query
+-- Count the number of cars for each owner. Display the owners first_name, last_name and count of vehicles. The first_name should be ordered in ascending order.
+
+SELECT first_name, last_name,
+COUNT(owner_id) FROM owners o
+JOIN vehicles v on o.id=v.owner_id
+GROUP BY (first_name, last_name)
+ORDER BY first_name;
+
+-- my answer:
+SELECT first_name, last_name, COUNT(\*) AS total_vehicle FROM owners INNER JOIN vehicles on owners.id = vehicles.owner_id GROUP BY (first_name, last_name) ORDER BY first_name;
+
+-- third query
+-- Count the number of cars for each owner and display the average price for each of the cars as integers. Display the owners first_name, last_name, average price and count of vehicles. The first_name should be ordered in descending order. Only display results with more than one vehicle and an average price greater than 10000.
+SELECT
+first_name, last_name,
+ROUND(AVG(price)) as average_price,
+COUNT(owner_id)
+FROM owners o
+JOIN vehicles v on o.id=v.owner_id
+GROUP BY
+(first_name, last_name)
+HAVING
+COUNT(owner_id) > 1 AND ROUND(AVG(price)) > 10000
+ORDER BY first_name DESC;
+
+-- my answer:
+SELECT first_name, last_name, ROUND(AVG(price)) as average_price, COUNT(_) AS vehicle_count
+FROM owners INNER JOIN vehicles on owners.id = vehicles.owner_id
+GROUP BY (first_name, last_name)
+HAVING COUNT(_) > 1 AND ROUND(AVG(price)) > 10000
+ORDER BY first_name DESC;
+
 > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
 In SQL, there are three types of relationships--one-to-one (1:1), one-to-many (1:N) or many-to-many (M:N)--which can be modeled. The six tables (Students, Lecturers, Courses, StudentLecturer, StudentCourse and LecturerCourse) will be used to illustrate these relationships. The Students, Lecturers and Courses tables are the master tables and relationships are built using the other three tables, the StudentLecturer, StudentCourse and LecturerCourse.
