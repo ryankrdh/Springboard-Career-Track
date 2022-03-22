@@ -727,11 +727,172 @@ COUNT(owner_id) > 1 AND ROUND(AVG(price)) > 10000
 ORDER BY first_name DESC;
 
 -- my answer:
-SELECT first_name, last_name, ROUND(AVG(price)) as average_price, COUNT(_) AS vehicle_count
+SELECT first*name, last_name, ROUND(AVG(price)) as average_price, COUNT(*) AS vehicle*count
 FROM owners INNER JOIN vehicles on owners.id = vehicles.owner_id
 GROUP BY (first_name, last_name)
-HAVING COUNT(_) > 1 AND ROUND(AVG(price)) > 10000
+HAVING COUNT(*) > 1 AND ROUND(AVG(price)) > 10000
 ORDER BY first_name DESC;
+
+## SQLZOO assignment
+
+# JOIN
+
+SELECT matchid, player FROM goal
+WHERE teamid = 'GER'
+
+SELECT id,stadium,team1,team2
+FROM game
+WHERE id = 1012
+
+SELECT player, teamid, stadium, mdate
+FROM game JOIN goal ON (id=matchid)
+WHERE teamid = 'GER'
+
+SELECT team1, team2, player FROM game
+JOIN goal ON (id=matchid)
+WHERE player LIKE 'Mario%'
+
+SELECT player, teamid, coach, gtime
+FROM goal
+JOIN eteam on (teamid=id)
+WHERE gtime<=10
+
+SELECT mdate,teamname FROM game
+JOIN eteam ON (team1 = eteam.id)
+WHERE coach = 'Fernando Santos'
+
+SELECT player FROM goal
+JOIN game ON (matchid = id)
+WHERE stadium = 'National Stadium, Warsaw'
+
+SELECT DISTINCT player
+FROM game JOIN goal ON matchid = id
+WHERE (team1= 'GER' OR team2='GER')
+AND teamid != 'GER'
+
+SELECT teamname, COUNT(\*)
+FROM eteam JOIN goal ON id=teamid
+GROUP BY teamname
+
+SELECT stadium, COUNT(\*) FROM goal
+JOIN game ON (matchid = id)
+GROUP BY stadium
+
+SELECT matchid, mdate, COUNT(\*)
+FROM game JOIN goal ON matchid = id
+WHERE (team1 = 'POL' OR team2 = 'POL')
+GROUP BY mdate,matchid
+
+SELECT matchid, mdate, COUNT(\*) FROM goal
+JOIN game ON (matchid=id)
+WHERE teamid = 'GER'
+GROUP BY matchid, mdate
+
+SELECT DISTINCT mdate, team1,
+SUM(CASE WHEN teamid=team1 THEN 1 ELSE 0 END) score1,
+team2,
+SUM(CASE WHEN teamid=team2 THEN 1 ELSE 0 END) score2
+FROM game
+LEFT JOIN goal ON game.id = goal.matchid
+GROUP BY id, mdate, team1, team2
+ORDER BY mdate, matchid, team1, team2
+
+# More JOIN
+
+SELECT id, title
+FROM movie
+WHERE yr=1962
+
+SELECT yr
+FROM movie
+WHERE title = 'Citizen Kane'
+
+SELECT id, title, yr FROM movie
+WHERE title LIKE '%Star Trek%'
+ORDER BY yr
+
+SELECT title FROM movie
+WHERE id IN (11768, 11955, 21191)
+
+SELECT id FROM actor
+WHERE name = 'Glenn Close'
+
+SELECT id FROM movie
+WHERE title = 'Casablanca'
+
+SELECT name FROM casting JOIN actor ON (id=actorid)
+WHERE movieid=11768
+
+SELECT name FROM casting
+JOIN actor ON (actor.id=actorid)
+JOIN movie ON (movie.id=movieid)
+WHERE title = 'Alien'
+
+SELECT title FROM casting
+JOIN movie ON (movie.id = movieid)
+JOIN actor ON (actor.id = actorid)
+WHERE name = 'Harrison Ford'
+
+SELECT title FROM casting
+JOIN movie ON (movie.id = movieid)
+JOIN actor ON (actor.id = actorid)
+WHERE name = 'Harrison Ford' AND ord > 1
+
+SELECT title, name FROM casting
+JOIN movie ON (movie.id = movieid)
+JOIN actor ON (actor.id = actorid)
+WHERE yr = 1962 and ord = 1
+Harder Questions
+
+SELECT yr,COUNT(title) FROM
+movie JOIN casting ON movie.id=movieid
+JOIN actor ON actorid=actor.id
+WHERE name='John Travolta'
+GROUP BY yr
+HAVING COUNT(title)=(SELECT MAX(c) FROM
+(SELECT yr,COUNT(title) AS c FROM
+movie JOIN casting ON movie.id=movieid
+JOIN actor ON actorid=actor.id
+WHERE name='John Travolta'
+GROUP BY yr) AS t
+)
+
+SELECT title, name FROM casting
+JOIN movie ON movie.id = movieid
+JOIN actor ON actor.id = actorid
+WHERE ord = 1
+AND movie.id IN
+(SELECT movie.id FROM movie
+JOIN casting ON movie.id = movieid
+JOIN actor ON actor.id = actorid
+WHERE actor.name = 'Julie Andrews')
+
+SELECT DISTINCT name FROM casting
+JOIN movie ON movie.id = movieid
+JOIN actor ON actor.id = actorid
+WHERE actorid IN (
+SELECT actorid FROM casting
+WHERE ord = 1
+GROUP BY actorid
+HAVING COUNT(actorid) >= 30)
+ORDER BY name
+
+SELECT title, COUNT(actorid) FROM casting
+JOIN movie ON movieid = movie.id
+WHERE yr = 1978
+GROUP BY movieid, title
+ORDER BY COUNT(actorid) DESC
+
+SELECT DISTINCT name FROM casting
+JOIN actor ON actorid = actor.id
+WHERE name != 'Art Garfunkel'
+AND movieid IN (
+SELECT movieid
+FROM movie
+JOIN casting ON movieid = movie.id
+JOIN actor ON actorid = actor.id
+WHERE actor.name = 'Art Garfunkel'
+)
 
 > <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
 
