@@ -765,10 +765,11 @@ SELECT player FROM goal
 JOIN game ON (matchid = id)
 WHERE stadium = 'National Stadium, Warsaw'
 
-SELECT DISTINCT player
+SELECT player
 FROM game JOIN goal ON matchid = id
-WHERE (team1= 'GER' OR team2='GER')
-AND teamid != 'GER'
+WHERE (team1='GER' OR team2='GER') AND teamid != 'GER'
+GROUP BY player
+ORDER BY player ASC;
 
 SELECT teamname, COUNT(\*)
 FROM eteam JOIN goal ON id=teamid
@@ -788,14 +789,11 @@ JOIN game ON (matchid=id)
 WHERE teamid = 'GER'
 GROUP BY matchid, mdate
 
-SELECT DISTINCT mdate, team1,
-SUM(CASE WHEN teamid=team1 THEN 1 ELSE 0 END) score1,
-team2,
-SUM(CASE WHEN teamid=team2 THEN 1 ELSE 0 END) score2
+SELECT mdate, team1, SUM(CASE WHEN teamid = team1 THEN 1 ELSE 0 END) score1, team2, SUM(CASE WHEN teamid = team2 THEN 1 ELSE 0 END) score2
 FROM game
-LEFT JOIN goal ON game.id = goal.matchid
-GROUP BY id, mdate, team1, team2
-ORDER BY mdate, matchid, team1, team2
+LEFT JOIN goal ON (id=matchid)
+GROUP BY mdate, team1, team2
+ORDER BY mdate, team1, team2
 
 # More JOIN
 
@@ -811,17 +809,13 @@ SELECT id, title, yr FROM movie
 WHERE title LIKE '%Star Trek%'
 ORDER BY yr
 
-SELECT title FROM movie
-WHERE id IN (11768, 11955, 21191)
-
 SELECT id FROM actor
 WHERE name = 'Glenn Close'
 
 SELECT id FROM movie
 WHERE title = 'Casablanca'
 
-SELECT name FROM casting JOIN actor ON (id=actorid)
-WHERE movieid=11768
+SELECT name FROM casting JOIN actor ON (id=actorid) WHERE movieid = 27
 
 SELECT name FROM casting
 JOIN actor ON (actor.id=actorid)
@@ -894,7 +888,9 @@ JOIN actor ON actorid = actor.id
 WHERE actor.name = 'Art Garfunkel'
 )
 
-> <br/> > <br/> > <br/> > <br/> > <br/> > <br/>
+<br/>
+
+> <br/> > <br/> > <br/> > <br/> >
 
 In SQL, there are three types of relationships--one-to-one (1:1), one-to-many (1:N) or many-to-many (M:N)--which can be modeled. The six tables (Students, Lecturers, Courses, StudentLecturer, StudentCourse and LecturerCourse) will be used to illustrate these relationships. The Students, Lecturers and Courses tables are the master tables and relationships are built using the other three tables, the StudentLecturer, StudentCourse and LecturerCourse.
 
@@ -920,3 +916,20 @@ A self-referencing relationship (also known as a recursive relationship) in a da
 
 Create table relationships in SQL Server using SQL Designer
 The methods to define relationships in a SQL Server database described above are not so easy and straightforward. They involve a bit of coding and demand a certain level of SQL expertise. Is there an easier way to create relationships? Let’s have a look at the method to implement relations visually—using the SQL Designer that comes with dbForge Studio for SQL Server.
+
+<br/>
+
+# DDL & Schema Design
+
+DML: Data Modification Language.
+DDL: Data Definition Language
+
+## CREATE DATABASE
+
+> createdb database_name
+> dropdb database_name
+
+If in SQL:
+
+> CREATE DATABASE database_name
+> DROP DATABASE database_name
