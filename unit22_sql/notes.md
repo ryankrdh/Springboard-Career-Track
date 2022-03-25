@@ -933,3 +933,13 @@ If in SQL:
 
 > CREATE DATABASE database_name
 > DROP DATABASE database_name
+
+CREATE TABLE books (
+id SERIAL PRIMARY KEY,
+title TEXT,
+author TEXT,
+price FLOAT,
+page_count INTEGER,
+publisher TEXT,
+publication_date DATE
+);
