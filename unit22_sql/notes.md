@@ -943,3 +943,31 @@ page_count INTEGER,
 publisher TEXT,
 publication_date DATE
 );
+
+NULL
+NULL is a special value in SQL for “unknown”.
+
+It’s not the same thing as 0 or an empty string!
+
+NULL values are ok when you really might have missing/unknown data
+
+But generally, they’re a pain, so it can be a good idea to make fields not nullable
+
+Primary Keys
+Every table should have a “primary key”, a unique way to identify rows
+
+Primary keys must be:
+
+Unique
+Not Null
+Primary keys should be:
+
+Unchanging (it’s a pain when primary keys change)
+Constraints
+Constraints are a basic form of validation. The database can prevent basic types of unintended behavior.
+
+Primary Key (every table must have a unique identifier)
+Unique (prevent duplicates in the column)
+Not Null (prevent null in the column)
+Check (do a logical condition before inserting / updating)
+Foreign Key (column values must reference values in another table)
