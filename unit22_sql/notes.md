@@ -986,3 +986,20 @@ ALTER TABLE books ADD COLUMN in_paperback BOOLEAN;
 ALTER TABLE books DROP COLUMN in_paperback;
 
 ALTER TABLE books RENAME COLUMN page_count TO num_pages;
+
+DDL for Movies
+Let’s look at the DDL from the earlier example
+
+CREATE TABLE studios (
+id SERIAL PRIMARY KEY,
+name TEXT NOT NULL,
+founded_in DATE
+);
+CREATE TABLE movies (
+id SERIAL PRIMARY KEY,
+title TEXT NOT NULL,
+release_year INTEGER,
+runtime INTEGER,
+rating TEXT,
+studio_id INTEGER REFERENCES studios
+);
