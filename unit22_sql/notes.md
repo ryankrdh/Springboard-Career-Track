@@ -971,3 +971,18 @@ Unique (prevent duplicates in the column)
 Not Null (prevent null in the column)
 Check (do a logical condition before inserting / updating)
 Foreign Key (column values must reference values in another table)
+
+CREATE TABLE users (
+id SERIAL PRIMARY KEY,
+phone_number TEXT UNIQUE,
+password TEXT NOT NULL,
+account_balance FLOAT CHECK (account_balance > 0)
+);
+Column Manipulation
+Adding / Removing / Renaming columns
+
+ALTER TABLE books ADD COLUMN in_paperback BOOLEAN;
+
+ALTER TABLE books DROP COLUMN in_paperback;
+
+ALTER TABLE books RENAME COLUMN page_count TO num_pages;
