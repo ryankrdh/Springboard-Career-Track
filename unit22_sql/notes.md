@@ -934,17 +934,58 @@ If in SQL:
 > CREATE DATABASE database_name
 > DROP DATABASE database_name
 
-CREATE TABLE books (
-id SERIAL PRIMARY KEY,
-title TEXT,
-author TEXT,
-price FLOAT,
-page_count INTEGER,
-publisher TEXT,
-publication_date DATE
-);
+> CREATE TABLE books (
+> id SERIAL PRIMARY KEY,
+> title TEXT,
+> author TEXT,
+> price FLOAT,
+> page_count INTEGER,
+> publisher TEXT,
+> publication_date DATE
+> );
 
-NULL
+When creating a TABLE, these are the available column data types:
+
+### Integer
+
+Integer numbers
+
+### Float
+
+Floating-point numbers (you can specify the precision)
+
+### Text Strings
+
+Text
+
+### Varchar
+
+Text Strings, but limited to a certain size
+
+### Boolean
+
+True or False
+
+### Date
+
+Date (without time)
+
+### Timestamp
+
+Date and time
+
+### Serial
+
+Auto-incrementing numbers (used for primary keys)
+
+### Other Types
+
+There are lots of other types, including specialized, less-common types for fixed-precision math (NUMERIC or DECIMAL), handling geospatial information, currency, and more!
+
+# CONSTRAINTS
+
+### NULL
+
 NULL is a special value in SQL for “unknown”.
 
 It’s not the same thing as 0 or an empty string!
@@ -953,10 +994,11 @@ NULL values are ok when you really might have missing/unknown data
 
 But generally, they’re a pain, so it can be a good idea to make fields not nullable
 
-Primary Keys
+### Primary Keys
+
 Every table should have a “primary key”, a unique way to identify rows
 
-Primary keys must be:
+### Primary keys must be:
 
 Unique
 Not Null
@@ -966,18 +1008,23 @@ Unchanging (it’s a pain when primary keys change)
 Constraints
 Constraints are a basic form of validation. The database can prevent basic types of unintended behavior.
 
-Primary Key (every table must have a unique identifier)
-Unique (prevent duplicates in the column)
-Not Null (prevent null in the column)
-Check (do a logical condition before inserting / updating)
-Foreign Key (column values must reference values in another table)
+### Primary Key (every table must have a unique identifier)
 
-CREATE TABLE users (
-id SERIAL PRIMARY KEY,
-phone_number TEXT UNIQUE,
-password TEXT NOT NULL,
-account_balance FLOAT CHECK (account_balance > 0)
-);
+### Unique (prevent duplicates in the column)
+
+### Not Null (prevent null in the column)
+
+### Check (do a logical condition before inserting / updating)
+
+### Foreign Key (column values must reference values in another table)
+
+> CREATE TABLE users (
+> id SERIAL PRIMARY KEY,
+> phone_number TEXT UNIQUE,
+> password TEXT NOT NULL,
+> account_balance FLOAT CHECK (account_balance > 0)
+> );
+
 Column Manipulation
 Adding / Removing / Renaming columns
 
