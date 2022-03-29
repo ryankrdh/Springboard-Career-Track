@@ -1000,6 +1000,26 @@ NULL values are ok when you really might have missing/unknown data
 
 But generally, they’re a pain, so it can be a good idea to make fields not nullable
 
+### DEFAULT VALUE and NULL example:
+
+> CREATE TABLE subreddits (
+
+    id SERIAL,
+    name VARCHAR(15) NOT NULL,
+    description TEXT,
+    subscribers INTEGER CHECK (subscribers > 0) DEFAULT 1,
+    is_private BOOLEAN DEFAULT false.
+
+);
+
+> CREATE TABLE users (
+
+    id SERIAL,
+    username VARCHAR(15) UNIQUE NOT NULL,
+    password VARCHAR(20) NOT NULL
+
+)
+
 ### Primary Keys
 
 Every table should have a “primary key”, a unique way to identify rows
@@ -1043,7 +1063,8 @@ Adding / Removing / Renaming columns
 
 # STRUCTURING RELATIONAL DATA
 
-DDL for Movies
+### DDL for Movies
+
 Let’s look at the DDL from the earlier example
 
 CREATE TABLE studios (
@@ -1051,6 +1072,7 @@ id SERIAL PRIMARY KEY,
 name TEXT NOT NULL,
 founded_in DATE
 );
+
 CREATE TABLE movies (
 id SERIAL PRIMARY KEY,
 title TEXT NOT NULL,
@@ -1058,4 +1080,47 @@ release_year INTEGER,
 runtime INTEGER,
 rating TEXT,
 studio_id INTEGER REFERENCES studios
+);
+
+### Controlling Delete Behavior with DDL
+
+CREATE TABLE movies (
+id SERIAL PRIMARY KEY,
+title TEXT NOT NULL,
+release_year INTEGER,
+runtime INTEGER,
+rating TEXT,
+studio_id INTEGER REFERENCES studios ON DELETE SET NULL
+);
+
+CREATE TABLE movies (
+id SERIAL PRIMARY KEY,
+title TEXT NOT NULL,
+release_year INTEGER,
+runtime INTEGER,
+rating TEXT,
+studio_id INTEGER REFERENCES studios ON DELETE CASCADE
+);
+
+### Many-to-Many DDL
+
+CREATE TABLE movies (
+id SERIAL PRIMARY KEY,
+title TEXT NOT NULL,
+release_year INTEGER NOT NULL,
+runtime INTEGER NOT NULL,
+rating TEXT NOT NULL
+);
+
+CREATE TABLE actors (
+id SERIAL PRIMARY KEY,
+first_name TEXT NOT NULL,
+last_name TEXT,
+birth_date DATE NOT NULL
+);
+
+CREATE TABLE roles (
+id SERIAL PRIMARY KEY,
+movie_id INTEGER REFERENCES movies ON DELETE CASCADE,
+actor_id INTEGER REFERENCES actors ON DELETE CASCADE
 );
