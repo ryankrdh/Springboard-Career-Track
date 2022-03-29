@@ -53,6 +53,12 @@ list tables in database:
 
 selecting all from table:
 
+> \l
+
+list off database available
+
+> \d database name;
+
 > SELECT \* FROM database_name;
 
 selcting title from table:
@@ -1025,14 +1031,17 @@ Constraints are a basic form of validation. The database can prevent basic types
 > account_balance FLOAT CHECK (account_balance > 0)
 > );
 
-Column Manipulation
+## Column Manipulation
+
 Adding / Removing / Renaming columns
 
-ALTER TABLE books ADD COLUMN in_paperback BOOLEAN;
+> ALTER TABLE books ADD COLUMN in_paperback BOOLEAN;
 
-ALTER TABLE books DROP COLUMN in_paperback;
+> ALTER TABLE books DROP COLUMN in_paperback;
 
-ALTER TABLE books RENAME COLUMN page_count TO num_pages;
+> ALTER TABLE books RENAME COLUMN page_count TO num_pages;
+
+# STRUCTURING RELATIONAL DATA
 
 DDL for Movies
 Let’s look at the DDL from the earlier example
