@@ -1079,7 +1079,7 @@ title TEXT NOT NULL,
 release_year INTEGER,
 runtime INTEGER,
 rating TEXT,
-studio_id INTEGER REFERENCES studios
+studio_id INTEGER NOT NULL REFERENCES studios
 );
 
 ### Controlling Delete Behavior with DDL
@@ -1092,6 +1092,8 @@ runtime INTEGER,
 rating TEXT,
 studio_id INTEGER REFERENCES studios ON DELETE SET NULL
 );
+
+### Second Delete Method. Cascade will have the reference be deleted as well.
 
 CREATE TABLE movies (
 id SERIAL PRIMARY KEY,
