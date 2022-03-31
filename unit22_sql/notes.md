@@ -1135,3 +1135,9 @@ ALTER TABLE books ADD COLUMN in_paperback TEXT DEFAULT 'moderator';
 ALTER TABLE books DROP COLUMN in_paperback;
 
 ALTER TABLE books RENAME COLUMN page_count TO num_pages;
+
+## Normalization
+
+Normalization is a database design technique which organizes tables in a manner that reduces redundancy and dependency of data.
+
+It divides larger tables to smaller tables and links them using relationships.
