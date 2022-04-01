@@ -1146,8 +1146,14 @@ It divides larger tables to smaller tables and links them using relationships.
 
 Indexing is part of DDL, but indexes can be created or dropped at any time. The more records in the database at the time of creation, the slower the indexing process will be.
 
+SQL takes care of indexes to make our queries faster. We don't have to do anything with them. downside is the size.
+
 > CREATE INDEX username_index ON table_name (column_name);
 
 You can also create a multi-column index, which is useful if you are constantly querying by two fields at once (e.g. first_name and last_name):
 
 > CREATE INDEX username_index ON table_name (column1_name, column2_name);
+
+## Drop an index
+
+> DROP INDEX username_index;
