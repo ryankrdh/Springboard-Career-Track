@@ -28,3 +28,12 @@ class Pet(db.Model):
                      unique=True)
     species = db.Column(db.String(30), nullable=True)
     hunger = db.Column(db.Integer, nullable=False, default=20)
+
+Would turn into this SQL:
+
+CREATE TABLE pets (
+id SERIAL PRIMARY KEY,
+name VARCHAR(50) NOT NULL UNIQUE,
+species VARCHAR(30),
+hunger INTEGER NOT NULL DEFAULT 20
+)
