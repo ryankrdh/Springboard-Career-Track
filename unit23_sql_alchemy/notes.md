@@ -9,3 +9,22 @@ Need the program that provides SQLAlchemy: flask-sqlalchemy
 
 $ pip install psycopg2-binary
 $ pip install flask-sqlalchemy
+
+OO into SQL
+Model
+A model like this:
+
+demo/models.py
+class Pet(db.Model):
+"""Pet."""
+
+    __tablename__ = "pets"
+
+    id = db.Column(db.Integer,
+                   primary_key=True,
+                   autoincrement=True)
+    name = db.Column(db.String(50),
+                     nullable=False,
+                     unique=True)
+    species = db.Column(db.String(30), nullable=True)
+    hunger = db.Column(db.Integer, nullable=False, default=20)
