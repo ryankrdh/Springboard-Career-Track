@@ -37,3 +37,15 @@ name VARCHAR(50) NOT NULL UNIQUE,
 species VARCHAR(30),
 hunger INTEGER NOT NULL DEFAULT 20
 )
+
+Setup
+demo/models.py
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+def connect_db(app):
+"""Connect to database."""
+
+    db.app = app
+    db.init_app(app)
