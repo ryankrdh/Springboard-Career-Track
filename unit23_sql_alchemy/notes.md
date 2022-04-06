@@ -64,3 +64,20 @@ SQLALCHEMY_TRACK_MODIFICATIONS - Set this to false or SQLAlchemy will yell at yo
 SQLALCHEMY_ECHO - Print all SQL statements to the terminal (helpful for debugging)
 Can talk to SQLite, PostgreSQL, MySQL, and more
 You (almost) never have to change code if you change databases
+
+Models
+Our Model
+demo/models.py
+class Pet(db.Model):
+"""Pet."""
+
+    __tablename__ = "pets"
+
+    id = db.Column(db.Integer,
+                   primary_key=True,
+                   autoincrement=True)
+    name = db.Column(db.String(50),
+                     nullable=False,
+                     unique=True)
+    species = db.Column(db.String(30), nullable=True)
+    hunger = db.Column(db.Integer, nullable=False, default=20)
