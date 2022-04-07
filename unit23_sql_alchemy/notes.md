@@ -113,3 +113,14 @@ class Pet(db.Model):
                      unique=True)
     species = db.Column(db.String(30), nullable=True)
     hunger = db.Column(db.Integer, nullable=False, default=20)
+
+Creating the Database
+$ ipython3
+In [1] %run app.py
+
+In [2] db.create_all()
+Create all the tables using this database connection
+Only have to do once
+No effect if tables already exist
+If you change table schema
+drop table & re-run
