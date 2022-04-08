@@ -134,3 +134,13 @@ Using our Model
 > > > db.session.add(fluffy) # required to add to database!
 > > > db.session.commit() # commit the transaction
 > > > You only have to use db.session.add() to add a new object once – you don’t need to keep adding it to the session each time you change it.
+
+Using our Model
+
+> > > fluffy = Pet(name='Fluffy', species="Pet")
+> > > fluffy.hunger
+> > > 20
+
+> > > db.session.add(fluffy) # required to add to database!
+> > > db.session.commit() # commit the transaction
+> > > You only have to use db.session.add() to add a new object once – you don’t need to keep adding it to the session each time you change it.
