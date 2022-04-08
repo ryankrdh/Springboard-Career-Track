@@ -144,3 +144,16 @@ Using our Model
 > > > db.session.add(fluffy) # required to add to database!
 > > > db.session.commit() # commit the transaction
 > > > You only have to use db.session.add() to add a new object once – you don’t need to keep adding it to the session each time you change it.
+
+The advantages text() provides over a plain string are −
+
+backend-neutral support for bind parameters
+per-statement execution options
+result-column typing behaviour
+The text()function requires Bound parameters in the named colon format. They are consistent regardless of database backend. To send values in for the parameters, we pass them into the execute() method as additional arguments.
+
+The following example uses bound parameters in textual SQL −
+
+from sqlalchemy.sql import text
+s = text("select students.name, students.lastname from students where students.name between :x and :y")
+conn.execute(s, x = 'A', y = 'L').fetchall()
