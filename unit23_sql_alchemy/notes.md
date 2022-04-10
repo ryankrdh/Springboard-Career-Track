@@ -157,3 +157,25 @@ The following example uses bound parameters in textual SQL −
 from sqlalchemy.sql import text
 s = text("select students.name, students.lastname from students where students.name between :x and :y")
 conn.execute(s, x = 'A', y = 'L').fetchall()
+
+Filtering data
+Lets see some examples of raw SQLite Queries and queries using SQLAlchemy.
+where
+SQL :
+SELECT * FROM census 
+WHERE sex = F
+SQLAlchemy :
+db.select([census]).where(census.columns.sex == 'F')
+in
+SQL :
+SELECT state, sex
+FROM census
+WHERE state IN (Texas, New York)
+SQLAlchemy :
+db.select([census.columns.state, census.columns.sex]).where(census.columns.state.in_(['Texas', 'New York']))
+and, or, not
+SQL :
+SELECT * FROM census
+WHERE state = 'California' AND NOT sex = 'M'
+SQLAlchemy :
+db.select([census]).where(db.and_(census.columns.state == 'California', census.columns.sex != 'M'))
