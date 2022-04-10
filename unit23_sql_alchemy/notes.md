@@ -7,10 +7,20 @@ Need the program that lets Python speak PostgreSQL: psycopg2
 
 Need the program that provides SQLAlchemy: flask-sqlalchemy
 
-$ pip install psycopg2-binary
+$ pip install psycopg2-binary (helps python speak to postgres)
 $ pip install flask-sqlalchemy
 
-OO into SQL
+from flask_sqlalchemy import SQLAlchemy
+
+app = FLask(**name**)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///sqla_intro'
+
+db =SQLalchemy()
+db.app = app
+db.init_app(app)
+
+OO into SQL  
 Model
 A model like this:
 
