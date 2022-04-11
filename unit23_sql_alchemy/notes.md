@@ -172,7 +172,7 @@ Filtering data
 Lets see some examples of raw SQLite Queries and queries using SQLAlchemy.
 where
 SQL :
-SELECT * FROM census 
+SELECT _ FROM census
 WHERE sex = F
 SQLAlchemy :
 db.select([census]).where(census.columns.sex == 'F')
@@ -182,10 +182,27 @@ SELECT state, sex
 FROM census
 WHERE state IN (Texas, New York)
 SQLAlchemy :
-db.select([census.columns.state, census.columns.sex]).where(census.columns.state.in_(['Texas', 'New York']))
+db.select([census.columns.state, census.columns.sex]).where(census.columns.state.in\_(['Texas', 'New York']))
 and, or, not
 SQL :
-SELECT * FROM census
+SELECT _ FROM census
 WHERE state = 'California' AND NOT sex = 'M'
 SQLAlchemy :
-db.select([census]).where(db.and_(census.columns.state == 'California', census.columns.sex != 'M'))
+db.select([census]).where(db.and\_(census.columns.state == 'California', census.columns.sex != 'M'))
+
+Using SQLAlchemy with Web Frameworks
+There is no reason why you cannot use the SQLAlchemy library in any application that requires a database backend. However, if you are building a web app with Flask, Bottle or another web framework then take a look at the following extensions. They provide some glue code along with helper functions that can reduce the boilerplate code needed to connect your application's code with the SQLAlchemy library.
+
+SQLAlchemy is typically used with Flask as the database ORM via the Flask-SQLAlchemy extension.
+
+The bottle-sqlalchemy extension for Bottle provides a bridge between the standard SQLAlchemy library and Bottle. However, from my experience using the library it does not have quite as many helper functions as Flask-SQLAlchemy.
+
+Pyramid uses the alchemy scaffold to make it easy to add SQLAlchemy to a Pyramid web app.
+
+While Django does not yet support easy swapping of the default Django backend ORM with SQLAlchemy (like it does for template engines), there are hacks for using SQLAlchemy within Django projects.
+
+Morepath has easy-to-use support for SQLAlchemy via its more.transaction module. There is a morepath-sqlalchemy demo that serves as a working example.
+
+Merging Django ORM with SQLAlchemy for Easier Data Analysis has details on why, how and when you may want to use SQLAlchemy to augment the Django ORM.
+
+Building a Simple Birthday App with Flask-SQLAlchemy combines SQLAlchemy with Flask to create a birthday reminder application.
