@@ -206,3 +206,28 @@ Morepath has easy-to-use support for SQLAlchemy via its more.transaction module.
 Merging Django ORM with SQLAlchemy for Easier Data Analysis has details on why, how and when you may want to use SQLAlchemy to augment the Django ORM.
 
 Building a Simple Birthday App with Flask-SQLAlchemy combines SQLAlchemy with Flask to create a birthday reminder application.
+
+SQLAlchemy resources
+The best way to get comfortable with SQLAlchemy is to dig in and write a database-driven application. The following resources can be helpful if you are having trouble getting started or are starting to run into some edge cases.
+
+There is an entire chapter in the Architecture of Open Source Applications book on SQLAlchemy. The content is detailed and well worth reading to understand what is executing under the covers.
+
+The SQLAlchemy cheatsheet has many examples for querying, generating database metadata and many other common (and not so common) operations when working with Core and the ORM.
+
+10 reasons to love SQLAlchemy is a bit of a non-critical lovefest for the code library. However, the post makes some good points about the quality of SQLAlchemy's documentation and what a pleasure it can be to use it in a Python project.
+
+SQLAlchemy and Django explains how one development team uses the Django ORM for most of their standard queries but relies on SQLAlchemy for really advanced queries.
+
+This SQLAlchemy tutorial provides a slew of code examples that cover the basics for working with SQLAlchemy.
+
+Implementing User Comments with SQLAlchemy gives a wonderful walkthrough of how to build your own online commenting system in Python using SQLAlchemy.
+
+Master SQLAlchemy Relationships in a Performance Friendly Way dives into code that shows how to improve performance when setting and accessing relationship-based data in your models.
+
+SQLAlchemy and data access in Python is a podcast interview with the creator of SQLAlchemy that covers the project's history and how it has evolved over the past decade.
+
+Most Flask developers use SQLAlchemy as an ORM to relational databases. If you're unfamiliar with SQLAlchemy questions will often come up such as what's the difference between flush and commit? that are important to understand as you build out your app.
+
+SQLAlchemy in batches shows the code that a popular iOS application runs in background batch scripts which uses SQLAlchemy to generate playlists. They provide some context and advice for using SQLAlchemy in batch scripts.
+
+Getting PostgreSQL transactions under control with SQLAlchemy provides a quick introduction to the tool Chryso that they are working on to provide better transaction management in SQLAlchemy connections.
