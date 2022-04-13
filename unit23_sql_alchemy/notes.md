@@ -231,3 +231,16 @@ Most Flask developers use SQLAlchemy as an ORM to relational databases. If you'r
 SQLAlchemy in batches shows the code that a popular iOS application runs in background batch scripts which uses SQLAlchemy to generate playlists. They provide some context and advice for using SQLAlchemy in batch scripts.
 
 Getting PostgreSQL transactions under control with SQLAlchemy provides a quick introduction to the tool Chryso that they are working on to provide better transaction management in SQLAlchemy connections.
+
+SQLAlchemy compared to other ORMs
+SQLAlchemy is one of many Python object-relational mapper (ORM) implementations. Several open source projects and articles are listed here to make it a bit easier to understand the differences between these implementations.
+
+Introduction to SQLAlchemy ORM for Django Developers is written by a developer who typically used the Django ORM at work and then had a chance to try SQLAlchemy for one project. He covers differences in how each one handles transactions, models and queries.
+
+SQLAlchemy vs Other ORMs provides a detailed comparison of SQLAlchemy against alternatives.
+
+If you're interested in the differences between SQLAlchemy and the Django ORM I recommend reading SQLAlchemy and You by Armin Ronacher.
+
+This GitHub project named PythonORMSleepy implements the same Flask application with several different ORMs: SQLAlchemy, Peewee, MongoEngine, stdnet and PonyORM. Looking through the code is helpful for understanding the varying approaches each library takes to accomplish a similar objective.
+
+Quora has several answers to the question of which is better and why: Django ORM or SQLALchemy based on various developers' experiences.
